@@ -68,7 +68,7 @@
                 display: block;
                 width: 1.625rem;
                 height: 1.625rem;
-                background-image: url(/wp-content/themes/pm-news/src/img/news-arrow.svg);
+                background-image: url(/wp-content/themes/sport-pulse/src/img/news-arrow.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -142,26 +142,7 @@
         }
     }
 
-    &-numbers {
-        display: flex;
-        gap: 0.4rem;
-        align-items: center;
-        margin-bottom: 0.25rem;
-    }
-
-    &-date {
-        color: #37373799;
-        font-weight: 400;
-        line-height: 0.916rem;
-        font-size: 0.75rem;
-    }
-
-    &-time {
-        color: #37373799;
-        font-weight: 400;
-        line-height: 0.916rem;
-        font-size: 0.75rem;
-    }
+    
 
     &-navigation {
         display: flex;

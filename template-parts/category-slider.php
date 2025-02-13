@@ -91,13 +91,7 @@
                                             <?php endif; ?>
 
                                             <a href="<?php echo esc_url(get_the_permalink()); ?>" class="category-slider-link">
-                                                <div class="category-slider-numbers">
-                                                    <span class="category-slider-date"><?php echo esc_html(get_the_date('d.m.Y')); ?></span>
-                                                    <span class="card__separator">•</span>
-                                                    <span class="category-slider-time">
-                                                        <?php echo esc_html(get_reading_time()); ?>
-                                                    </span>
-                                                </div>
+
                                                 <h3 class="category-slider-item--title">
                                                     <?php
                                                     $title = get_the_title();
