@@ -6,9 +6,9 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
-function sport_pulse_setup()
+function pm_news_setup()
 {
-	load_theme_textdomain('sport_pulse', get_template_directory() . '/languages');
+	load_theme_textdomain('pm_news', get_template_directory() . '/languages');
 
 	add_theme_support('automatic-feed-links');
 
@@ -32,13 +32,13 @@ function sport_pulse_setup()
 
 	add_theme_support('customize-selective-refresh-widgets');
 }
-add_action('after_setup_theme', 'sport_pulse_setup');
+add_action('after_setup_theme', 'pm_news_setup');
 
-function sport_pulse_content_width()
+function pm_news_content_width()
 {
-	$GLOBALS['content_width'] = apply_filters('sport_pulse_content_width', 640);
+	$GLOBALS['content_width'] = apply_filters('pm_news_content_width', 640);
 }
-add_action('after_setup_theme', 'sport_pulse_content_width', 0);
+add_action('after_setup_theme', 'pm_news_content_width', 0);
 
 
 /**

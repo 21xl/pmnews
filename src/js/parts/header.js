@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("menu-header-menu-ru") ||
     document.getElementById("menu-header-menu-kz");
 
-  if (!menuContainer) return; // Если нет ни одного из меню, прекращаем выполнение скрипта
+  if (!menuContainer) return;  
 
   function toggleSubMenu(event) {
     event.stopPropagation();
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (subMenu) {
       const isOpen = subMenu.classList.contains("open");
 
-      closeAllSubMenus(); // Закрываем все подменю перед открытием нового
+      closeAllSubMenus(); 
 
       if (isOpen) {
         subMenu.classList.remove("open");
@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
       subMenu.classList.remove("open");
       const parentMenuItem = subMenu.closest(".menu-item-has-children");
 
-      // Убираем класс open и у родителя подменю
       if (parentMenuItem) {
         parentMenuItem.classList.remove("open");
       }

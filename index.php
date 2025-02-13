@@ -10,7 +10,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package sport_pulse
+ * @package pm_news
  */
 
 get_header();
