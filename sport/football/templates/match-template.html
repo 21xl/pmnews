@@ -1,0 +1,142 @@
+<div class="matches__ligue" data-ligue="{{competition.id}}" pinned="{{pinned}}">
+	<div class="matches__ligue-head">
+		<div class="matches__ligue-block">
+			<div class="matches__ligue-fav">
+				<div class="fav addligue">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M9.82028 2.77976C9.89346 2.6304 10.1064 2.63042 10.1795 2.77978L12.3994 7.3127C12.4284 7.37188 12.4847 7.41299 12.5499 7.4226L17.5184 8.15443C17.6819 8.17851 17.7473 8.37927 17.6293 8.49503L14.0329 12.0249C13.9861 12.0707 13.9648 12.1366 13.9758 12.2012L14.8243 17.1859C14.8521 17.3495 14.6801 17.4739 14.5334 17.3962L10.0936 15.0435C10.035 15.0125 9.96485 15.0125 9.90628 15.0435L5.4664 17.3962C5.31976 17.4739 5.14774 17.3495 5.17559 17.1859L6.02404 12.2012C6.03503 12.1366 6.01371 12.0707 5.96697 12.0249L2.37051 8.49503C2.25256 8.37926 2.31795 8.17851 2.48146 8.15442L7.44911 7.4226C7.5143 7.41299 7.57058 7.37189 7.59957 7.31272L9.82028 2.77976Z"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+			</div>
+
+			<div class="matches__ligue-img">
+				{{#if country}}
+				<img src="{{country.logo}}" alt="{{country.name}}" />
+				{{else}}
+				<img src="{{category.logo}}" alt="{{category.name}}" />
+				{{/if}}
+			</div>
+
+			<div class="matches__ligue-title">
+				{{#if country}}
+
+				<a href="/statistics/football/{{country.slug}}/" class="matches__ligue-category">
+					<span>{{country.name}}</span>
+					<span class="colon">:</span>
+				</a>
+				<a href="/statistics/football/{{country.slug}}/{{competition.slug}}/"
+					class="matches__ligue-competition">
+					<span>{{competition.name}}</span>
+				</a>
+
+				{{else}}
+
+				<a href="/statistics/football/{{category.slug}}/" class="matches__ligue-category">
+					<span>{{category.name}}</span>
+					<span class="colon">:</span>
+				</a>
+				<a href="/statistics/football/{{category.slug}}/{{competition.slug}}/"
+					class="matches__ligue-competition">
+					<span>{{competition.name}}</span>
+				</a>
+				{{/if}}
+			</div>
+
+			<div class="matches__ligue-pin">
+				<div class="pin {{isPinned competition.id}}" data-competition_id="{{competition.id}}">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M12.5576 4.39259L15.6069 7.44185C15.8908 7.7258 16.0325 8.1221 15.993 8.52171C15.9534 8.92132 15.7367 9.28214 15.4026 9.50489L13.1731 10.9913C12.8956 11.1762 12.6971 11.4579 12.6162 11.7814L11.6886 15.4918C11.63 15.7261 11.45 15.9107 11.2173 15.9752C10.9846 16.0396 10.7353 15.9739 10.5645 15.8032L4.1963 9.43495C4.02558 9.26422 3.95988 9.01485 4.02433 8.78216C4.08879 8.54948 4.27342 8.36945 4.50766 8.31089L8.21807 7.38327C8.54155 7.3024 8.82327 7.10386 9.00823 6.82643L10.4946 4.59688C10.7173 4.26275 11.0782 4.0461 11.4778 4.00653C11.8774 3.96696 12.2737 4.10864 12.5576 4.39259Z"
+							stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M4 15.9981L7.38087 12.6172" stroke-width="1.5" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+				</div>
+			</div>
+		</div>
+
+		<div class="matches__ligue-control">
+			{{#if country}}
+			<a class="matches__ligue-table"
+				href="/statistics/football/{{country.slug}}/{{competition.slug}}/standings/">
+				<span>{{t 'standing'}}</span>
+			</a>
+			{{else}}
+			<a class="matches__ligue-table"
+				href="/statistics/football/{{category.slug}}/{{competition.slug}}/standings/">
+				<span>{{t 'standing'}}</span>
+			</a>
+			{{/if}}
+			<div class="matches__ligue-hide hidden">
+				<span>{{t 'show'}}</span>
+
+				<div class="matches__ligue-arrow"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="matches__ligue-content">
+		{{#each matches}}
+		<a href="/statistics/football/match/{{this.id}}/">
+			<div class="matches__item {{statusClass this.status_id}}" data-match_id="{{this.id}}">
+				<div class="matches__item-block">
+					<div class="matches__item-fav" onclick="event.stopPropagation();">
+						<div class="fav addfav">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M9.82028 2.77976C9.89346 2.6304 10.1064 2.63042 10.1795 2.77978L12.3994 7.3127C12.4284 7.37188 12.4847 7.41299 12.5499 7.4226L17.5184 8.15443C17.6819 8.17851 17.7473 8.37927 17.6293 8.49503L14.0329 12.0249C13.9861 12.0707 13.9648 12.1366 13.9758 12.2012L14.8243 17.1859C14.8521 17.3495 14.6801 17.4739 14.5334 17.3962L10.0936 15.0435C10.035 15.0125 9.96485 15.0125 9.90628 15.0435L5.4664 17.3962C5.31976 17.4739 5.14774 17.3495 5.17559 17.1859L6.02404 12.2012C6.03503 12.1366 6.01371 12.0707 5.96697 12.0249L2.37051 8.49503C2.25256 8.37926 2.31795 8.17851 2.48146 8.15442L7.44911 7.4226C7.5143 7.41299 7.57058 7.37189 7.59957 7.31272L9.82028 2.77976Z"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+					</div>
+
+					<div class="matches__item-time">{{{matchTimeOrBreak this.id}}}</div>
+
+					<div class="matches__item-rivals">
+						<div
+							class="matches__item-team {{winnerClass this.home_scores this.away_scores}} {{#if (isHomeScoreGreater this.home_scores)}}red-card{{/if}}">
+							<div class="matches__item-img">
+								<img src="{{this.home_team.logo}}" alt="{{this.home_team.name}}" />
+							</div>
+
+							<span>{{this.home_team.name}}</span>
+
+							<div class="matches__item-card">{{redCards this.home_scores}}</div>
+						</div>
+
+						<div
+							class="matches__item-team {{winnerClass this.away_scores this.home_scores}}  {{#if (isHomeScoreGreater this.away_scores)}}red-card{{/if}}">
+							<div class="matches__item-img">
+								<img src="{{this.away_team.logo}}" alt="{{this.away_team.name}}" />
+							</div>
+
+							<span>{{this.away_team.name}}</span>
+
+							<div class="matches__item-card">{{redCards this.away_scores}}</div>
+						</div>
+					</div>
+
+					<div class="matches__item-status">
+						<div class="matches__item-goal" data-goal="{{this.id}}">
+							<span>{{t 'goal'}}</span>
+						</div>
+
+						<div class="matches__item-penalty">
+							<span>{{t 'penalty'}}</span>
+						</div>
+					</div>
+
+					<div class="matches__item-score">
+						<span>{{displayScore this.status_id this.home_scores}}</span>
+						<span>{{displayScore this.status_id this.away_scores}}</span>
+					</div>
+				</div>
+
+				<div class="matches__item-time matches__item-time--ended">{{finishedMatchTime this.id}}</div>
+			</div>
+		</a>
+		{{/each}}
+	</div>
+</div>

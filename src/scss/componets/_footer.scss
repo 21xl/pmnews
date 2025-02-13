@@ -1,0 +1,121 @@
+.footer {
+    border-top: 0.063rem solid $border;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        padding-top: 5rem;
+        padding-bottom: 3.75rem;
+
+        @include media(mobile) {
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            gap: 1.25rem;
+            padding-top: 1.5rem;
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        width: 21.875rem;
+
+        @include media(mobile) {
+            width: 100%;
+        }
+    }
+
+    &__logo {
+        &--desktop {
+            width: 7.8rem;
+            height: 3rem;
+            margin-bottom: 2.688rem;
+
+            @include media(mobile) {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            width: 5.2rem;
+            display: none;
+            height: 2rem;
+            margin-bottom: 0;
+
+            @include media(mobile) {
+                display: block;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__text {
+        font-size: 1.125rem;
+        margin-bottom: 1.438rem;
+
+        @include media(mobile) {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__copyright {
+        font-size: 1.125rem;
+
+        @include media(mobile) {
+            font-size: 0.875rem;
+        }
+    }
+
+    &__title {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 3.2rem;
+
+        @include media(mobile) {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.125rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include media(mobile) {
+            gap: 0.625rem;
+        }
+
+        &--2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .menu-item {
+            a {
+                font-size: 1.125rem;
+                transition: color 0.3s ease-in;
+
+                &:hover {
+                    color: $red;
+                }
+
+                @include media(mobile) {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}

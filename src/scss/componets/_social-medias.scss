@@ -1,0 +1,96 @@
+.social-medias {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: filter 0.3s ease-in-out;
+
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(43%) sepia(52%) saturate(292%) hue-rotate(188deg)
+                brightness(88%) contrast(84%);
+        }
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.share {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @include media(mobile) {
+        gap: 0.75rem;
+    }
+
+    button {
+        display: block;
+        width: 1.75rem;
+        height: 1.75rem;
+        // position: relative;
+
+        @include media(mobile) {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
+    .copy {
+        &-copied {
+            opacity: 0;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.75rem;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 0.5rem;
+            padding: 0.906rem 0.688rem 0.906rem 1.5rem;
+            backdrop-filter: blur(0.5rem);
+            background: #171718cc;
+            color: $white;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.209rem;
+            z-index: 4;
+
+            @include media(mobile) {
+                top: 100%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 1.375rem;
+                height: 1.375rem;
+                display: block;
+                left: 0.2rem;
+                top: 50%;
+                transform: translate(0, -50%);
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                background-size: contain !important;
+                background-image: url(/wp-content/themes/pm-news/src/img/check-copy.svg);
+            }
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}

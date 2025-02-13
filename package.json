@@ -1,0 +1,45 @@
+{
+  "name": "sport_pulse",
+  "version": "1.0.0",
+  "description": "Awesome theme.",
+  "author": "Ihor F",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://github.com/Automattic/_s#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automattic/_s.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Automattic/_s/issues"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^19.2.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "dir-archiver": "^1.1.1",
+    "glob": "^11.0.0",
+    "html-loader": "^5.1.0",
+    "sass": "^1.49.0",
+    "sass-loader": "^14.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "events": "^3.3.0",
+    "handlebars": "^4.7.8",
+    "i18next": "^24.0.5"
+  }
+}

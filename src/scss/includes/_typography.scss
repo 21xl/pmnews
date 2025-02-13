@@ -1,0 +1,185 @@
+ul,
+ol {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+
+    @include media(mobile) {
+        margin: 0.3rem 0;
+    }
+}
+
+p,
+strong,
+b,
+em,
+i,
+li {
+    font-size: 1.125rem;
+
+    @include media(mobile) {
+        font-size: 0.875rem;
+    }
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    position: relative;
+    padding: 0.75rem 1.625rem 0.75rem 1.5rem;
+    border-radius: 0rem 0.75rem 0.75rem 0rem;
+    margin: 1.5rem 0;
+    background: #f8f9fb;
+
+    @include media(mobile) {
+        margin: 1.25rem 0;
+        border-radius: 0rem 0.5rem 0.5rem 0rem;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.375rem;
+        height: 100%;
+        background: $blue;
+
+        @include media(mobile) {
+            width: 0.25rem;
+        }
+    }
+}
+
+h1 {
+    font-size: 3.25rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: $black;
+
+    & > * {
+        font-size: 3.25rem;
+        font-weight: 700;
+
+        @include media(mobile) {
+            font-size: 1.7rem;
+        }
+    }
+
+    @include media(mobile) {
+        font-size: 1.7rem;
+        margin: 1.7rem 0 0.7rem;
+    }
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: $black;
+
+    & > * {
+        font-size: 3rem;
+        font-weight: 700;
+
+        @include media(mobile) {
+            font-size: 1.5rem;
+        }
+    }
+
+    @include media(mobile) {
+        font-size: 1.5rem;
+        margin: 1.7rem 0 0.7rem;
+    }
+}
+
+h3 {
+    font-size: 2.625rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: $black;
+
+    & > * {
+        font-size: 2.625rem;
+        font-weight: 700;
+
+        @include media(mobile) {
+            font-size: 1.32rem;
+        }
+    }
+
+    @include media(mobile) {
+        font-size: 1.32rem;
+        margin: 1.7rem 0 0.7rem;
+    }
+}
+
+h4 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: $black;
+
+    & > * {
+        font-size: 2.25rem;
+        font-weight: 700;
+
+        @include media(mobile) {
+            font-size: 1.2rem;
+        }
+    }
+
+    @include media(mobile) {
+        font-size: 1.2rem;
+        margin: 1.7rem 0 0.7rem;
+    }
+}
+
+h5 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: $black;
+
+    & > * {
+        font-size: 1.875rem;
+        font-weight: 700;
+
+        @include media(mobile) {
+            font-size: 1.125rem;
+        }
+    }
+
+    @include media(mobile) {
+        font-size: 1.125rem;
+        margin: 1.7rem 0 0.7rem;
+    }
+}
+
+h6 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: $black;
+
+    & > * {
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        @include media(mobile) {
+            font-size: 1rem;
+        }
+    }
+
+    @include media(mobile) {
+        font-size: 1rem;
+        margin: 1.7rem 0 0.7rem;
+    }
+}

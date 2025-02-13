@@ -1,0 +1,39 @@
+.logo {
+    &__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__full {
+        transition: all 0.5s ease-in-out;
+        width: 7.875rem;
+
+        &.collapsed {
+            transform: translateX(-31.25rem);
+        }
+    }
+
+    &__collapsed {
+        transition: all 0.5s ease-in-out;
+        transform: translateX(31.25rem);
+        width: 3.5rem;
+
+        &.collapsed {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

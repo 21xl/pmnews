@@ -1,0 +1,57 @@
+.attachment-page {
+    &__title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 3.663rem;
+        color: $black;
+        margin-bottom: 1.5rem;
+
+        @include media(mobile) {
+            font-size: 1.5rem;
+            line-height: 1.831rem;
+            margin-bottom: 0.813rem;
+        }
+    }
+
+    &__flex {
+        display: flex;
+
+        @include media(mobile) {
+            flex-direction: column;
+        }
+
+        & .single-aside {
+            margin-top: 4.5rem;
+
+            @include media(mobile) {
+                margin-top: 2.5rem;
+            }
+        }
+    }
+
+    &__content {
+        max-width: 72%;
+        width: 100%;
+
+        @include media(mobile) {
+            max-width: 100%;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 36.813rem;
+        overflow: hidden;
+        border-radius: 0.75rem;
+
+        @include media(mobile) {
+            height: 12.563rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "goal": "ГОЛ!",
+  "penalty": "Пенальти",
+  "match_start": "Матч начался",
+  "match_end": "Матч завершен",
+  "score": "Счет",
+  "standing": "Таблица",
+  "show": "Показать",
+  "half_time": "Перерыв",
+  "penalty_shootout": "Пенальти",
+  "match_ended": "Завершён",
+  "delay": "Задержка",
+  "interrupt": "Прерван",
+  "cut_in_half": "Остановлен",
+  "cancelled": "Отменён",
+  "to_be_determined": "Определяется",
+  "hidden": "Скрыто",
+  "round": "Раунд"
+}

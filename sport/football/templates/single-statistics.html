@@ -1,0 +1,177 @@
+<div class="match__statistics-checkbox custom-checkbox">
+	{{#if stat.full_time}}
+	<div class="custom-checkbox__item" data-checkbox-tab="tab1">
+		<input type="hidden" name="checkbox1" value="true" class="custom-checkbox__input" />
+		<div class="custom-checkbox__box" data-checked="true"></div>
+		<span class="custom-checkbox__label">{{ t 'Full time'}}</span>
+	</div>
+	{{/if}}
+	{{#if stat.first_half}}
+	<div class="custom-checkbox__item" data-checkbox-tab="tab2">
+		<input type="hidden" name="checkbox2" value="false" class="custom-checkbox__input">
+		<div class="custom-checkbox__box" data-checked="false"></div>
+		<span class="custom-checkbox__label">{{t '1 time'}}</span>
+	</div>
+	{{/if}}
+	{{#if stat.sec_half}}
+	<div class="custom-checkbox__item" data-checkbox-tab="tab3">
+		<input type="hidden" name="checkbox3" value="false" class="custom-checkbox__input">
+		<div class="custom-checkbox__box" data-checked="false"></div>
+		<span class="custom-checkbox__label">{{t '2 time'}}</span>
+	</div>
+	{{/if}}
+	{{#if stat.first_overtime}}
+	<div class="custom-checkbox__item" data-checkbox-tab="tab4">
+		<input type="hidden" name="checkbox4" value="false" class="custom-checkbox__input">
+		<div class="custom-checkbox__box" data-checked="false"></div>
+		<span class="custom-checkbox__label">{{t '1 overtime'}}</span>
+	</div>
+	{{/if}}
+	{{#if stat.sec_overtime}}
+	<div class="custom-checkbox__item" data-checkbox-tab="tab5">
+		<input type="hidden" name="checkbox5" value="false" class="custom-checkbox__input">
+		<div class="custom-checkbox__box" data-checked="false"></div>
+		<span class="custom-checkbox__label">{{t '1 overtime'}}</span>
+	</div>
+	{{/if}}
+
+</div>
+
+<div class="checkboxes__content">
+	{{#if stat.full_time}}
+	<div class="custom-checkbox__tab" data-checkbox-tab="tab1">
+		<div class="match__statistics-list">
+			{{#each stat.full_time}}
+			<div class="match__statistics-item">
+				<div class="match__statistics-label">{{t this.type}}</div>
+
+				<div class="match__statistics-bar">
+					<div class="match__statistics-segment match__statistics-segment--red"
+						data-value="{{this.home_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.home_val}}{{stattype this.data_type}}</div>
+					</div>
+
+					<div class="match__statistics-segment match__statistics-segment--blue"
+						data-value="{{this.away_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.away_val}}{{stattype this.data_type}}</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
+	{{#if stat.first_half}}
+	<div class="custom-checkbox__tab hidden" data-checkbox-tab="tab2">
+		<div class="match__statistics-list">
+			{{#each stat.first_half}}
+			<div class="match__statistics-item">
+				<div class="match__statistics-label">{{t this.type}}</div>
+
+				<div class="match__statistics-bar">
+					<div class="match__statistics-segment match__statistics-segment--red"
+						data-value="{{this.home_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.home_val}}{{stattype this.data_type}}</div>
+					</div>
+
+					<div class="match__statistics-segment match__statistics-segment--blue"
+						data-value="{{this.away_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.away_val}}{{stattype this.data_type}}</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
+	{{#if stat.sec_half}}
+	<div class="custom-checkbox__tab hidden" data-checkbox-tab="tab3">
+		<div class="match__statistics-list">
+			{{#each stat.sec_half}}
+			<div class="match__statistics-item">
+				<div class="match__statistics-label">{{t this.type}}</div>
+
+				<div class="match__statistics-bar">
+					<div class="match__statistics-segment match__statistics-segment--red"
+						data-value="{{this.home_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.home_val}}{{stattype this.data_type}}</div>
+					</div>
+
+					<div class="match__statistics-segment match__statistics-segment--blue"
+						data-value="{{this.away_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.away_val}}{{stattype this.data_type}}</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
+	{{#if stat.first_overtime}}
+	<div class="custom-checkbox__tab hidden" data-checkbox-tab="tab4">
+		<div class="match__statistics-list">
+			{{#each stat.first_overtime}}
+			<div class="match__statistics-item">
+				<div class="match__statistics-label">{{t this.type}}</div>
+
+				<div class="match__statistics-bar">
+					<div class="match__statistics-segment match__statistics-segment--red"
+						data-value="{{this.home_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.home_val}}{{stattype this.data_type}}</div>
+					</div>
+
+					<div class="match__statistics-segment match__statistics-segment--blue"
+						data-value="{{this.away_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.away_val}}{{stattype this.data_type}}</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
+	{{#if stat.sec_overtime}}
+	<div class="custom-checkbox__tab hidden" data-checkbox-tab="tab5">
+		<div class="match__statistics-list">
+			{{#each stat.sec_overtime}}
+			<div class="match__statistics-item">
+				<div class="match__statistics-label">{{t this.type}}</div>
+
+				<div class="match__statistics-bar">
+					<div class="match__statistics-segment match__statistics-segment--red"
+						data-value="{{this.home_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.home_val}}{{stattype this.data_type}}</div>
+					</div>
+
+					<div class="match__statistics-segment match__statistics-segment--blue"
+						data-value="{{this.away_val}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{this.away_val}}{{stattype this.data_type}}</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
+
+</div>

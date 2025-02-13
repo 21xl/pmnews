@@ -1,0 +1,133 @@
+.button {
+    display: block;
+    width: fit-content;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 122%;
+    padding: 0.813rem 1.5rem;
+    border-radius: $border_radius;
+    color: $white;
+    background: $red;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: #d72526;
+    }
+
+    @include media(mobile) {
+        font-size: 0.875rem;
+        padding: 0.469rem 1rem;
+        border-radius: 0.5rem;
+    }
+
+    &--transparent {
+        background: linear-gradient(94.84deg, rgba(255, 255, 255, 0.1) 0%, rgba(229, 229, 229, 0.1) 102.26%);
+        border: 0.063rem solid #ffffff33;
+
+        &:hover {
+            background: linear-gradient(94.84deg, rgba(255, 255, 255, 0.1) 0%, rgba(229, 229, 229, 0.1) 102.26%);
+        }
+    }
+
+    &--white {
+        color: $black;
+        border: 0.063rem solid #ccc;
+        background: $white;
+
+        &:hover {
+            background: #dbdde6;
+        }
+    }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    font-weight: 500;
+    line-height: 1.221rem;
+    text-transform: uppercase;
+    transition: 0.4s ease;
+    padding: 0.5rem 0.7rem 0.5rem 1.5rem;
+
+    @include media(mobile) {
+        font-size: 0.875rem;
+        line-height: 1.068rem;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url(/wp-content/themes/pm-news/src/img/link-arrow.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include media(mobile) {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+    }
+
+    &:hover {
+        border-radius: 2.5rem;
+        background: #F0F1F5;
+    }
+}
+
+table {
+    display: block;
+    max-width: 66rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 1rem 0;
+    border: none;
+    border-collapse: collapse;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin: 0 auto 1rem;
+
+    @include media(mobile) {
+        max-width: 22rem;
+        min-height: 100%;
+        display: inline-block;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    caption {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    tr {
+        &:nth-child(even) {
+            background: rgba(237, 241, 245, 0.4);
+        }
+    }
+
+    th,
+    td {
+        padding: 1rem 1.5rem;
+        border: 0.063rem solid $border_2;
+        border-collapse: collapse;
+        white-space: nowrap;
+    }
+
+    thead {
+        tr {
+            background: $gray;
+        }
+
+        th {
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+    }
+}

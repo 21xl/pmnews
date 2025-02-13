@@ -1,0 +1,287 @@
+.archive {
+    main {
+        padding-top: 5.5rem;
+
+        @include media(mobile) {
+            padding-top: 5rem;
+        }
+    }
+}
+
+.archive-grid {
+    margin-bottom: $margin_bottom;
+
+    @include media(mobile) {
+        margin-bottom: $margin_bottom_mob;
+    }
+
+    &__title {
+        margin: 0 0 2rem;
+
+        @include media(mobile) {
+            margin: 0 0 1.25rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        gap: 1.5rem;
+
+        @include media(mobile) {
+            gap: 1.25rem;
+            flex-direction: column;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__top {
+        display: flex;
+        gap: 1.5rem;
+
+        @include media(mobile) {
+            gap: 1.25rem;
+            flex-direction: column;
+        }
+
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 15rem 30.375rem;
+            gap: 1.5rem;
+            width: calc(100% - 13.75rem);
+
+            @include media(mobile) {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 1.25rem;
+            }
+
+            .card {
+                &:nth-child(1) {
+                    grid-column: 1 / 4;
+
+                    @include media(mobile) {
+                        grid-column: 1 / 2;
+                    }
+
+                    .tags {
+                        width: 50%;
+
+                        @include media(mobile) {
+                            width: 100%;
+                        }
+                    }
+
+                    .card__link {
+                        flex-direction: row;
+                        @include media(mobile) {
+                            flex-direction: column;
+                        }
+                    }
+
+                    .card__img {
+                        width: 50%;
+                        height: 100%;
+                        @include media(mobile) {
+                            width: 100%;
+                        }
+                    }
+
+                    .card__content {
+                        padding: 1.5rem;
+                        width: 50%;
+                        @include media(mobile) {
+                            padding: 0.75rem;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &__img {
+                    height: 14.5rem;
+                }
+            }
+        }
+    }
+
+    &__all {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+
+        @include media(mobile) {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .card {
+            &:nth-child(1) {
+                @include media(mobile) {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+
+                .tags {
+                    @include media(mobile) {
+                        padding: 0.75rem 0.75rem 0 0.75rem;
+                        position: static;
+                    }
+                }
+            }
+
+            &__img {
+                height: 14.5rem;
+
+                @include media(mobile) {
+                    display: none;
+                }
+            }
+
+            &__desc {
+                @include media(mobile) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__ad {
+        display: block;
+        width: 13.75rem;
+        height: 47rem;
+        background: #edf1f5;
+        border-radius: 0.75rem;
+
+        @include media(mobile) {
+            display: none;
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+
+        @include media(mobile) {
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .page-numbers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            padding: 1.3125rem;
+            transition: border 0.3s ease-in-out;
+            border-radius: 0.75rem;
+            border: 0.063rem solid transparent;
+
+            @include media(mobile) {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1rem;
+                padding: 0.6rem;
+            }
+
+            &:hover {
+                border: 0.063rem solid $red;
+            }
+        }
+
+        .current {
+            background: rgba(255, 0, 0, 0.1) !important;
+            border: 0.063rem solid transparent !important;
+        }
+
+        .pagination-prev {
+            display: block;
+            width: 2.5rem;
+            height: 2.5rem;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+
+            @include media(mobile) {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            &:hover {
+                background: none;
+                transform: translateX(-0.3rem);
+            }
+        }
+
+        .pagination-next {
+            display: block;
+            width: 2.5rem;
+            height: 2.5rem;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+
+            @include media(mobile) {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            &:hover {
+                transform: translateX(0.3rem);
+            }
+        }
+
+        .pagination-disabled {
+            opacity: 0.3;
+            backdrop-filter: blur(0.125rem);
+            cursor: not-allowed;
+
+            &:hover {
+                transform: none;
+            }
+        }
+
+        .next,
+        .prev {
+            display: none;
+        }
+    }
+
+    &__list--nocomplete {
+        .grid-news__ad {
+            display: none;
+        }
+
+        .archive-grid__top-list {
+            width: 100%;
+        }
+    }
+}

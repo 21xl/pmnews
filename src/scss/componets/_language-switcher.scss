@@ -1,0 +1,25 @@
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    list-style: none;
+    padding: 0;
+
+    &__item {
+        color: rgba(7, 20, 36, 0.5);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+
+        a {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        &--current {
+            background: $gray;
+            color: $black;
+        }
+    }
+}

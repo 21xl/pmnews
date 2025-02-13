@@ -1,0 +1,176 @@
+@import "loader";
+@import "sidebar";
+@import "icons";
+@import "tabs";
+@import "links";
+@import "matches";
+@import "competition";
+@import "date-picker";
+@import "table";
+@import "match";
+@import "custom-checkbox";
+@import "brackets";
+@import "tooltip";
+
+.statistics {
+  padding: 8rem 0 5rem;
+
+  @include media(mobile) {
+    padding: 4rem 0 2rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+
+    @include media(mobile) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__title {
+    font-size: 1.8125rem;
+    font-weight: 700;
+    color: $black;
+    margin: 0 0 2rem;
+    display: block;
+  }
+
+  &__links {
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    border: 0.063rem solid #dbe2e9;
+    margin-bottom: 1.5rem;
+    gap: 0.87rem;
+    @include media(mobile) {
+      border-top: 0.063rem solid #dbe2e9;
+      border-bottom: 0.063rem solid #dbe2e9;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+    }
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: 15.125rem 1fr 13.75rem;
+    gap: 1.25rem;
+
+    @include media(mobile) {
+      display: flex;
+    }
+  }
+
+  &__banner {
+    display: block;
+    width: 100%;
+    height: 12rem;
+    border-radius: 0.75rem;
+    background-color: $gray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 1.5rem;
+  }
+
+  &__ad {
+    display: block;
+    width: 100%;
+    height: 47rem;
+    position: sticky;
+    top: 1rem;
+    overflow: hidden;
+
+    @include media(mobile) {
+      display: none;
+    }
+
+    &-wrapper {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $gray;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 0.75rem;
+    }
+  }
+
+  &__breadcrumbs {
+    .wrapper {
+      padding: 0;
+    }
+  }
+
+  &__mobile-sidebar {
+    display: none;
+
+    @include media(mobile) {
+      display: flex;
+      margin-bottom: 1rem;
+      padding: 0.66rem 1rem;
+      border-radius: 0.5rem;
+      border: 0.063rem solid #dbdde6;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    span {
+      font-size: 0.875rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 90%;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath d='m8 10 4 4 4-4' stroke='%23636F92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &.active {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+
+    @include media(mobile) {
+      display: flex;
+    }
+  }
+}
+
+.post-type-archive-football main {
+  padding: 0;
+}
+
+.skeleton {
+  background-color: #f0f1f5;
+  background-image: linear-gradient(90deg, rgba(#fff, 0), rgba(#fff, 0.5), rgba(#fff, 0));
+  background-size: 2.5rem 100%;
+  background-repeat: no-repeat;
+  background-position: left -2.5rem top 0;
+  animation: shine 1s ease infinite;
+  border-radius: 0.25rem;
+}
+
+@keyframes shine {
+  to {
+    background-position: right -2.5rem top 0;
+  }
+}
