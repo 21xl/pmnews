@@ -91,7 +91,7 @@
             line-height: 1.831rem;
             transition: color 0.2s ease-in;
             &:hover {
-                color: $red;
+                color: $yellow;
             }
             @include media(mobile) {
                 font-size: 1.1rem;

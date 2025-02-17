@@ -382,11 +382,11 @@
 
     &.live {
         .scoreboard__minute {
-            background: $red;
+            background: $yellow;
             color: $white;
 
             span {
-                background: $red;
+                background: $yellow;
 
                 &:after {
                     content: "′";
@@ -404,11 +404,11 @@
 
     &.pause {
         .scoreboard__minute {
-            background: $red;
+            background: $yellow;
             color: $white;
 
             span {
-                background: $red;
+                background: $yellow;
             }
         }
     }
@@ -641,7 +641,7 @@
                 display: block;
                 width: 0.75rem;
                 height: 0.75rem;
-                background: $red;
+                background: $yellow;
                 border-radius: 50%;
                 animation: blink 2s infinite;
 

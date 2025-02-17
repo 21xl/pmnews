@@ -503,7 +503,7 @@
 
       span {
         font-weight: 500;
-        color: $red;
+        color: $yellow;
       }
     }
 
@@ -545,25 +545,25 @@
 
     &.live {
       .matches__item-time {
-        color: $red;
+        color: $yellow;
 
         &:after {
           content: "′";
           animation: blink 3s infinite;
-          color: $red;
+          color: $yellow;
           font-size: 0.875rem;
           font-weight: 500;
         }
       }
 
       .matches__item-score span {
-        color: $red;
+        color: $yellow;
       }
     }
 
     &.overtime {
       .matches__item-time {
-        color: $red;
+        color: $yellow;
       }
 
       .matches__item-time:after {
@@ -571,13 +571,13 @@
       }
 
       .matches__item-score span {
-        color: $red;
+        color: $yellow;
       }
     }
 
     &.pause {
       .matches__item-time {
-        color: $red;
+        color: $yellow;
       }
 
       .matches__item-time:after {
@@ -585,7 +585,7 @@
       }
 
       .matches__item-score span {
-        color: $red;
+        color: $yellow;
       }
     }
 
@@ -687,7 +687,7 @@
 
 .minute {
   animation: blink 2s infinite;
-  color: $red;
+  color: $yellow;
   font-size: 0.875rem;
   font-weight: 500;
 }

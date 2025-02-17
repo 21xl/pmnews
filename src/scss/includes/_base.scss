@@ -12,7 +12,7 @@ html {
     line-height: 122%;
     color: $black;
     scrollbar-width: thin;
-    scrollbar-color: #bcc2d2 $white;
+    scrollbar-color: $black $white;
 
     @include media(mobile) {
         font-size: 0.875rem;
@@ -30,13 +30,13 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #bcc2d2;
+    background-color: $black;
     border-radius: 0.625rem;
-    border: 0.063rem solid #bcc2d2;
+    border: 0.063rem solid $black;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: $black;
 }
 
 body {
@@ -153,7 +153,7 @@ body {
     }
 
     a {
-        color: $red;
+        color: $yellow;
         font-weight: 700;
     }
 
@@ -229,7 +229,7 @@ body {
     }
 
     a {
-        color: $red;
+        color: $yellow;
         font-weight: 700;
         word-break: break-all;
     }
