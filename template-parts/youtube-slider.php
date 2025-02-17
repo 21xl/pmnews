@@ -31,12 +31,12 @@ $youtube_link = get_field('youtube_link', 'options');
             target="_blank">
             <div class="youtube-slider__text">
                 <h2 class="youtube-slider__title">
-                    <?php pll_e('Самые свежие новости'); ?>
+                    <?php pll_e('Latest news'); ?>
                 </h2>
 
 
                 <p class="youtube-slider__desc">
-                    <?php pll_e('YouTube канал SportPulse - ваш надёжный источник свежих новостей из мира спорта!'); ?>
+                    <?php pll_e('YouTube channel PM News is your reliable source of the latest news from the world of sports!'); ?>
                 </p>
             </div>
 

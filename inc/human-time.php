@@ -4,18 +4,18 @@ function translate_human_time_diff($from, $to)
     $time_diff = human_time_diff($from, $to);
 
     $translations = array(
-        'hour' => array(pll__('час'), pll__('часа'), pll__('часов')),
-        'hours' => array(pll__('час'), pll__('часа'), pll__('часов')),
-        'min' => array(pll__('минута'), pll__('минуты'), pll__('минут')),
-        'mins' => array(pll__('минута'), pll__('минуты'), pll__('минут')),
-        'day' => array(pll__('день'), pll__('дня'), pll__('дней')),
-        'days' => array(pll__('день'), pll__('дня'), pll__('дней')),
-        'week' => array(pll__('неделя'), pll__('недели'), pll__('недель')),
-        'weeks' => array(pll__('неделя'), pll__('недели'), pll__('недель')),
-        'month' => array(pll__('месяц'), pll__('месяца'), pll__('месяцев')),
-        'months' => array(pll__('месяц'), pll__('месяца'), pll__('месяцев')),
-        'second' => array(pll__('секунда'), pll__('секунды'), pll__('секунд')),
-        'seconds' => array(pll__('секунда'), pll__('секунды'), pll__('секунд')),
+        'hour' => array(pll__('hour'), pll__('hour'), pll__('hour')),
+        'hours' => array(pll__('hours'), pll__('hours'), pll__('hours')),
+        'min' => array(pll__('min'), pll__('min'), pll__('min')),
+        'mins' => array(pll__('mins'), pll__('mins'), pll__('mins')),
+        'day' => array(pll__('day'), pll__('day'), pll__('day')),
+        'days' => array(pll__('days'), pll__('days'), pll__('days')),
+        'week' => array(pll__('week'), pll__('week'), pll__('week')),
+        'weeks' => array(pll__('weeks'), pll__('weeks'), pll__('weeks')),
+        'month' => array(pll__('month'), pll__('month'), pll__('month')),
+        'months' => array(pll__('months'), pll__('months'), pll__('months')),
+        'second' => array(pll__('second'), pll__('second'), pll__('second')),
+        'seconds' => array(pll__('seconds'), pll__('seconds'), pll__('seconds')),
     );
 
     foreach ($translations as $english => $translation) {

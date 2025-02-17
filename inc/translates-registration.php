@@ -10,12 +10,12 @@ if (function_exists('pll_register_string')):
     pll_register_string('company', 'Компания', 'pm-news');
     pll_register_string('categories', 'Категории', 'pm-news');
     pll_register_string('join_us', 'Присоединяйтесь', 'pm-news');
-    pll_register_string('details', 'Детали', 'pm-news');
+    pll_register_string('details', 'Details', 'pm-news');
     pll_register_string('reading_time', 'Время для чтения:', 'pm-news');
     pll_register_string('next_article', 'Следующая статья', 'pm-news');
     pll_register_string('more_videos', 'Больше видео', 'pm-news');
-    pll_register_string('youtube_title', 'Самые свежие новости', 'pm-news');
-    pll_register_string('youtube_description', 'YouTube канал SportPulse - ваш надёжный источник свежих новостей из мира спорта!', 'pm-news');
+    pll_register_string('youtube_title', 'Latest news', 'pm-news');
+    pll_register_string('youtube_description', 'YouTube channel PM News is your reliable source of the latest news from the world of sports!', 'pm-news');
     pll_register_string('back', 'Назад', 'pm-news');
     pll_register_string('go_to_home', 'На главную', 'pm-news');
     pll_register_string('page_not_found', 'Страница не найдена', 'pm-news');
@@ -35,7 +35,7 @@ if (function_exists('pll_register_string')):
     pll_register_string('all-news-author', 'Все статьи автора', 'pm-news');
     pll_register_string('copied', 'Скопировано!', 'pm-news');
     pll_register_string('footer-text', 'Будьте в курсе всех спортивных новостей Казахстана и мира. Получайте самую актуальную информацию о спорте, результаты матчей и интересные статьи от нашей команды журналистов.', 'pm-news');
-    pll_register_string('back', 'назад', 'pm-news');
+    pll_register_string('back', 'ago', 'pm-news');
     pll_register_string('hour', 'час', 'pm-news');
     pll_register_string('hours', 'часов', 'pm-news');
     pll_register_string('minuta', 'минута', 'pm-news');
@@ -66,7 +66,7 @@ if (function_exists('pll_register_string')):
     );
     pll_register_string('search-autor', 'Авторы', 'pm-news');
     pll_register_string('search-show', 'Показаны первые результаты поиска', 'pm-news');
-    pll_register_string('more-btn', 'Детальнее', 'pm-news');
+    pll_register_string('more-btn', 'More details', 'pm-news');
     pll_register_string('file-name', 'Имя файла:', 'pm-news');
     pll_register_string('prognoz', 'Узнавайте итоги всех футбольных матчей первыми на нашей странице с', 'pm-news');
     pll_register_string('prognoz-live', 'Live-результатами', 'pm-news');

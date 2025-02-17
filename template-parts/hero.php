@@ -34,7 +34,7 @@
                                 <?php endif; ?>
 
                                 <a href="<?php echo esc_url($link); ?>" class="hero__link">
-                                    <?php pll_e('Детали'); ?>
+                                    <?php pll_e('Details'); ?>
                                 </a>
                             </div>
 

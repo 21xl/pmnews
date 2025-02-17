@@ -59,10 +59,10 @@ if ($query->have_posts()): ?>
 
                                         <span class="daily-news__slide-time">
                                             <?php echo esc_html($time); ?>
-                                            <?php pll_e('назад'); ?>
+                                            <?php pll_e('ago'); ?>
                                         </span>
 
-                                        <span class="daily-news__slide-btn"> <?php pll_e('Детальнее'); ?></span>
+                                        <span class="daily-news__slide-btn"> <?php pll_e('More details'); ?></span>
                                     </div>
 
                                     <?php if ($image): ?>
