@@ -15,9 +15,9 @@ $ad_banner = get_field('ad_category', 'options');
 <section class="grid-news">
     <div class="grid-news__wrapper wrapper">
         <?php if (!empty($category_name)): ?>
-            <h2 class="grid-news__title">
-                <?php echo esc_html($category_name); ?>
-            </h2>
+                <h2 class="grid-news__title">
+                    <?php echo esc_html($category_name); ?>
+                </h2>
         <?php endif; ?>
 
         <div class="grid-news__content">
@@ -31,17 +31,17 @@ $ad_banner = get_field('ad_category', 'options');
             $category_posts = new WP_Query($args);
 
             if ($category_posts->have_posts()): ?>
-                <div
-                    class="grid-news__list grid-news__list--<?php echo esc_attr($count); ?><?php echo $ad ? ' grid-news__list--ad' : ''; ?>">
-                    <?php while ($category_posts->have_posts()):
-                        $category_posts->the_post(); ?>
-                        <?php get_template_part('template-parts/card'); ?>
-                    <?php endwhile; ?>
-                </div>
+                    <div
+                        class="grid-news__list grid-news__list--<?php echo esc_attr($count); ?><?php echo $ad ? ' grid-news__list--ad' : ''; ?>">
+                        <?php while ($category_posts->have_posts()):
+                            $category_posts->the_post(); ?>
+                                <?php get_template_part('template-parts/card'); ?>
+                        <?php endwhile; ?>
+                    </div>
             <?php else: ?>
-                <div class="grid-news__nothing">
-                    <?php pll_e('Пока постов нет'); ?>
-                </div>
+                    <div class="grid-news__nothing">
+                        <?php pll_e('There are no posts yet'); ?>
+                    </div>
             <?php endif;
             wp_reset_postdata();
             ?>
@@ -51,18 +51,18 @@ $ad_banner = get_field('ad_category', 'options');
                 $ad_banner_img = isset($ad_banner['image']) ? esc_url($ad_banner['image']) : '';
 
                 if ($ad_banner_link && $ad_banner_img): ?>
-                    <a href="<?php echo esc_url($ad_banner_link); ?>" rel="nofollow noopener" target="_blank"
-                        class="grid-news__ad">
-                        <img src="<?php echo esc_url($ad_banner_img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                    </a>
-                <?php endif;
+                            <a href="<?php echo esc_url($ad_banner_link); ?>" rel="nofollow noopener" target="_blank"
+                                class="grid-news__ad">
+                                <img src="<?php echo esc_url($ad_banner_img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            </a>
+                    <?php endif;
             endif; ?>
         </div>
 
         <?php if ($category_posts->have_posts() && !empty($category_link)): ?>
-            <a href="<?php echo esc_url($category_link); ?>" class="link grid-news__link">
-                <?php pll_e('Смотреть больше'); ?>
-            </a>
+                <a href="<?php echo esc_url($category_link); ?>" class="link grid-news__link">
+                    <?php pll_e('See more'); ?>
+                </a>
         <?php endif; ?>
     </div>
 </section>

@@ -178,7 +178,7 @@ $ad_banner = get_field('ad_category', 'options');
 
                         <?php else: ?>
                             <div class="grid-news__nothing">
-                                <?php pll_e('Пока постов нет'); ?>
+                                <?php pll_e('There are no posts yet'); ?>
                             </div>
                         <?php endif;
                         wp_reset_postdata();

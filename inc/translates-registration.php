@@ -3,11 +3,11 @@ if (function_exists('pll_register_string')):
     pll_register_string('login', 'Логин', 'pm-news');
     pll_register_string('registration', 'Регистрация', 'pm-news');
     pll_register_string('min', 'мин', 'pm-news');
-    pll_register_string('see_more', 'Смотреть больше', 'pm-news');
-    pll_register_string('no_posts_yet', 'Пока постов нет', 'pm-news');
+    pll_register_string('see_more', 'See more', 'pm-news');
+    pll_register_string('no_posts_yet', 'There are no posts yet', 'pm-news');
     pll_register_string('copyright', 'Copyright', 'pm-news');
-    pll_register_string('all_rights_reserved', 'Все права защищены.', 'pm-news');
-    pll_register_string('company', 'Компания', 'pm-news');
+    pll_register_string('all_rights_reserved', 'All rights reserved.', 'pm-news');
+    pll_register_string('company', 'Company', 'pm-news');
     pll_register_string('categories', 'Категории', 'pm-news');
     pll_register_string('join_us', 'Присоединяйтесь', 'pm-news');
     pll_register_string('details', 'Details', 'pm-news');
@@ -25,13 +25,13 @@ if (function_exists('pll_register_string')):
     pll_register_string('redaction', 'Редакция', 'pm-news');
     pll_register_string('marketing-office', 'Рекламный отдел', 'pm-news');
     pll_register_string('connect', 'Связаться', 'pm-news');
-    pll_register_string('telegram', 'Телеграм', 'pm-news');
+    pll_register_string('telegram', 'Telegram', 'pm-news');
     pll_register_string('number', 'Номер телефона', 'pm-news');
     pll_register_string('about-author', 'Об авторе/ специализация', 'pm-news');
     pll_register_string('news-count', 'Количество статей', 'pm-news');
     pll_register_string('comments', 'Комментарии', 'pm-news');
     pll_register_string('rating', 'Рейтинг', 'pm-news');
-    pll_register_string('blue-popup', 'Сделать ставку', 'pm-news');
+    pll_register_string('blue-popup', 'Place a bet', 'pm-news');
     pll_register_string('all-news-author', 'Все статьи автора', 'pm-news');
     pll_register_string('copied', 'Скопировано!', 'pm-news');
     pll_register_string('footer-text', 'Будьте в курсе всех спортивных новостей Казахстана и мира. Получайте самую актуальную информацию о спорте, результаты матчей и интересные статьи от нашей команды журналистов.', 'pm-news');
@@ -70,4 +70,7 @@ if (function_exists('pll_register_string')):
     pll_register_string('file-name', 'Имя файла:', 'pm-news');
     pll_register_string('prognoz', 'Узнавайте итоги всех футбольных матчей первыми на нашей странице с', 'pm-news');
     pll_register_string('prognoz-live', 'Live-результатами', 'pm-news');
+    pll_register_string('youtube-link', 'More videos', 'pm-news');
+
 endif;
+

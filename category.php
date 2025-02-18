@@ -118,7 +118,7 @@ $custom_title = get_field('custom_title', 'category_' . $category->term_id);
                             </div>
                         <?php else: ?>
                             <div class="archive-grid__nothing">
-                                <?php pll_e('Пока постов нет'); ?>
+                                <?php pll_e('There are no posts yet'); ?>
                             </div>
                         <?php endif;
                             wp_reset_postdata(); ?>

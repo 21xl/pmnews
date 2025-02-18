@@ -25,7 +25,7 @@ $full_logo = get_field('full_logo', 'options');
         <?php if (has_nav_menu('footer_menu_1')): ?>
             <div class="footer__column">
                 <span class="footer__title">
-                    <?php pll_e('Компания'); ?>
+                    <?php pll_e('Company'); ?>
                 </span>
 
                 <?php wp_nav_menu(

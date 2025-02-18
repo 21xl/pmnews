@@ -94,8 +94,8 @@
 												$ad_banner_img = isset($ad_banner['image']) ? esc_url($ad_banner['image']) : '';
 
 												if ($ad_banner_link && $ad_banner_img): ?>
-													<a href="<?php echo esc_url($ad_banner_link) ?>" rel="nofollow noopener"
-														target="_blank" class="archive-grid__ad">
+													<a href="<?php echo esc_url($ad_banner_link) ?>" rel="nofollow noopener" target="_blank"
+														class="archive-grid__ad">
 														<img src="<?php echo esc_url($ad_banner_img) ?>"
 															alt="<?php echo esc_attr(get_the_title()); ?>">
 													</a>
@@ -111,7 +111,7 @@
 								</div>
 							<?php else: ?>
 								<div class="archive-grid__nothing">
-									<?php pll_e('Пока постов нет'); ?>
+									<?php pll_e('There are no posts yet'); ?>
 								</div>
 							<?php endif;
 							wp_reset_postdata();

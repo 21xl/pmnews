@@ -40,7 +40,10 @@ $youtube_link = get_field('youtube_link', 'options');
                 </p>
             </div>
 
-            <div class="youtube-slider__img">
+            <div class="youtube-slider__right">
+                <span class="youtube-slider__right--text"> <?php pll_e('More videos'); ?></span>
+                <div class="youtube-slider__img"></div>
+                <span class="youtube-slider__right--arrow"></span>
             </div>
         </a>
 

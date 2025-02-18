@@ -100,7 +100,7 @@ $contact_phone = get_field('contact_phone');
 
                                     <div class="contacts__additional-inner">
                                         <span class="contacts__additional-name">
-                                            <?php pll_e('Телеграм'); ?>
+                                            <?php pll_e('Telegram'); ?>
                                         </span>
 
                                         <span class="contacts__additional-link">

@@ -226,9 +226,9 @@ $banner = get_field('ad_single', 'option');
 
 								echo '</ul>';
 
-								// Добавляем кнопку "Смотреть больше"
+								// Добавляем кнопку "See more"
 								if ($post_count > 12) {
-									echo '<button id="show-more-posts" style="display: flex; margin: 0 auto;">Смотреть больше</button>';
+									echo '<button id="show-more-posts" style="display: flex; margin: 0 auto;">See more</button>';
 								}
 
 								wp_reset_postdata();

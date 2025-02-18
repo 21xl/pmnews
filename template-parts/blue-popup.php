@@ -26,7 +26,7 @@ if (empty($blue_popup_delay)) {
 
                 <div class="blue-popup__right">
                     <a href="<?php echo esc_url($blue_popup_link); ?>" class="blue-popup__link">
-                        <?php pll_e('Сделать ставку'); ?>
+                        <?php pll_e('Place a bet'); ?>
                     </a>
 
                     <div class="blue-popup__cancel">
