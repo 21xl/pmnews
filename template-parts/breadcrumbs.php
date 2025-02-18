@@ -4,7 +4,8 @@
             <?php global $post; ?>
 
             <!-- Главная страница -->
-            <a href="<?php echo home_url(); ?>" class="breadcrumbs__main"><span>Главная</span></a>
+            <a href="<?php echo home_url(); ?>" class="breadcrumbs__main"><span>
+                    <?php pll_e('Home'); ?></span></a>
 
             <?php
             // Для одиночных записей

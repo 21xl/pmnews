@@ -1,17 +1,18 @@
-<section class="category-slider">
-    <div class="category-slider__wrapper wrapper">
-        <div class="category-slider__slider">
-            <?php if (have_rows('category_slider_list')): ?>
+<?php if (have_rows('category_slider_list')): ?>
+    <section class="category-slider">
+        <div class="category-slider__wrapper wrapper">
+            <div class="category-slider__slider">
+
                 <?php while (have_rows('category_slider_list')):
                     the_row();
                     $category = get_sub_field('news');
                     if (isset($category) && !empty($category)) {
                         $category_name = esc_html($category->name ?? '');
 
-                        $now = current_time('Y-m-d H:i:s'); // Текущее время в WP
-                        $yesterday = date('Y-m-d H:i:s', strtotime('-24 hours')); // 24 часа назад
-                        $tomorrow = date('Y-m-d 23:59:59', strtotime('+1 day')); // Завтра включительно
-            
+                        $now = current_time('Y-m-d H:i:s');
+                        $yesterday = date('Y-m-d H:i:s', strtotime('-24 hours'));
+                        $tomorrow = date('Y-m-d 23:59:59', strtotime('+1 day'));
+
                         $args = [
                             'post_type' => 'post',
                             'posts_per_page' => -1,
@@ -24,8 +25,8 @@
                             ],
                             'date_query' => [
                                 [
-                                    'after' => $yesterday, // Посты за последние 24 часа
-                                    'before' => $tomorrow,  // До конца завтрашнего дня
+                                    'after' => $yesterday,
+                                    'before' => $tomorrow,
                                     'inclusive' => true,
                                 ],
                             ],
@@ -95,7 +96,8 @@
                         </div>
                     <?php } ?>
                 <?php endwhile; ?>
-            <?php endif; ?>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>

@@ -1,17 +1,18 @@
 .button {
     display: block;
     width: fit-content;
+    color: $black;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 122%;
     padding: 0.813rem 1.5rem;
     border-radius: $border_radius;
-    color: $white;
     background: $yellow;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        background: #d72526;
+        background: $black;
+        color: $white;
     }
 
     @include media(mobile) {

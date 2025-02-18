@@ -21,12 +21,12 @@ if (function_exists('pll_register_string')):
     pll_register_string('page_not_found', 'Страница не найдена', 'pm-news');
     pll_register_string('error_page_text', 'К сожалению, что-то пошло не так и страница не найдена.
 				Пожалуйста, перейдите на главную страницу', 'pm-news');
-    pll_register_string('contact', 'Юридический адрес редакции', 'pm-news');
-    pll_register_string('redaction', 'Редакция', 'pm-news');
-    pll_register_string('marketing-office', 'Рекламный отдел', 'pm-news');
-    pll_register_string('connect', 'Связаться', 'pm-news');
+    pll_register_string('contact', 'Legal address of the editorial office', 'pm-news');
+    pll_register_string('redaction', 'Editorial office', 'pm-news');
+    pll_register_string('marketing-office', 'Advertising department', 'pm-news');
+    pll_register_string('connect', 'Interactive', 'pm-news');
     pll_register_string('telegram', 'Telegram', 'pm-news');
-    pll_register_string('number', 'Номер телефона', 'pm-news');
+    pll_register_string('number', 'Phone number', 'pm-news');
     pll_register_string('about-author', 'Об авторе/ специализация', 'pm-news');
     pll_register_string('news-count', 'Количество статей', 'pm-news');
     pll_register_string('comments', 'Комментарии', 'pm-news');
@@ -71,6 +71,7 @@ if (function_exists('pll_register_string')):
     pll_register_string('prognoz', 'Узнавайте итоги всех футбольных матчей первыми на нашей странице с', 'pm-news');
     pll_register_string('prognoz-live', 'Live-результатами', 'pm-news');
     pll_register_string('youtube-link', 'More videos', 'pm-news');
+    pll_register_string('bread-main', 'Home', 'pm-news');
 
 endif;
 

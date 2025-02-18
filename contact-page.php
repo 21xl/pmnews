@@ -24,6 +24,7 @@ $contact_phone = get_field('contact_phone');
 
         <main>
             <section class="contacts">
+                <?php get_template_part('template-parts/breadcrumbs') ?>
                 <div class="contacts__wrapper wrapper">
                     <h1 class="contacts__title">
                         <?php echo esc_html(get_the_title()) ?>
@@ -39,7 +40,7 @@ $contact_phone = get_field('contact_phone');
 
                                 <div class="contacts__item-text">
                                     <p class="contacts__item-sub">
-                                        <?php pll_e('Юридический адрес редакции'); ?>
+                                        <?php pll_e('Legal address of the editorial office'); ?>
                                     </p>
 
                                     <a href="<?php echo esc_url($contact_address_map) ?>" target="_blank"
@@ -59,7 +60,7 @@ $contact_phone = get_field('contact_phone');
 
                                 <div class="contacts__item-text">
                                     <p class="contacts__item-sub">
-                                        <?php pll_e('Редакция'); ?>
+                                        <?php pll_e('Editorial office'); ?>
                                     </p>
 
                                     <a href="mailto:<?php echo esc_attr($edit_address); ?>" class="contacts__item-info">
@@ -78,7 +79,7 @@ $contact_phone = get_field('contact_phone');
 
                                 <div class="contacts__item-text">
                                     <p class="contacts__item-sub">
-                                        <?php pll_e('Рекламный отдел'); ?>
+                                        <?php pll_e('Advertising department'); ?>
                                     </p>
 
                                     <a href="mailto:<?php echo esc_attr($ad_address) ?>" class="contacts__item-info">
@@ -119,7 +120,7 @@ $contact_phone = get_field('contact_phone');
 
                                     <div class="contacts__additional-inner">
                                         <span class="contacts__additional-name">
-                                            <?php pll_e('Номер телефона'); ?>
+                                            <?php pll_e('Phone number'); ?>
                                         </span>
 
                                         <span class="contacts__additional-link">
@@ -144,7 +145,7 @@ $contact_phone = get_field('contact_phone');
                             </div>
 
                             <a href="mailto:<?php echo ($edit_address); ?>" class="contacts__questions-button button">
-                                <?php pll_e('Связаться'); ?>
+                                <?php pll_e('Interactive'); ?>
                             </a>
                         </div>
                     <?php endif; ?>
