@@ -8,7 +8,7 @@
     transition:
         width 0.5s ease-in-out,
         padding 0.5s ease-in-out;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    background: $black;
     border-right: 0.063rem solid $border_2;
     height: fit-content;
 
@@ -193,14 +193,26 @@
                 align-items: center;
                 gap: 0.3rem;
 
+                &>img{
+                    transition: all 0.4s ease-in-out;
+                }
+
                 @include media(mobile) {
                     padding: 0;
                     width: 100%;
                 }
 
                 &:hover {
-                    background: $gray;
+                    background: $yellow;
                     width: 98%;
+                    color: $black;
+                    &>img{
+                        filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+                    }
+
+                    .menu-item__name{
+                        color: $black;
+                    }
 
                     @include media(mobile) {
                         width: 100%;
@@ -222,7 +234,12 @@
 
                 &:hover {
                     width: 98%;
-                    background: $gray;
+                    background: $yellow;
+                    color: $black;
+
+                     .menu-item__name{
+                        color: $black !important;
+                     }
                     @include media(mobile) {
                         width: 100%;
                     }
@@ -266,8 +283,9 @@
 
         .menu-arrow {
             transition:
-                transform 0.3s ease-in-out,
+                transform  all 0.4s ease-in-out,
                 opacity 0.5s ease-in-out;
+               z-index: 1;
             position: absolute;
             top: 1.5rem;
             right: 1.9rem;
@@ -298,6 +316,7 @@
 
         .menu-item__name {
             transition: all 0.3s ease-in-out;
+            color: $white;
         }
 
         .menu-item {
@@ -314,7 +333,7 @@
             .hover-name {
                 position: absolute;
                 top: 0.3rem;
-                right: -10.5rem;
+                right: -15rem;
                 z-index: 1000;
                 display: inline-block;
                 opacity: 0;
@@ -327,7 +346,7 @@
                 line-height: 1.221rem;
                 font-family: $main_font;
                 border-radius: 0.5rem;
-                width: 8rem;
+                width: 11rem;
                 text-align: center;
                 display: none;
 
@@ -361,7 +380,7 @@
 
             .menu-item > a > .menu-item__name {
                 font-size: 0.875rem;
-                color: #071424a6;
+                color: $white;
 
                 @include media(mobile) {
                     font-size: 1rem;
@@ -374,7 +393,7 @@
 
             .menu-item > span > .menu-item__name {
                 font-size: 0.875rem;
-                color: #071424a6;
+                color: $white;
 
                 @include media(mobile) {
                     font-size: 1rem;
@@ -412,12 +431,25 @@
 
     .current-menu-parent > .menu-item {
         border-radius: $border_radius;
-        background: $gray;
+        background: $yellow;
         width: 98%;
+        color: $black;
+
+        img{
+            filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+        }
+
+        .menu-item__name{
+            color: $black;
+        }
 
         @include media(mobile) {
             width: 100%;
         }
+    }
+
+    .current-menu-parent .menu-arrow {
+        filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
     }
 
     .current-menu-item {
@@ -430,7 +462,22 @@
         }
     }
     .current-menu-item > a,
-    .current-menu-item > .menu-item {
-        background: $gray;
+    .current-menu-item > .menu-item,
+    .current-menu-item .menu-item > .menu-item__name
+   {
+        background: $yellow;
+        color: $black;
     }
+
+    .current_page_item .menu-item .menu-item__name {
+        background: $yellow;
+        color: $black !important;
+    }
+
+   .menu-item-has-children:hover{
+    .menu-arrow {
+        filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+    }
+   }  
+
 }

@@ -52,8 +52,9 @@ class description_walker extends Walker_Nav_Menu
             $item_output .= "\n\t" . '<div class="sub-menu-container-box">';
             $item_output .= "\n\t" . '<div class="sub-menu-container">';
             $item_output .= "\n\t<div class=\"sub-menu-parent-title\">
-                <div class=\"menu-goto-parent\">Назад</div>
+                <div class=\"menu-goto-parent\">" . pll__('Back') . "</div>
             </div>";
+
             $item_output .= "\n\t<div class='category-name'>" . $icon_html . $item_title . "</div>";
         }
 

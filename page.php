@@ -8,6 +8,7 @@
 
 		<main>
 			<section class="default">
+				<?php get_template_part('template-parts/breadcrumbs') ?>
 				<div class="default__wrapper wrapper">
 					<h1>
 						<?php echo esc_html(get_the_title()) ?>

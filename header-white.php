@@ -9,7 +9,7 @@ $ad_banner = get_field('ad_menu', 'options');
         <div class="header__wrapper wrapper">
             <div class="header__left">
                 <a href="<?php echo esc_url(get_home_url()); ?>" class="header__logo-mobile"
-                    title="<?php pll_e('На главную!'); ?>">
+                    title="<?php pll_e('Main page!'); ?>">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/logo.svg'); ?>"
                         alt="<?php echo esc_attr(the_title()); ?>">
                 </a>

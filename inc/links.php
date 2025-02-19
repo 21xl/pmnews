@@ -20,7 +20,7 @@ add_action('wp_head', function () {
 
     } elseif (is_home()) {
         // Для главной страницы блога
-        $canonical_url = get_home_url(); // Ссылка на главную страницу
+        $canonical_url = get_home_url(); // Ссылка Main page 
 
     } elseif (is_paged()) {
         // Для архивов с пагинацией

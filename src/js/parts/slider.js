@@ -201,13 +201,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Category slider
-// Find all category sliders
+ 
 var categorySliders = document.querySelectorAll(".category-slider__inner");
 
 categorySliders.forEach(function(categoryEl) {
   var slides = categoryEl.querySelectorAll(".swiper-slide");
 
-  // Remove slides if there are more than 15
+  
   if (slides.length > 15) {
     slides.forEach(function (slide, index) {
       if (index >= 15) {

@@ -12,13 +12,25 @@
         padding: 2.5rem;
 
         @include media(mobile) {
-            padding: 1.88rem;
+            padding:0.625rem 1.88rem 1.88rem;
         }
     }
 
     &__logo {
-        width: 7.85rem;
+        width: 14.621rem;
         margin: 0 auto 4.5rem;
+        height: 3.5rem;
+
+        @include media(mobile) {
+           width: 7.31rem;
+           height: 1.75rem;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     &__404 {
@@ -47,6 +59,7 @@
         text-transform: uppercase;
         margin: 0 0 0.5rem;
         text-align: center;
+        color: $white;
 
         @include media(mobile) {
             font-size: 1.5rem;
@@ -58,6 +71,7 @@
         text-align: center;
         max-width: 50rem;
         margin: 0 auto 2.5rem;
+        color: $white;
 
         @include media(mobile) {
             font-size: 1.125rem;
@@ -67,6 +81,7 @@
 
     &__button {
         margin: 0 auto;
+        border: 0.063rem solid $yellow;
     }
 }
 

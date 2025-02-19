@@ -16,11 +16,11 @@ if (function_exists('pll_register_string')):
     pll_register_string('more_videos', 'Больше видео', 'pm-news');
     pll_register_string('youtube_title', 'Latest news', 'pm-news');
     pll_register_string('youtube_description', 'YouTube channel PM News is your reliable source of the latest news from the world of sports!', 'pm-news');
-    pll_register_string('back', 'Назад', 'pm-news');
-    pll_register_string('go_to_home', 'На главную', 'pm-news');
-    pll_register_string('page_not_found', 'Страница не найдена', 'pm-news');
-    pll_register_string('error_page_text', 'К сожалению, что-то пошло не так и страница не найдена.
-				Пожалуйста, перейдите на главную страницу', 'pm-news');
+    pll_register_string('back', 'Back', 'pm-news');
+    pll_register_string('go_to_home', 'Main page', 'pm-news');
+    pll_register_string('page_not_found', 'Page Not Found', 'pm-news');
+    pll_register_string('error_page_text', 'К сожалению, что-то пошло не так и Page Not Found.
+				Пожалуйста, перейдите Main page страницу', 'pm-news');
     pll_register_string('contact', 'Legal address of the editorial office', 'pm-news');
     pll_register_string('redaction', 'Editorial office', 'pm-news');
     pll_register_string('marketing-office', 'Advertising department', 'pm-news');
@@ -71,7 +71,10 @@ if (function_exists('pll_register_string')):
     pll_register_string('prognoz', 'Узнавайте итоги всех футбольных матчей первыми на нашей странице с', 'pm-news');
     pll_register_string('prognoz-live', 'Live-результатами', 'pm-news');
     pll_register_string('youtube-link', 'More videos', 'pm-news');
-    pll_register_string('bread-main', 'Home', 'pm-news');
-
+    pll_register_string('bread-main', 'Sports news', 'pm-news');
+    pll_register_string('404-text', 'Unfortunately, something went wrong, and the page could not be found. Please, go to the main page.', 'pm-news');
+    pll_register_string('recommended', 'Recommended', 'pm-news');
 endif;
+
+
 

@@ -63,7 +63,7 @@ $popularpost = new WP_Query(array(
 if ($popularpost->have_posts()): ?>
     <div class="single__recommendation swiper">
         <h2 class="single__recommendation-title">
-            <?php pll_e('Рекомендуемое'); ?>
+            <?php pll_e('Recommended'); ?>
         </h2>
 
         <div class="swiper-wrapper">

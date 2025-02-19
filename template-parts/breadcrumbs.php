@@ -5,7 +5,7 @@
 
             <!-- Главная страница -->
             <a href="<?php echo home_url(); ?>" class="breadcrumbs__main"><span>
-                    <?php pll_e('Home'); ?></span></a>
+                    <?php pll_e('Sports news'); ?></span></a>
 
             <?php
             // Для одиночных записей
@@ -69,7 +69,7 @@
             <?php } ?>
 
             <?php if (is_404()) { ?>
-                <span class="breadcrumbs__current">Страница не найдена</span>
+                <span class="breadcrumbs__current">Page Not Found</span>
             <?php } ?>
 
             <?php if (is_author()) {

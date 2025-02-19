@@ -80,7 +80,7 @@ function custom_breadcrumbs()
 
     // Страница 404
     if (is_404()) {
-        echo ' <span class="breadcrumbs__current">Страница не найдена</span>';
+        echo ' <span class="breadcrumbs__current">Page Not Found</span>';
     }
 
     // Страница автора

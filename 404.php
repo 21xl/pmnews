@@ -18,15 +18,15 @@ get_template_part('head');
 				</div>
 
 				<h1 class="error-page__title">
-					<?php pll_e('Страница не найдена'); ?>
+					<?php pll_e('Page Not Found'); ?>
 				</h1>
 
 				<p class="error-page__text">
-					<?php pll_e('К сожалению, что-то пошло не так, и страница не найдена. Пожалуйста, перейдите на главную страницу.'); ?>
+					<?php pll_e('Unfortunately, something went wrong, and the page could not be found. Please, go to the main page.'); ?>
 				</p>
 
 				<a href="<?php echo esc_url(get_home_url()); ?>" class="button error-page__button">
-					<?php pll_e('На главную'); ?>
+					<?php pll_e('Main page'); ?>
 				</a>
 			</div>
 		</section>

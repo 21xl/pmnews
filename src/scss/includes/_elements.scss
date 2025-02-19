@@ -9,6 +9,7 @@
     border-radius: $border_radius;
     background: $yellow;
     transition: all 0.3s ease-in-out;
+    border: 0.063rem solid $yellow;
 
     &:hover {
         background: $black;

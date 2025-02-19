@@ -9,7 +9,7 @@ $ad_banner = get_field('ad_menu', 'options');
 		<div class="header__wrapper wrapper">
 			<div class="header__left">
 				<a href="<?php echo esc_url(get_home_url()) ?>" class="header__logo-mobile"
-					title="<?php pll_e('На главную!'); ?>">
+					title="<?php pll_e('Main page!'); ?>">
 					<svg width="74" height="28" viewBox="0 0 74 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<g clip-path="url(#clip0_163_14488)">
 							<mask id="mask0_163_14488" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0"
