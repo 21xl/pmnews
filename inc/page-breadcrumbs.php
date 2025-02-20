@@ -75,8 +75,11 @@ function custom_breadcrumbs()
 
     // Результаты поиска
     if (is_search()) {
-        echo ' <span class="breadcrumbs__current">Результаты поиска для "<span>' . get_search_query() . '</span>"</span>';
+        echo '<span class="breadcrumbs__current">';
+        pll_e('Search results');
+        echo ' "<span>' . get_search_query() . '</span>"</span>';
     }
+
 
     // Страница 404
     if (is_404()) {

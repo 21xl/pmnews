@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function storeTokenInSession(token) {
-    // Store the token in sessionStorage
+    // Сохраняем токен в sessionStorage
     sessionStorage.setItem('searchToken', token);
   }
 
@@ -99,6 +99,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchInput) searchInput.value = "";
     toggleModalSearchResults(false);
     document.body.classList.remove("modal-search__freeze");
+  }
+
+  
+  function getCurrentLangFromURL() {
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    const languagePrefixes = ["ru", "kk", "en", "ua", "uk"];
+    if (pathSegments.length > 0 && languagePrefixes.includes(pathSegments[0])) {
+      return pathSegments[0];  
+    }
+    return "";  
   }
 
   if (searchTrigger) {
@@ -158,6 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
           xhr.onload = function () {
             if (xhr.status >= 200 && xhr.status < 400) {
               const response = JSON.parse(xhr.responseText);
+              console.log(xhr.responseText);
               if (searchResults) searchResults.innerHTML = response.html;
 
               const searchCount = document.getElementById("search-count");
@@ -184,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (searchMessage) searchMessage.style.display = "flex";
               }
 
-              // Store the token in the session storage
+
               if (response.token) {
                 storeTokenInSession(response.token);
               }
@@ -226,48 +237,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentQuery.length > 0) {
           saveRecentQuery(currentQuery);
           const searchQuery = encodeURIComponent(currentQuery);
-
-          const languagePrefixes = ["ru", "kk", "en", "ua", "uk"];
-          let currentLang = "";
-
-          languagePrefixes.forEach((prefix) => {
-            if (window.location.pathname.includes(`/${prefix}/`) && prefix !== "ru") {
-              currentLang = prefix;
-            }
-          });
-
-          if (!currentLang) {
-            currentLang = "";
-          }
-
-          const resultsPage = `/${currentLang ? currentLang + '/' : ''}search-results/`;
-          window.location.href = `${resultsPage}?query=${searchQuery}`;
+          const currentLang = getCurrentLangFromURL();
+          const searchURL = currentLang ? `/${currentLang}/?s=${searchQuery}` : `/?s=${searchQuery}`;
+          window.location.href = searchURL;
         }
       }
     });
-    
-   //Новое
+
     additionalSearch.addEventListener("click", function () {
       const currentQuery = searchInput.value.trim();
       if (currentQuery.length > 0) {
         saveRecentQuery(currentQuery);
         const searchQuery = encodeURIComponent(currentQuery);
-    
-        const languagePrefixes = ["ru", "kk", "en", "ua", "uk"];
-        let currentLang = "";
-    
-        languagePrefixes.forEach((prefix) => {
-          if (window.location.pathname.includes(`/${prefix}/`) && prefix !== "ru") {
-            currentLang = prefix;
-          }
-        });
-    
-        if (!currentLang) {
-          currentLang = "";
-        }
-    
-        const resultsPage = `/${currentLang ? currentLang + '/' : ''}search-results/`;
-        window.location.href = `${resultsPage}?query=${searchQuery}`;
+        const currentLang = getCurrentLangFromURL();
+        const resultsPage = currentLang ? `/${currentLang}/` : "/";
+        window.location.href = `${resultsPage}?s=${searchQuery}`;
       }
     });
   }
@@ -294,7 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (queryText.length > 0) {
           saveRecentQuery(queryText);
         }
-
         searchInput.value = queryText;
         currentQuery = queryText;
       }
@@ -302,7 +285,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const viewAllResultsContainer = document.getElementById('view-all-results-container');
-
   if (viewAllResultsContainer) {
     viewAllResultsContainer.addEventListener("click", function (event) {
       if (event.target) {
@@ -310,7 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (queryText.length > 0) {
           saveRecentQuery(queryText);
         }
-
         searchInput.value = queryText;
         currentQuery = queryText;
       }

@@ -59,8 +59,8 @@
             opacity: 0;
         }
 
-        .aside__list li > .menu-item,
-        .aside__list li > a {
+        .aside__list li>.menu-item,
+        .aside__list li>a {
             padding: 0.8rem;
         }
 
@@ -127,7 +127,7 @@
             margin-left: 1rem;
         }
 
-        & > svg {
+        &>svg {
             transition: opacity 0.6s ease;
 
             path {
@@ -141,8 +141,8 @@
             }
         }
 
-        &.collapsed > svg path:nth-child(1),
-        &.collapsed > svg path:nth-child(2) {
+        &.collapsed>svg path:nth-child(1),
+        &.collapsed>svg path:nth-child(2) {
             opacity: 0;
         }
     }
@@ -183,7 +183,7 @@
         flex-direction: column;
 
         li {
-            & > .menu-item {
+            &>.menu-item {
                 width: 98%;
                 margin: 0.25rem 0;
                 border-radius: $border_radius;
@@ -193,7 +193,7 @@
                 align-items: center;
                 gap: 0.3rem;
 
-                &>img{
+                &>img {
                     transition: all 0.4s ease-in-out;
                 }
 
@@ -206,11 +206,12 @@
                     background: $yellow;
                     width: 98%;
                     color: $black;
-                    &>img{
+
+                    &>img {
                         filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
                     }
 
-                    .menu-item__name{
+                    .menu-item__name {
                         color: $black;
                     }
 
@@ -220,7 +221,7 @@
                 }
             }
 
-            & > a {
+            &>a {
                 display: block;
                 width: 98%;
                 margin: 0.25rem 0;
@@ -237,9 +238,10 @@
                     background: $yellow;
                     color: $black;
 
-                     .menu-item__name{
+                    .menu-item__name {
                         color: $black !important;
-                     }
+                    }
+
                     @include media(mobile) {
                         width: 100%;
                     }
@@ -283,9 +285,10 @@
 
         .menu-arrow {
             transition:
-                transform  all 0.4s ease-in-out,
+                transform 0.4s ease-in-out,
                 opacity 0.5s ease-in-out;
-               z-index: 1;
+
+            z-index: 1;
             position: absolute;
             top: 1.5rem;
             right: 1.9rem;
@@ -303,7 +306,7 @@
             }
         }
 
-        .menu-item-has-children.open > .menu-arrow {
+        .menu-item-has-children.open>.menu-arrow {
             transform: rotate(180deg);
         }
     }
@@ -320,6 +323,7 @@
         }
 
         .menu-item {
+            border-radius: $border_radius;
             position: relative;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
@@ -378,7 +382,7 @@
             padding-left: 0.3rem;
             margin-left: 1.625rem;
 
-            .menu-item > a > .menu-item__name {
+            .menu-item>a>.menu-item__name {
                 font-size: 0.875rem;
                 color: $white;
 
@@ -391,7 +395,7 @@
                 }
             }
 
-            .menu-item > span > .menu-item__name {
+            .menu-item>span>.menu-item__name {
                 font-size: 0.875rem;
                 color: $white;
 
@@ -429,17 +433,17 @@
         }
     }
 
-    .current-menu-parent > .menu-item {
+    .current-menu-parent>.menu-item {
         border-radius: $border_radius;
         background: $yellow;
         width: 98%;
         color: $black;
 
-        img{
+        img {
             filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
         }
 
-        .menu-item__name{
+        .menu-item__name {
             color: $black;
         }
 
@@ -461,10 +465,10 @@
             width: 100%;
         }
     }
-    .current-menu-item > a,
-    .current-menu-item > .menu-item,
-    .current-menu-item .menu-item > .menu-item__name
-   {
+
+    .current-menu-item>a,
+    .current-menu-item>.menu-item,
+    .current-menu-item .menu-item>.menu-item__name {
         background: $yellow;
         color: $black;
     }
@@ -474,10 +478,26 @@
         color: $black !important;
     }
 
-   .menu-item-has-children:hover{
-    .menu-arrow {
-        filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+    .menu-item-has-children:hover {
+        .menu-arrow {
+            filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+        }
+
     }
-   }  
+
+    li:has(.menu-arrow:hover) .menu-item {
+        background: $yellow;
+        border-radius: $border_radius;
+
+        .menu-icon {
+            filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+        }
+
+        .menu-item__name {
+            color: $black;
+        }
+    }
+
+
 
 }

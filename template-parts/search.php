@@ -7,7 +7,7 @@
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/search-black.svg'); ?>"
                     alt="Поиск">
             </div>
-            <input type="text" id="search-input" placeholder="<?php echo esc_attr(pll__('Поиск Sport Pulse...')); ?>">
+            <input type="text" id="search-input" placeholder="<?php echo esc_attr(pll__('Search...')); ?>">
             <button id="clear-search" class="clear-search-button"></button>
             <span id="modal-search__close" class="modal-search__close"></span>
         </div>
@@ -15,7 +15,7 @@
         <div class="modal-search__mobile">
 
             <!-- Недавние запросы поиска -->
-            <span class="modal-search__title"><?php echo esc_html(pll__('Последние запросы')); ?></span>
+            <span class="modal-search__title"><?php echo esc_html(pll__('Recent queries')); ?></span>
             <ul id="recent-queries"></ul>
 
             <!-- Прилоадер -->
@@ -27,12 +27,12 @@
             <!-- Результаты поиска -->
             <div class="modal-search__results">
                 <div class="modal-search__results-inner">
-                    <span class="search-results-title"><?php echo esc_html(pll__('Результаты поиска')); ?> (<span
+                    <span class="search-results-title"><?php echo esc_html(pll__('Search results')); ?> (<span
                             id="search-count">0</span>)</span>
                     <ul id="search-results"></ul>
                 </div>
                 <div class="modal-search__absolute">
-                    <span class="view-text"><?php echo esc_html(pll__('Показаны первые результаты поиска')); ?></span>
+                    <span class="view-text"><?php echo esc_html(pll__('Showing first search results')); ?></span>
                     <div id="view-all-results-container"></div>
                 </div>
             </div>
@@ -41,10 +41,10 @@
             <div class="modal-search__message">
                 <div class="modal-search__message--icon">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/nothing.svg'); ?>"
-                        alt="<?php echo esc_attr(pll__('К сожалению, по запросу ничего не найдено.')); ?>">
+                        alt="<?php echo esc_attr(pll__('Unfortunately, nothing was found for your request.')); ?>">
                 </div>
                 <span
-                    class="modal-search__message--text"><?php echo esc_html(pll__('К сожалению, по запросу ничего не найдено.')); ?></span>
+                    class="modal-search__message--text"><?php echo esc_html(pll__('Unfortunately, nothing was found for your request.')); ?></span>
             </div>
 
             <!-- Рекомендации -->
@@ -63,7 +63,7 @@
                 if ($recommendations_query->have_posts()): ?>
                     <div id="recommendations-section" style="display: block;">
                         <span
-                            class="search-results-title"><?php echo esc_html(pll__('Возможно, Вам будет интересно:')); ?></span>
+                            class="search-results-title"><?php echo esc_html(pll__('You might be interested in:')); ?></span>
                         <div class="recommended-posts">
                             <ul>
                                 <?php while ($recommendations_query->have_posts()):

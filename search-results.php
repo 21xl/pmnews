@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 /*
 Template Name: Результаты поиска
 */
@@ -234,7 +234,7 @@ $banner = get_field('ad_single', 'option');
 								wp_reset_postdata();
 							}
 						} else {
-							echo '<p>' . pll_e('Пожалуйста, введите поисковый запрос.') . '</p>';
+							echo '<p>' . pll_e('Please enter your search term.') . '</p>';
 						}
 						?>
 					</div>
@@ -278,4 +278,4 @@ $banner = get_field('ad_single', 'option');
 			});
 		}
 	});
-</script>
+</script> -->

@@ -22,7 +22,7 @@ $ad_banner = get_field('ad_menu', 'options');
 
             <div class="header__buttons">
                 <a href="#" class="button button--white"><?php pll_e('Регистрация') ?></a>
-                <a href="#" class="button"><?php pll_e('Логин') ?></a>
+                <a href="#" class="button"><?php pll_e('Login') ?></a>
             </div>
 
             <?php echo do_shortcode('[language_switcher]'); ?>

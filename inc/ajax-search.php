@@ -13,18 +13,20 @@ function search_ajax_handler()
     }
 
     $unique_token = uniqid('search_', true);
-
     $results = [];
     $total_results = 0;
     $output = '';
+    $current_lang = pll_current_language();
 
-    // Поиск по постам и страницам по заголовку
+    // Поиск по постам
     $post_args = array(
         'post_type' => array('post'),
         'posts_per_page' => -1,
         'post_status' => 'publish',
         's' => $query,
-        'fields' => 'ids'
+        'fields' => 'ids',
+        // 'lang' => $current_lang,
+        // 'suppress_filters' => false
     );
 
     $post_query = new WP_Query($post_args);
@@ -46,11 +48,13 @@ function search_ajax_handler()
         'taxonomy' => 'category',
         'search' => $query,
         'hide_empty' => true,
+        // 'lang' => $current_lang,
+        // 'suppress_filters' => false
     ));
 
     if (!empty($category_results)) {
         $total_results += count($category_results);
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Категории')) . ' (' . intval(count($category_results)) . ')</p>';
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Категории')) . ' (' . count($category_results) . ')</p>';
         $output .= '<div class="modal-search__categories">';
 
         foreach ($category_results as $category) {
@@ -64,39 +68,38 @@ function search_ajax_handler()
         'taxonomy' => 'post_tag',
         'search' => $query,
         'hide_empty' => true,
+        // 'lang' => $current_lang,
+
     ));
 
     $total_tags = count($tag_results);
-
     if ($total_tags > 0) {
         $total_results += $total_tags;
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Теги')) . ' (' . intval($total_tags) . ')</p>';
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Теги')) . ' (' . $total_tags . ')</p>';
         $output .= '<ul class="modal-search__tags">';
 
-        $tag_results_to_display = array_slice($tag_results, 0, 5);
-
-        foreach ($tag_results_to_display as $tag) {
+        foreach (array_slice($tag_results, 0, 5) as $tag) {
             $output .= '<li><a href="' . esc_url(get_term_link($tag)) . '" class="tags__item">' . esc_html($tag->name) . '</a></li>';
         }
         $output .= '</ul>';
     }
 
-    // Поиск по авторам
     $user_args = array(
         'search' => '*' . esc_attr($query) . '*',
         'search_columns' => array('display_name'),
     );
     $user_results = get_users($user_args);
-    $total_users = count($user_results);
+    $filtered_users = array_filter($user_results, function ($user) use ($current_lang) {
+        return get_user_meta($user->ID, 'lang', true) === $current_lang;
+    });
 
+    $total_users = count($filtered_users);
     if ($total_users > 0) {
         $total_results += $total_users;
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Авторы')) . ' (' . intval($total_users) . ')</p>';
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Авторы')) . ' (' . $total_users . ')</p>';
         $output .= '<div class="resluting-search__people">';
 
-        $user_results_to_display = array_slice($user_results, 0, 5);
-
-        foreach ($user_results_to_display as $user) {
+        foreach (array_slice($filtered_users, 0, 5) as $user) {
             $author_avatar = get_field('author_avatar', 'user_' . $user->ID);
             $author_position = get_field('author_position', 'user_' . $user->ID);
 
@@ -114,7 +117,6 @@ function search_ajax_handler()
             $output .= '</a>';
             $output .= '</div>';
         }
-
         $output .= '</div>';
     }
 
@@ -124,13 +126,14 @@ function search_ajax_handler()
         'posts_per_page' => -1,
         'post_status' => 'publish',
         's' => $query,
-        'fields' => 'ids'
+        'fields' => 'ids',
+        // 'lang' => $current_lang,
     );
 
     $page_query = new WP_Query($page_args);
     if ($page_query->have_posts()) {
         $total_results += $page_query->found_posts;
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Страницы')) . ' (' . intval($page_query->found_posts) . ')</p>';
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Pages')) . ' (' . $page_query->found_posts . ')</p>';
         $output .= '<div class="modal-search__pages">';
 
         foreach ($page_query->posts as $post_id) {
@@ -138,55 +141,19 @@ function search_ajax_handler()
             $output .= esc_html(get_the_title($post_id));
             $output .= '</a>';
         }
-
         $output .= '</div>';
     }
-
     wp_reset_postdata();
 
-    // Поиск по новостям
-    $total_news = count($results);
-
-    if ($total_news > 0) {
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Новости')) . ' (' . intval($total_news) . ')</p>';
-        $output .= '<ul class="modal-search__news">';
-
-        $displayed_results = array_slice($results, 0, 5);
-
-        foreach ($displayed_results as $item) {
-            $output .= '<li>';
-
-            if (!empty($item['categories'])) {
-                $output .= '<div class="result-categories">' . wp_kses_post($item['categories']) . '</div>';
-                $link_class = 'outer-link';
-            } else {
-                $link_class = 'outer-link no-category';
-            }
-
-            $output .= '<a href="' . esc_url($item['url']) . '" class="' . esc_attr($link_class) . '">';
-            $output .= '<div class="search-result-item" data-title="' . esc_attr($item['title']) . '">' . esc_html($item['title']) . '</div>';
-            $output .= '</a>';
-            $output .= '</li>';
-        }
-
-        $output .= '</ul>';
-    }
-
-    $current_lang = pll_current_language();
-    $default_lang = pll_default_language();
-
-    if ($current_lang !== $default_lang) {
-        $view_all_url = home_url("/$current_lang/search-results/") . '?query=' . urlencode($query);
-    } else {
-        $view_all_url = home_url("/search-results/") . '?query=' . urlencode($query);
-    }
-    $view_all_button = '<a href="' . esc_url($view_all_url) . '" class="view-all-results">' . esc_html((function_exists('pll__') ? pll__('Смотреть все результаты') : 'Смотреть все результаты')) . ' (' . intval($total_results) . ')</a>';
+    $search_query = '?s=' . urlencode($query);
+    $view_all_url = home_url(($current_lang !== pll_default_language() ? "/$current_lang/" : '') . $search_query);
+    $view_all_button = '<a href="' . esc_url($view_all_url) . '" class="view-all-results">' . esc_html(pll__('View all results')) . ' (' . $total_results . ')</a>';
 
     wp_send_json(array(
         'html' => $output,
-        'total' => intval($total_results),
+        'total' => $total_results,
         'view_all_button' => $view_all_button,
-        'token' => $unique_token, // Include the unique token in the response
+        'token' => $unique_token,
     ));
     wp_die();
 }

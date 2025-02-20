@@ -1,6 +1,6 @@
 <?php
 if (function_exists('pll_register_string')):
-    pll_register_string('login', 'Логин', 'pm-news');
+    pll_register_string('login', 'Login', 'pm-news');
     pll_register_string('registration', 'Регистрация', 'pm-news');
     pll_register_string('min', 'мин', 'pm-news');
     pll_register_string('see_more', 'See more', 'pm-news');
@@ -8,7 +8,7 @@ if (function_exists('pll_register_string')):
     pll_register_string('copyright', 'Copyright', 'pm-news');
     pll_register_string('all_rights_reserved', 'All rights reserved.', 'pm-news');
     pll_register_string('company', 'Company', 'pm-news');
-    pll_register_string('categories', 'Категории', 'pm-news');
+    pll_register_string('categories', 'Categories', 'pm-news');
     pll_register_string('join_us', 'Присоединяйтесь', 'pm-news');
     pll_register_string('details', 'Details', 'pm-news');
     pll_register_string('reading_time', 'Время для чтения:', 'pm-news');
@@ -45,27 +45,27 @@ if (function_exists('pll_register_string')):
     pll_register_string('month', 'месяц', 'pm-news');
     pll_register_string('months', 'месяцев', 'pm-news');
     pll_register_string('sec', 'сек', 'pm-news');
-    pll_register_string('search-placeholder', 'Поиск Sport Pulse...', 'pm-news');
-    pll_register_string('last-search', 'Последние запросы', 'pm-news');
-    pll_register_string('recommendation-search', 'Результаты поиска', 'pm-news');
-    pll_register_string('show-all', 'Смотреть все результаты', 'pm-news');
-    pll_register_string('prediction', 'Возможно, Вам будет интересно:', 'pm-news');
+    pll_register_string('search-placeholder', 'Search...', 'pm-news');
+    pll_register_string('last-search', 'Recent queries', 'pm-news');
+    pll_register_string('recommendation-search', 'Search results', 'pm-news');
+    pll_register_string('show-all', 'View all results', 'pm-news');
+    pll_register_string('prediction', 'You might be interested in:', 'pm-news');
     pll_register_string(
         'nothing-found',
-        'К сожалению, по запросу ничего не найдено.',
+        'Unfortunately, nothing was found for your request.',
         'pm-news'
     );
-    pll_register_string('search-tags', 'Теги', 'pm-news');
-    pll_register_string('search-empty', 'Результаты не найдены.', 'pm-news');
-    pll_register_string('search-news', 'Новости', 'pm-news');
-    pll_register_string('search-page', 'Страницы', 'pm-news');
+    pll_register_string('search-tags', 'Tags', 'pm-news');
+    pll_register_string('search-empty', 'No results found.', 'pm-news');
+    pll_register_string('search-news', 'News', 'pm-news');
+    pll_register_string('search-page', 'Pages', 'pm-news');
     pll_register_string(
         'search-search',
-        'Пожалуйста, введите поисковый запрос.',
+        'Please enter your search term.',
         'pm-news'
     );
-    pll_register_string('search-autor', 'Авторы', 'pm-news');
-    pll_register_string('search-show', 'Показаны первые результаты поиска', 'pm-news');
+    pll_register_string('search-autor', 'Authors', 'pm-news');
+    pll_register_string('search-show', 'Showing first search results', 'pm-news');
     pll_register_string('more-btn', 'More details', 'pm-news');
     pll_register_string('file-name', 'Имя файла:', 'pm-news');
     pll_register_string('prognoz', 'Узнавайте итоги всех футбольных матчей первыми на нашей странице с', 'pm-news');
@@ -74,7 +74,9 @@ if (function_exists('pll_register_string')):
     pll_register_string('bread-main', 'Sports news', 'pm-news');
     pll_register_string('404-text', 'Unfortunately, something went wrong, and the page could not be found. Please, go to the main page.', 'pm-news');
     pll_register_string('recommended', 'Recommended', 'pm-news');
+    pll_register_string('search-results', 'Search results', 'pm-news');
 endif;
+
 
 
 

@@ -64,7 +64,8 @@
             <?php } ?>
 
             <?php if (is_search()) { ?>
-                <span class="breadcrumbs__current">Результаты поиска для
+                <span class="breadcrumbs__current">
+                    <?php pll_e('Search results'); ?>
                     "<span><?php echo get_search_query(); ?></span>"</span>
             <?php } ?>
 
