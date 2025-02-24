@@ -27,12 +27,12 @@ if (function_exists('pll_register_string')):
     pll_register_string('connect', 'Interactive', 'pm-news');
     pll_register_string('telegram', 'Telegram', 'pm-news');
     pll_register_string('number', 'Phone number', 'pm-news');
-    pll_register_string('about-author', 'Об авторе/ специализация', 'pm-news');
-    pll_register_string('news-count', 'Количество статей', 'pm-news');
-    pll_register_string('comments', 'Комментарии', 'pm-news');
-    pll_register_string('rating', 'Рейтинг', 'pm-news');
+    pll_register_string('about-author', 'About the author/specialization', 'pm-news');
+    pll_register_string('news-count', 'Number of articles', 'pm-news');
+    pll_register_string('comments', 'Comments', 'pm-news');
+    pll_register_string('rating', 'Rating', 'pm-news');
     pll_register_string('blue-popup', 'Place a bet', 'pm-news');
-    pll_register_string('all-news-author', 'Все статьи автора', 'pm-news');
+    pll_register_string('all-news-author', 'All authors articles', 'pm-news');
     pll_register_string('copied', 'Скопировано!', 'pm-news');
     pll_register_string('footer-text', 'Будьте в курсе всех спортивных новостей Казахстана и мира. Получайте самую актуальную информацию о спорте, результаты матчей и интересные статьи от нашей команды журналистов.', 'pm-news');
     pll_register_string('back', 'ago', 'pm-news');
@@ -67,7 +67,7 @@ if (function_exists('pll_register_string')):
     pll_register_string('search-autor', 'Authors', 'pm-news');
     pll_register_string('search-show', 'Showing first search results', 'pm-news');
     pll_register_string('more-btn', 'More details', 'pm-news');
-    pll_register_string('file-name', 'Имя файла:', 'pm-news');
+    pll_register_string('file-name', 'File name:', 'pm-news');
     pll_register_string('prognoz', 'Узнавайте итоги всех футбольных матчей первыми на нашей странице с', 'pm-news');
     pll_register_string('prognoz-live', 'Live-результатами', 'pm-news');
     pll_register_string('youtube-link', 'More videos', 'pm-news');

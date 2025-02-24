@@ -68,7 +68,7 @@
                 display: block;
                 width: 1.625rem;
                 height: 1.625rem;
-                background-image: url('/wp-content/themes/pm-news/src/img/news-arrow.svg');
+                background-image: url(/wp-content/themes/sport-pulse/src/img/news-arrow.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -125,8 +125,8 @@
 
     .tag-item {
         a {
-            background: $black;
-            color: $yellow;
+            background: #F1F4FE;
+            color: $gray_3;
             padding: 0.25rem 0.5rem;
             border-radius: 1.5rem;
             display: inline-block;
@@ -137,8 +137,7 @@
             white-space: nowrap;
 
             &:hover {
-                color: $black;
-                background: $yellow;
+                background: $white;
             }
         }
     }
@@ -182,7 +181,7 @@
     }
 
     &__prev {
-        background: url('./src/img/recomm-prev.svg');
+        background: url(./src/img/recomm-prev.svg);
         background-position: center !important;
         background-size: contain !important;
         background-repeat: no-repeat !important;
@@ -193,7 +192,7 @@
     }
 
     &__next {
-        background: url('./src/img/recomm-next.svg');
+        background: url(./src/img/recomm-next.svg);
         background-position: center !important;
         background-size: contain !important;
         background-repeat: no-repeat !important;

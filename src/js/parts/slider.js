@@ -201,13 +201,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Category slider
- 
 var categorySliders = document.querySelectorAll(".category-slider__inner");
 
 categorySliders.forEach(function(categoryEl) {
   var slides = categoryEl.querySelectorAll(".swiper-slide");
 
-  
   if (slides.length > 15) {
     slides.forEach(function (slide, index) {
       if (index >= 15) {
@@ -224,6 +222,7 @@ categorySliders.forEach(function(categoryEl) {
     var categorySwiper = new Swiper(categoryEl, {
       slidesPerView: window.innerWidth <= 542 ? 1 : 3,
       spaceBetween: window.innerWidth <= 542 ? 5 : 20,
+        a11y: false,
       grid: {
         rows: window.innerWidth <= 542 ? 6 : 2, 
         fill: "row",

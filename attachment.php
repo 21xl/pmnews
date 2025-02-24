@@ -13,8 +13,9 @@
 
                 <section class="attachment-page">
                     <div class="wrapper">
-                        <h1 class="attachment-page__title"> <?php pll_e('Имя файла:'); ?>
-                            <?php echo esc_html(get_the_title()); ?></h1>
+                        <h1 class="attachment-page__title"> <?php pll_e('File name:'); ?>
+                            <?php echo esc_html(get_the_title()); ?>
+                        </h1>
                         <div class="attachment-page__img">
                             <?php
 

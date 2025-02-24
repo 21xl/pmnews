@@ -6,12 +6,16 @@
                 <?php while (have_rows('category_slider_list')):
                     the_row();
                     $category = get_sub_field('news');
-                    if (isset($category) && !empty($category)) {
+                    if (isset($category) && !empty($category)):
                         $category_name = esc_html($category->name ?? '');
+                        $selected_date = isset($_GET['selected_date']) && !empty($_GET['selected_date'])
+                            ? sanitize_text_field($_GET['selected_date'])
+                            : current_time('Y-m-d');
 
-                        $now = current_time('Y-m-d H:i:s');
-                        $yesterday = date('Y-m-d H:i:s', strtotime('-24 hours'));
-                        $tomorrow = date('Y-m-d 23:59:59', strtotime('+1 day'));
+
+                        $start_date = $selected_date . ' 00:00:00';
+                        $end_date = date('Y-m-d 23:59:59', strtotime("+2 days", strtotime($start_date)));
+
 
                         $args = [
                             'post_type' => 'post',
@@ -23,15 +27,17 @@
                                     'terms' => $category->term_id ?? 0,
                                 ],
                             ],
-                            'date_query' => [
+                            'meta_query' => [
                                 [
-                                    'after' => $yesterday,
-                                    'before' => $tomorrow,
-                                    'inclusive' => true,
+                                    'key' => 'calendar_for_category',
+                                    'value' => [$start_date, $end_date],
+                                    'compare' => 'BETWEEN',
+                                    'type' => 'DATETIME',
                                 ],
                             ],
-                            'orderby' => 'date',
-                            'order' => 'DESC',
+                            'orderby' => 'meta_value',
+                            'meta_key' => 'calendar_for_category',
+                            'order' => 'ASC',
                         ];
 
                         $posts_query = new WP_Query($args);
@@ -94,7 +100,7 @@
                                 <div class="category-slider__next"></div>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php endif; ?>
                 <?php endwhile; ?>
 
             </div>

@@ -47,14 +47,14 @@ $author_url = get_author_posts_url($author_id);
 									<span>5.0</span>
 
 									<img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/star.svg') ?>"
-										alt="Рейтинг">
+										alt="Rating">
 								</div>
 
 								<div class="single__info-comments">
 									<span>21</span>
 
 									<img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/comments.svg') ?>"
-										alt="Комментарии">
+										alt="Comments">
 								</div>
 							</div>
 						</div>
@@ -94,14 +94,14 @@ $author_url = get_author_posts_url($author_id);
 									<span>5.0</span>
 
 									<img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/star.svg') ?>"
-										alt="Рейтинг">
+										alt="Rating">
 								</div>
 
 								<div class="single__info-comments">
 									<span>21</span>
 
 									<img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/comments.svg') ?>"
-										alt="Комментарии">
+										alt="Comments">
 								</div>
 							</div>
 

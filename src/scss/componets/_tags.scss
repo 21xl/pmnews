@@ -15,11 +15,11 @@
 
     &__item {
         padding: 0.5rem 0.625rem;
-        background: #F1F4FE;
-        color: $gray_3;
         font-size: 0.875rem;
         font-weight: 700;
         line-height: 122%;
+        background: $black;
+        color: $yellow;
         transition: background 0.3s ease-in-out;
         border-radius: 1.5rem;
         white-space: nowrap;
@@ -28,9 +28,11 @@
             padding: 0.25rem 0.5rem;
             font-size: 0.75rem;
         }
+        
 
         &:hover {
-            background: $white;
+            background: $yellow;
+            color: $black;
         }
     }
 }

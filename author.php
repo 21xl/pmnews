@@ -55,7 +55,7 @@ $ad_banner = get_field('ad_category', 'options');
                     <?php if ($author_bio): ?>
                         <div class="author__about-wrapper">
                             <div class="author__about-item">
-                                <span><?php pll_e('Об авторе/ специализация') ?></span>
+                                <span><?php pll_e('About the author/specialization') ?></span>
 
                                 <p><?php echo esc_html($author_bio); ?></p>
                             </div>
@@ -64,24 +64,24 @@ $ad_banner = get_field('ad_category', 'options');
 
                     <div class="author__about-wrapper author__about-wrapper--grid">
                         <div class="author__about-item">
-                            <span><?php pll_e('Количество статей') ?></span>
+                            <span><?php pll_e('Number of articles') ?></span>
 
                             <p><?php echo esc_html($post_count); ?></p>
                         </div>
 
                         <div class="author__about-item">
-                            <span><?php pll_e('Комментарии') ?></span>
+                            <span><?php pll_e('Comments') ?></span>
 
                             <p><?php echo esc_html($comment_count); ?></p>
                         </div>
 
                         <div class="author__about-item">
-                            <span><?php pll_e('Рейтинг') ?></span>
+                            <span><?php pll_e('Rating') ?></span>
 
                             <div>
                                 <?php echo esc_html($author_rating); ?>
                                 <img src="<?php echo esc_url(get_template_directory_uri() . '/src/img/star.svg') ?>"
-                                    alt="<?php pll_e('Рейтинг') ?>">
+                                    alt="<?php pll_e('Rating') ?>">
                             </div>
                         </div>
                     </div>
@@ -91,14 +91,14 @@ $ad_banner = get_field('ad_category', 'options');
             <section class="grid-news">
                 <div class="grid-news__wrapper wrapper">
                     <h2>
-                        <?php pll_e('Все статьи автора'); ?>
+                        <?php pll_e('All authors articles'); ?>
                     </h2>
 
                     <div class="grid-news__content grid-news__content--all">
                         <?php
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array(
-                            'posts_per_page' => 13,
+                            'posts_per_page' => 25,
                             'orderby' => 'date',
                             'order' => 'DESC',
                             'author' => $author_id,
@@ -150,7 +150,7 @@ $ad_banner = get_field('ad_category', 'options');
                                 <?php endwhile; ?>
                             </div>
 
-                            <?php if ($posts->max_num_pages >= 1): ?>
+                            <?php if ($posts->have_posts() && $posts->max_num_pages > 1): ?>
                                 <div class="archive-grid__pagination">
                                     <?php $prev_link = get_previous_posts_link('<span class="pagination-prev"><svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.6504 13.9998L16.9504 20.6998L23.6504 27.3998" stroke="#071424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>');
                                     $next_link = get_next_posts_link('<span class="pagination-next"><svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none"> <path d="M17.3496 26.998L24.0496 20.298L17.3496 13.598" stroke="#071424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>');
