@@ -1,0 +1,314 @@
+<div class="schedule">
+	<div class="schedule__tabs tabs">
+		<div class="tabs__list">
+			{{#each standings}}
+			<div class="tabs__item" data-status="{{this.stage.name}}">
+				<span>{{this.stage.name}}</span>
+			</div>
+			{{/each}} {{#if brackets}}
+			<div class="tabs__item" data-status="brackets">
+				<span>Сетка</span>
+			</div>
+			{{/if}}
+		</div>
+	</div>
+
+	<div class="tabs__content">
+		{{#each standings}}
+		<div class="tabs__content-item" data-status="{{this.stage.name}}">
+			<div class="table standings">
+				<div class="table__wrapper">
+					{{#each this.tables}}
+					<div class="row head">
+						<div class="cell"></div>
+						{{#if (groupName this.group)}}
+						<div class="cell group-name">Группа {{groupName this.group}}</div>
+						{{else}}
+						<div class="cell team-name">Команда</div>
+						{{/if}}
+						<div class="cell tooltip">
+							О
+							<div class="tooltip__body">
+								<span>Очки</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							М
+							<div class="tooltip__body">
+								<span>Матчи</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							В
+							<div class="tooltip__body">
+								<span>Выигрыши</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							Н
+							<div class="tooltip__body">
+								<span>Ничьи</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							П
+							<div class="tooltip__body">
+								<span>Поражения</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							РМ
+							<div class="tooltip__body">
+								<span>Разница мячей</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							ЗМ
+							<div class="tooltip__body">
+								<span>Забитые мячи</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							ПМ
+							<div class="tooltip__body">
+								<span>Пропущенные мячи</span>
+							</div>
+						</div>
+
+						<div class="cell tooltip">
+							П5
+							<div class="tooltip__body">
+								<span>Последние матчи</span>
+							</div>
+						</div>
+					</div>
+
+					{{#each this.rows}}
+
+					<div class="row">
+						<div class="cell">
+							<span class="place" {{inlineStyle this.promotion.color}}>{{add @index 1}}</span>
+						</div>
+						<div class="cell team-name">
+							<a href="/statistics/teams/{{this.team_slug}}/">
+								<div class="emblem">
+									<img src="{{this.team_logo}}" alt="{{this.team_name}}" />
+								</div>
+							</a>
+							<a href="/statistics/teams/{{this.team_slug}}/">
+								<span>{{this.team_name}}</span>
+							</a>
+						</div>
+						<div class="cell">{{this.points}}</div>
+						<div class="cell">{{this.stats.total}}</div>
+						<div class="cell">{{this.stats.won}}</div>
+						<div class="cell">{{this.stats.draw}}</div>
+						<div class="cell">{{this.stats.loss}}</div>
+						<div class="cell">{{this.stats.goal_diff}}</div>
+						<div class="cell">{{this.stats.goals}}</div>
+						<div class="cell">{{this.stats.goals_against}}</div>
+						<div class="cell">
+							<div class="form-icons">
+								{{#each this.matches}}
+								<span class="{{this.result}}"></span>
+								{{/each}}
+							</div>
+						</div>
+					</div>
+					{{/each}}
+					<div class="legend">
+						{{#each this.promotions}}
+						<div class="legend__item">
+							<div {{inlineStyle this.color}} class="legend__color"></div>
+							<div class="legend__name">- {{this.name}}</div>
+						</div>
+						{{/each}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+
+	<!-- Сетка -->
+	{{#if brackets}}
+	<div class="tabs__content-item" data-status="brackets">
+		<div class="brackets">
+			<div class="brackets__navigation">
+				<div class="brackets__navigation-item brackets__navigation-prev">
+					<span>Предыдущий этап</span>
+
+					<div class="brackets__navigation-arrow">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+							<path d="M14 8L10 12L14 16" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="brackets__navigation-item brackets__navigation-next">
+					<span>Следующий этап</span>
+
+					<div class="brackets__navigation-arrow">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+							<path d="M10 16L14 12L10 8" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</div>
+				</div>
+			</div>
+
+			<div class="brackets__wrapper">
+				<div class="brackets__head">
+					{{#each brackets}}
+					<div class="brackets__head-item" data-count="{{add @index 1}}">{{this.name}}</div>
+					{{/each}}
+				</div>
+
+				<div class="brackets__list">
+					{{#each brackets}}
+					<div class="brackets__item">
+						{{#each this.newMatchups}}
+						<div class="brackets__item-wrapper {{checkPenalty this.matches.[0]}}">
+							<div class="brackets__item-rivals">
+								<div class="brackets__item-team {{checkWinner this.home_team_id this.winner_team_id}}">
+									<div class="brackets__item-block">
+										<div class="brackets__item-img">
+											{{#if this.home_team}}
+											<img src="{{this.home_team.logo}}" alt="{{this.home_team.name}}" />
+											{{/if}}
+										</div>
+
+										<span class="brackets__item-name">{{this.home_team.name}}</span>
+									</div>
+
+									{{#if (checkState state_id)}}
+									<div class="brackets__item-score">
+										<span>{{this.home_score}}</span>
+									</div>
+									{{/if}}
+								</div>
+
+								<div class="brackets__item-team {{checkWinner this.away_team_id this.winner_team_id}}">
+									<div class="brackets__item-block">
+										<div class="brackets__item-img">
+											{{#if this.away_team}}
+											<img src="{{this.away_team.logo}}" alt="{{this.away_team.name}}" />
+											{{/if}}
+										</div>
+
+										<span class="brackets__item-name">{{this.away_team.name}}</span>
+									</div>
+
+									{{#if (checkState state_id)}}
+									<div class="brackets__item-score">
+										<span>{{this.away_score}}</span>
+									</div>
+									{{/if}}
+								</div>
+							</div>
+
+							<div class="brackets__item-bracket">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 98" fill="none"
+									preserveAspectRatio="none">
+									<path d="M0 1H11.5V52H25" stroke="#DBDDE6"
+										style="vector-effect: non-scaling-stroke" />
+									<path d="M0 97H11.5V52H25" stroke="#DBDDE6"
+										style="vector-effect: non-scaling-stroke" />
+								</svg>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+</div>
+</div>
+
+<script>
+	const wrapper = document.querySelector(".brackets__wrapper");
+	const prevBtn = document.querySelector(".brackets__navigation-prev");
+	const nextBtn = document.querySelector(".brackets__navigation-next");
+	const navigation = document.querySelector(".brackets__navigation");
+
+	let currentIndex = 0;
+
+	const remToPx = (rem) => rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+	const getItemsCount = () => {
+		const items = document.querySelectorAll(".brackets__head-item");
+		return items ? items.length : 0;
+	};
+
+	const getVisibleItemsCount = () => {
+		return isMobile() ? 1 : 4;
+	};
+
+	const isMobile = () => window.innerWidth <= 541;
+
+	const getMaxIndex = () => {
+		const totalItems = getItemsCount();
+		const visibleItems = getVisibleItemsCount();
+		return Math.max(0, totalItems - visibleItems);
+	};
+
+	const updateNavigationVisibility = () => {
+		if (!navigation || !prevBtn || !nextBtn) return;
+
+		const totalItems = getItemsCount();
+		const visibleItems = getVisibleItemsCount();
+
+		const showNavigation = totalItems > visibleItems;
+		navigation.classList.toggle("active", showNavigation);
+
+		prevBtn.classList.toggle("active", currentIndex > 0);
+		nextBtn.classList.toggle("active", currentIndex < getMaxIndex());
+	};
+
+	const scrollToItem = (index) => {
+		if (!wrapper) return;
+		const offset = -index * remToPx(isMobile() ? 20.4 : 15.5);
+		wrapper.style.transform = `translateX(${offset}px)`;
+	};
+
+	if (nextBtn) {
+		nextBtn.addEventListener("click", () => {
+			if (currentIndex < getMaxIndex()) {
+				currentIndex++;
+				scrollToItem(currentIndex);
+				updateNavigationVisibility();
+			}
+		});
+	}
+
+	if (prevBtn) {
+		prevBtn.addEventListener("click", () => {
+			if (currentIndex > 0) {
+				currentIndex--;
+				scrollToItem(currentIndex);
+				updateNavigationVisibility();
+			}
+		});
+	}
+
+	window.addEventListener("resize", () => {
+		if (!wrapper || !navigation) return;
+		updateNavigationVisibility();
+		currentIndex = Math.min(currentIndex, getMaxIndex());
+		scrollToItem(currentIndex);
+	});
+
+	updateNavigationVisibility();
+</script>

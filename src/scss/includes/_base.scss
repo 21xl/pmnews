@@ -1,0 +1,303 @@
+html {
+    font-size: 0.833vw; // 16px
+
+    @include media(mobile) {
+        font-size: 4.267vw; // 14px
+    }
+}
+
+* {
+    font-family: $main_font;
+    font-size: 1rem;
+    line-height: 122%;
+    color: $black;
+    scrollbar-width: thin;
+    scrollbar-color: $black $white;
+
+    @include media(mobile) {
+        font-size: 0.875rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0.45rem;
+    border-radius: 0.625rem;
+}
+
+::-webkit-scrollbar-track {
+    background: $white;
+    border-radius: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $black;
+    border-radius: 0.625rem;
+    border: 0.063rem solid $black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.wrapper {
+    padding: 0 2.5rem;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+
+    @include media(mobile) {
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    position: relative;
+    width: calc(100% - 18.125rem);
+    transition:
+        width 0.5s ease-in-out,
+        margin-left 0.5s ease-in-out,
+        width 0.5s ease-in-out;
+
+    &.collapsed {
+        width: calc(100% - 6.25rem);
+
+        table {
+            max-width: 76rem;
+            width: 100%;
+            margin: 0 auto 1rem;
+        }
+
+        @include media(mobile) {
+            width: 100%;
+        }
+    }
+
+    @include media(mobile) {
+        width: 100%;
+    }
+}
+
+.editor-content {
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+
+    @include media(mobile) {
+        width: 100%;
+        margin-bottom: 1.875rem;
+    }
+
+    &__wrapper {
+        font-size: 1.125rem;
+
+        @include media(mobile) {
+            font-size: 0.875rem;
+        }
+    }
+
+    figure {
+        width: 100% !important;
+    }
+
+    img {
+        display: block;
+        width: 100% !important;
+        margin: 1rem auto;
+        object-fit: cover;
+        height: 30rem !important;
+        border-radius: $border-radius;
+
+        @include media(mobile) {
+            margin: 1rem 0;
+            height: 12rem !important;
+        }
+    }
+
+    iframe {
+        display: block;
+        width: 80% !important;
+        margin: 2rem auto;
+        object-fit: cover;
+        height: 30rem !important;
+        border-radius: $border-radius;
+        margin: 0 auto !important;
+
+        @include media(mobile) {
+            margin: 1rem 0;
+            width: 100% !important;
+            height: 12rem !important;
+        }
+    }
+
+    .instagram-media {
+        width: 100% !important;
+        max-width: 75% !important;
+        height: revert-layer !important;
+        object-fit: contain;
+
+        @include media(mobile) {
+            max-width: 100% !important;
+        }
+    }
+
+    a {
+        color: $blue;
+        font-weight: 500;
+    }
+
+    .wp-playlist-light {
+        overflow: hidden !important;
+        width: 100% !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .mejs-video {
+        height: 40rem !important;
+        overflow: hidden !important;
+        width: 100% !important;
+
+        @include media(mobile) {
+            width: 100% !important;
+            height: 20rem !important;
+        }
+
+        video {
+            height: 100% !important;
+            width: 100% !important;
+
+            @include media(mobile) {
+                width: 100% !important;
+            }
+        }
+    }
+
+    p {
+        display: block;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        unicode-bidi: isolate;
+    }
+}
+
+.default {
+    padding-top: 5.5rem;
+
+    h1 {
+        margin: 0 0 1rem;
+
+        @include media(mobile) {
+            margin: 0 0 0.7rem;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 45rem;
+        margin-bottom: 1rem;
+        border-radius: $border-radius;
+
+        @include media(mobile) {
+            height: 15rem;
+            margin-bottom: 0.7rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: $border-radius;
+        }
+    }
+
+    @include media(mobile) {
+        padding-top: 4.5rem;
+    }
+
+    a {
+        color: $blue;
+        font-weight: 500;
+        word-break: break-all;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .editor-content {
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+
+        @include media(mobile) {
+            margin-bottom: 1.875rem;
+        }
+
+        &__wrapper {
+            font-size: 1.125rem;
+
+            @include media(mobile) {
+                font-size: 0.875rem;
+            }
+        }
+
+        p,
+        strong,
+        b,
+        em,
+        i,
+        li {
+            font-size: 1.125rem;
+        }
+
+        strong {
+            display: block;
+            margin: 1rem 0;
+        }
+
+        table {
+            display: block;
+            max-width: 66rem;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            margin: 0 auto 1rem;
+
+            @include media(mobile) {
+                max-width: 22rem;
+                min-height: 100%;
+                display: inline-block;
+            }
+        }
+
+        table th,
+        table td {
+            white-space: normal;
+        }
+
+        .wp-playlist {
+            height: 10rem;
+        }
+    }
+}

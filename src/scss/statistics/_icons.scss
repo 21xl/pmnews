@@ -1,0 +1,178 @@
+.fav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  // overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "Добавить матч в избранное";
+    position: absolute;
+    top: 70%;
+    left: 0.7rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 2.75rem;
+    padding-top: 0.8rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='179' height='44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)' data-figma-skip-parse='true'%3E%3CforeignObject x='-14' y='-5.175' width='207' height='63.175'%3E%3Cdiv xmlns='http://www.w3.org/1999/xhtml' style='backdrop-filter:blur(7px);height:100%25;width:100%25'/%3E%3C/foreignObject%3E%3C/g%3E%3Cpath data-figma-bg-blur-radius='14' fill-rule='evenodd' clip-rule='evenodd' d='M3.414 9.415C2.154 8.155 0 9.046 0 10.829v10.598c0 .066.003.13.009.194A8.132 8.132 0 0 0 0 22v14a8 8 0 0 0 8 8h163a8 8 0 0 0 8-8V22a8 8 0 0 0-8-8H8L3.413 9.415Z' fill='%237F8AA8'/%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.414 9.415C2.154 8.155 0 9.046 0 10.829v10.598c0 .066.003.13.009.194A8.132 8.132 0 0 0 0 22v14a8 8 0 0 0 8 8h163a8 8 0 0 0 8-8V22a8 8 0 0 0-8-8H8L3.413 9.415Z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: $white;
+    z-index: 9999;
+
+    @include media(mobile) {
+      display: none !important;
+    }
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+    stroke: #acacac;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background: #f0f1f5;
+
+    &:before {
+      display: flex;
+    }
+  }
+
+  &.active {
+    &:hover {
+      background: #fff1cc;
+    }
+
+    &::before {
+      content: "Убрать матч из избранного";
+    }
+
+    svg {
+      fill: $orange;
+      stroke: $orange;
+    }
+  }
+}
+
+.pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  // overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "Закрепить лигу в закрепленных лигах";
+    position: absolute;
+    top: 100%;
+    left: -0.8rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 16.5rem;
+    height: 2.7rem;
+    padding-top: 0.8rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='235' height='43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23a)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24.14.852a2 2 0 0 0-3.28 0L12.384 13H8a8 8 0 0 0-8 8v14a8 8 0 0 0 8 8h219a8 8 0 0 0 8-8V21a8 8 0 0 0-8-8H32.616L24.14.85Z' fill='%237F8AA8'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='a' x='-14' y='-14.004' width='263' height='71.004' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeGaussianBlur in='BackgroundImageFix' stdDeviation='7'/%3E%3CfeComposite in2='SourceAlpha' operator='in' result='effect1_backgroundBlur_5935_274208'/%3E%3CfeBlend in='SourceGraphic' in2='effect1_backgroundBlur_5935_274208' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: $white;
+    z-index: 9999;
+
+    @include media(mobile) {
+      display: none !important;
+    }
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+    stroke: $black;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background: #dbdde6;
+
+    &:before {
+      display: flex;
+    }
+  }
+
+  &.active {
+    svg {
+      transform: rotate(-45deg);
+    }
+
+    &::before {
+      content: "Открепить лигу из закрепленных лиг";
+    }
+
+    &:hover {
+      background: #c2cdf9;
+    }
+
+    svg {
+      fill: $light_blue;
+      stroke: $light_blue;
+
+      path {
+        fill: $light_blue;
+        stroke: $light_blue;
+      }
+    }
+  }
+}
+
+.form-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  span {
+    display: block;
+    min-width: 1.125rem;
+    width: 1.125rem;
+    min-height: 1.125rem;
+    height: 1.125rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+  }
+
+  .win {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Crect width='18' height='18' rx='9' fill='%23008451'/%3E%3Cpath d='m7.483 11.079-2.24-2.24a.875.875 0 1 0-1.237 1.238l2.917 2.917a.875.875 0 0 0 1.29-.059l5.834-7a.875.875 0 0 0-1.344-1.12l-5.22 6.264Z' fill='%23fff'/%3E%3C/svg%3E");
+  }
+
+  .loss {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Crect width='18' height='18' rx='9' fill='%23E05555'/%3E%3Cpath d='m5.161 5.352.089-.102a.995.995 0 0 1 1.304-.089l.102.089L9 7.593l2.345-2.343a.995.995 0 0 1 1.304-.089l.102.089a.995.995 0 0 1 .089 1.304l-.089.102L10.405 9l2.345 2.345a.995.995 0 0 1 .089 1.304l-.089.102a.995.995 0 0 1-1.304.089l-.102-.089-2.345-2.345-2.343 2.345a.995.995 0 0 1-1.304.089l-.102-.089a.995.995 0 0 1-.089-1.304l.089-.102 2.343-2.345L5.25 6.656a.995.995 0 0 1-.089-1.304Z' fill='%23fff'/%3E%3C/svg%3E");
+  }
+
+  .draw {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Crect width='18' height='18' rx='9' fill='%23B4B4B4'/%3E%3Crect x='4' y='8' width='10' height='2' rx='1' fill='%23fff'/%3E%3C/svg%3E");
+  }
+}

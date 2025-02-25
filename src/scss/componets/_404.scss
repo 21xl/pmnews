@@ -1,0 +1,92 @@
+.error-page {
+    background-image: url(/wp-content/themes/pm-news/src/img/404.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2.5rem;
+
+        @include media(mobile) {
+            padding:0.625rem 1.88rem 1.88rem;
+        }
+    }
+
+    &__logo {
+        width: 14.621rem;
+        margin: 0 auto 4.5rem;
+        height: 3.5rem;
+
+        @include media(mobile) {
+           width: 7.31rem;
+           height: 1.75rem;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__404 {
+        display: block;
+        width: 79rem;
+        height: 30.75rem;
+        margin: 0 auto 1.5rem;
+
+        @include media(mobile) {
+            width: 100%;
+            height: 11.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0 0 0.5rem;
+        text-align: center;
+        color: $white;
+
+        @include media(mobile) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.75rem;
+        text-align: center;
+        max-width: 50rem;
+        margin: 0 auto 2.5rem;
+        color: $white;
+
+        @include media(mobile) {
+            font-size: 1.125rem;
+            margin: 0 auto 1.5rem;
+        }
+    }
+
+    &__button {
+        margin: 0 auto;
+        border: 0.063rem solid $yellow;
+    }
+}
+
+.error404 {
+    .footer {
+        display: none;
+    }
+}

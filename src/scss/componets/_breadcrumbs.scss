@@ -1,0 +1,96 @@
+.breadcrumbs {
+    display: flex;
+    text-transform: uppercase;
+    gap: 0.25rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-bottom: 0.25rem;
+
+    a {
+        span {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -0.15rem;
+                left: 50%;
+                transform: translate(-50%);
+                display: block;
+                height: 0.063rem;
+                background: $black;
+                transition: opacity 0.3s ease-in-out;
+                width: 100%;
+                opacity: 0;
+            }
+        }
+
+        &:hover {
+            span:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    a,
+    span {
+        font-size: 0.8rem;
+        color: $black;
+        font-weight: 500;
+        white-space: nowrap;
+
+        @include media(mobile) {
+            font-size: 0.7rem;
+            line-height: 0.8rem;
+        }
+    }
+
+    &__wrapper {
+        margin: 0 0 1.75rem 0;
+
+        @include media(mobile) {
+            margin: 0 0 1rem 0;
+        }
+    }
+
+    &__current {
+        color: #9ea6bd !important;
+        max-width: 50rem;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal !important;
+        width: fit-content;
+        @include media(mobile) {
+            max-width: 12rem;
+        }
+    }
+
+    & > a::before,
+    .breadcrumbs .breadcrumbs__current::before {
+        content: "";
+        background: url(./src/img/bread-arrow.svg);
+        background-position: center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        width: 1.2rem;
+        height: 0.7rem;
+        display: inline-block;
+        @include media(mobile) {
+            height: 0.6rem;
+        }
+    }
+
+    & a:first-child::before,
+    .breadcrumbs .breadcrumbs__main::before {
+        display: none;
+    }
+}

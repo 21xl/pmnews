@@ -1,0 +1,425 @@
+<!-- СОСТАВ -->
+<div class="match__composition-block">
+	<h2 class="match__composition-title">{{t 'startSquad'}}</h2>
+
+	<div class="match__composition-main">
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
+							</div>
+
+							<span>{{home_t.name}}</span>
+						</div>
+
+						<div class="cell nationality">{{t 'Nationality'}}</div>
+
+						<div class="cell age">{{t 'Age'}}</div>
+					</div>
+					{{#each homeTeam}}
+					<div class="row" data-player="{{this.id}}">
+						<div class="cell player">
+							<div class="player__img">
+								<img src="{{this.logo}}" alt="{{this.name}}" />
+							</div>
+
+							<div class="player__block">
+								<div class="player__head">
+									<span class="player__name">{{this.name}}</span>
+									<span class="player__number">{{this.shirt_number}}</span>
+								</div>
+
+								<span class="player__position">{{t this.position}}</span>
+							</div>
+						</div>
+
+						<div class="cell">
+							<div class="flag">
+								{{#if this.country_logo}}
+								<img src="{{this.country_logo}}" alt="{{this.country_name}}" />
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="cell gray">{{this.age}}</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
+							</div>
+
+							<span>{{away_t.name}}</span>
+						</div>
+
+						<div class="cell nationality">{{t 'Nationality'}}</div>
+
+						<div class="cell age">{{t 'Age'}}</div>
+					</div>
+
+					{{#each awayTeam}}
+					<div class="row" data-player="{{this.id}}">
+						<div class="cell player">
+							<div class="player__img">
+								<img src="{{this.logo}}" alt="{{this.name}}" />
+							</div>
+
+							<div class="player__block">
+								<div class="player__head">
+									<span class="player__name">{{this.name}}</span>
+									<span class="player__number">{{this.shirt_number}}</span>
+								</div>
+
+								<span class="player__position">{{t this.position}}</span>
+							</div>
+						</div>
+
+						<div class="cell">
+							<div class="flag">
+								{{#if this.country_logo}}
+								<img src="{{this.country_logo}}" alt="{{this.country_name}}" />
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="cell gray">{{this.age}}</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- СОСТАВ ЗАМЕНЫ -->
+<div class="match__composition-block">
+	<h2 class="match__composition-title">{{t 'altSquad'}}</h2>
+
+	<div class="match__composition-main">
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
+							</div>
+
+							<span>{{home_t.name}}</span>
+						</div>
+
+						<div class="cell nationality">{{t 'Nationality'}}</div>
+
+						<div class="cell age">{{t 'Age'}}</div>
+					</div>
+
+					{{#each althome}}
+					<div class="row" data-player="{{this.id}}">
+						<div class="cell player">
+							<div class="player__img">
+								<img src="{{this.logo}}" alt="{{this.name}}" />
+							</div>
+
+							<div class="player__block">
+								<div class="player__head">
+									<span class="player__name">{{this.name}}</span>
+									<span class="player__number">{{this.shirt_number}}</span>
+								</div>
+
+								<span class="player__position">{{t this.position}}</span>
+							</div>
+						</div>
+
+						<div class="cell">
+							<div class="flag">
+								{{#if this.country_logo}}
+								<img src="{{this.country_logo}}" alt="{{this.country_name}}" />
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="cell gray">{{this.age}}</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
+							</div>
+
+							<span>{{away_t.name}}</span>
+						</div>
+
+						<div class="cell nationality">{{t 'Nationality'}}</div>
+
+						<div class="cell age">{{t 'Age'}}</div>
+					</div>
+
+					{{#each altaway}}
+					<div class="row" data-player="{{this.id}}">
+						<div class="cell player">
+							<div class="player__img">
+								<img src="{{this.logo}}" alt="{{this.name}}" />
+							</div>
+
+							<div class="player__block">
+								<div class="player__head">
+									<span class="player__name">{{this.name}}</span>
+									<span class="player__number">{{this.shirt_number}}</span>
+								</div>
+
+								<span class="player__position">{{t this.position}}</span>
+							</div>
+						</div>
+
+						<div class="cell">
+							<div class="flag">
+								{{#if this.country_logo}}
+								<img src="{{this.country_logo}}" alt="{{this.country_name}}" />
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="cell gray">{{this.age}}</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ТРЕНЕР -->
+<div class="match__composition-block">
+	<h2 class="match__composition-title">{{t 'coach'}}</h2>
+
+	<div class="match__composition-main">
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
+							</div>
+
+							<span>{{home_t.name}}</span>
+						</div>
+
+						<div class="cell nationality">{{t 'Nationality'}}</div>
+
+						<div class="cell age">{{t 'Age'}}</div>
+					</div>
+
+					<div class="row">
+						<div class="cell player">
+							<div class="player__img">
+								<img src="{{coachesData.home.logo}}" alt="{{coachesData.home.name}}" />
+							</div>
+
+							<div class="player__block">
+								<div class="player__head">
+									<span class="player__name">{{coachesData.home.name}}</span>
+								</div>
+
+								<span class="player__position">{{t 'coach'}}</span>
+							</div>
+						</div>
+
+						<div class="cell">
+							<div class="flag">
+								{{#if coachesData.home.country_logo}}
+								<img src="{{coachesData.home.country_logo}}" alt="{{coachesData.home.country_name}}" />
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="cell gray">{{coachesData.home.age}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
+							</div>
+
+							<span>{{away_t.name}}</span>
+						</div>
+
+						<div class="cell nationality">{{t 'Nationality'}}</div>
+
+						<div class="cell age">{{t 'Age'}}</div>
+					</div>
+					<div class="row">
+						<div class="cell player">
+							<div class="player__img">
+								<img src="{{coachesData.away.logo}}" alt="{{coachesData.away.name}}" />
+							</div>
+
+							<div class="player__block">
+								<div class="player__head">
+									<span class="player__name">{{coachesData.away.name}}</span>
+								</div>
+
+								<span class="player__position">{{t 'coach'}}</span>
+							</div>
+						</div>
+
+						<div class="cell">
+							<div class="flag">
+								{{#if coachesData.away.country_logo}}
+								<img src="{{coachesData.away.country_logo}}" alt="{{coachesData.away.country_name}}" />
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="cell gray">{{coachesData.away.age}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ЗАМЕНЫ -->
+
+<div class="match__composition-block {{addHiddenClass homeSub awaySub}}">
+	<h2 class="match__composition-title">{{t 'submition'}}</h2>
+
+	<div class="match__composition-main">
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
+							</div>
+
+							<span>{{home_t.name}}</span>
+						</div>
+					</div>
+					{{#each homeSub}}
+					<div class="row substitution">
+						<div class="cell gray">{{this.time}}'</div>
+
+						<div class="substitution-block">
+							<div class="cell player">
+								<div class="player__img">
+									<img src="{{this.in.logo}}" alt="{{this.in.name}}" />
+								</div>
+
+								<div class="player__block">
+									<div class="player__head">
+										<span class="player__name">{{this.in.name}}</span>
+										<span class="player__number">{{this.in.shirt_number}}</span>
+									</div>
+
+									<span class="player__position">{{t this.in.position}}</span>
+								</div>
+							</div>
+
+							<div class="substitution-icon"></div>
+
+							<div class="cell player">
+								<div class="player__img">
+									<img src="{{this.out.logo}}" alt="{{this.out.name}}" />
+								</div>
+
+								<div class="player__block">
+									<div class="player__head">
+										<span class="player__name">{{this.out.name}}</span>
+										<span class="player__number">{{this.out.shirt_number}}</span>
+									</div>
+
+									<span class="player__position">{{t this.out.position}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+
+		<div class="match__composition-team">
+			<div class="match__composition-wrapper">
+				<div class="table composition">
+					<div class="row head">
+						<div class="cell team-name">
+							<div class="emblem">
+								<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
+							</div>
+
+							<span>{{away_t.name}}</span>
+						</div>
+					</div>
+
+					{{#each awaySub}}
+					<div class="row substitution">
+						<div class="cell gray">{{this.time}}'</div>
+
+						<div class="substitution-block">
+							<div class="cell player">
+								<div class="player__img">
+									<img src="{{this.in.logo}}" alt="{{this.in.name}}" />
+								</div>
+
+								<div class="player__block">
+									<div class="player__head">
+										<span class="player__name">{{this.in.name}}</span>
+										<span class="player__number">{{this.in.shirt_number}}</span>
+									</div>
+
+									<span class="player__position">{{t this.in.position}}</span>
+								</div>
+							</div>
+
+							<div class="substitution-icon"></div>
+
+							<div class="cell player">
+								<div class="player__img">
+									<img src="{{this.out.logo}}" alt="{{this.out.name}}" />
+								</div>
+
+								<div class="player__block">
+									<div class="player__head">
+										<span class="player__name">{{this.out.name}}</span>
+										<span class="player__number">{{this.out.shirt_number}}</span>
+									</div>
+
+									<span class="player__position">{{t this.out.position}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

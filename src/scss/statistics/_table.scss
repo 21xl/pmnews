@@ -1,0 +1,510 @@
+.table {
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 0.063rem solid #f0f1f5;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    width: 100%;
+
+    @include media(mobile) {
+      min-width: 100%;
+      width: fit-content;
+    }
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+
+    @include media(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    &__color {
+      display: block;
+      width: 0.875rem;
+      height: 0.875rem;
+      border-radius: 0.25rem;
+      overflow: hidden;
+    }
+
+    &__name {
+      color: var(--Gray-500-Text-secondary, #636f92);
+      font-family: "Helvetica Neue";
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+    border-bottom: 0.063rem solid #f0f1f5;
+    padding: 0 0.5rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .cell {
+    display: block;
+    padding: 1rem 0;
+    text-align: center;
+    align-content: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .head {
+    background-color: #f9f9fb;
+
+    .cell {
+      color: $gray_3;
+      padding: 0.66rem 0;
+    }
+  }
+
+  .team-name {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: left;
+
+    span {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .skeleton {
+      display: block;
+      width: 8rem;
+      height: 1.25rem;
+    }
+  }
+
+  .emblem {
+    display: block;
+    min-width: 1.5rem;
+    width: 1.5rem;
+    min-height: 1.5rem;
+    height: 1.5rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .flag {
+    display: block;
+    min-width: 1.5rem;
+    width: 1.5rem;
+    min-height: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 0.063rem solid #f0f1f5;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .bookmaker {
+    img,
+    svg {
+      width: auto;
+      height: 1.5rem;
+      object-fit: contain;
+
+      @include media(mobile) {
+        height: 1.25rem;
+      }
+    }
+
+    .skeleton {
+      width: 5.875rem;
+      height: 1.5rem;
+    }
+  }
+
+  .odd {
+    .skeleton {
+      width: 100%;
+    }
+
+    .odd-status {
+      display: flex !important;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 100% !important;
+      gap: 0.4rem;
+      padding: 0.38rem 0.75rem !important;
+      border-radius: 0.5rem;
+      border: 0.063rem solid #dbdde6;
+      font-size: 0.875rem;
+
+      @include media(mobile) {
+        padding: 0.38rem 0.25rem !important;
+        font-size: 0.75rem;
+      }
+    }
+
+    &.up {
+      .odd-status {
+        &:before {
+          content: "";
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='.5' width='16' height='16' rx='8' fill='%23008451'/%3E%3Cpath d='M7.994 12.244v-7.49M10.988 7.746 8 4.758 5.01 7.746' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          @include media(mobile) {
+            width: 0.875rem;
+            height: 0.875rem;
+          }
+        }
+      }
+    }
+
+    &.down {
+      .odd-status {
+        &:before {
+          content: "";
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='.5' width='16' height='16' rx='8' fill='%23E05555'/%3E%3Cpath d='M8.006 4.756v7.49M5.012 9.254 8 12.242l2.989-2.988' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .gray {
+    color: $gray_3;
+
+    span {
+      color: $gray_3;
+    }
+
+    .skeleton {
+      width: 3.5625rem;
+      height: 1.25rem;
+    }
+  }
+
+  .place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.1rem 0.34rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  .player {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+
+    &__img {
+      min-width: 2rem;
+      width: 2rem;
+      min-height: 2rem;
+      height: 2rem;
+      background-color: #edf1f5;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.13rem;
+    }
+
+    &__name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 10rem;
+      white-space: nowrap;
+      text-transform: capitalize;
+
+      @include media(mobile) {
+        max-width: 13rem;
+      }
+    }
+
+    &__head {
+      display: flex;
+      align-items: center;
+      gap: 0.38rem;
+
+      &.skeleton {
+        display: block;
+        width: 8rem;
+        height: 1rem;
+      }
+    }
+
+    &__number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.375rem;
+      height: 1.05rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+
+      background: #edf1f5;
+      color: $gray_3;
+      white-space: nowrap;
+    }
+
+    &__position {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: $gray_3;
+      text-align: left;
+
+      &.skeleton {
+        display: block;
+        width: 5.3rem;
+        height: 1rem;
+      }
+    }
+  }
+
+  .skeleton {
+    display: block;
+    height: 1rem;
+  }
+}
+
+.standings {
+  .cell {
+    &:nth-child(1) {
+      width: 2rem;
+
+      .skeleton {
+        width: 1rem;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 100%;
+      flex: 1;
+
+      .skeleton {
+        width: 7.5rem;
+      }
+    }
+
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10) {
+      width: 2.875rem;
+
+      .skeleton {
+        width: 2.875rem;
+      }
+    }
+
+    &:nth-child(11) {
+      width: 7.625rem;
+
+      .skeleton {
+        width: 7.625rem;
+      }
+    }
+  }
+}
+
+.odds {
+  .row {
+    padding: 0 1rem;
+
+    @include media(mobile) {
+      padding: 0 0.88rem;
+    }
+  }
+
+  .cell {
+    &:nth-child(1) {
+      width: 100%;
+      flex: 1;
+      text-align: left;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      width: 5.375rem;
+
+      @include media(mobile) {
+        width: 4rem;
+      }
+    }
+  }
+}
+
+.composition {
+  .cell {
+    &:nth-child(1) {
+      width: 100%;
+      flex: 1;
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      flex: none;
+      width: 8.25rem;
+
+      @include media(mobile) {
+        width: 3.0625rem;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 4.6rem;
+
+      @include media(mobile) {
+        width: 3.0625rem;
+      }
+    }
+  }
+
+  .substitution {
+    .cell {
+      &:nth-child(1) {
+        width: fit-content;
+        min-width: 1.2rem;
+        text-align: center;
+        flex: none;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: fit-content;
+        flex: none;
+      }
+    }
+
+    .player {
+      @include media(mobile) {
+        padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+      }
+    }
+  }
+
+  .substitution-block {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include media(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 1.2rem;
+    }
+  }
+
+  .substitution-icon {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cpath d='M8.537 3.88H10.8V1.615M3.478 8.777H1.215v2.265' stroke='%23636F92' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.806 8.033A4.94 4.94 0 0 1 9.63 9.948c-2 2-5.245 2-7.246 0a5.1 5.1 0 0 1-.874-1.174M10.503 3.875a5.131 5.131 0 0 0-.874-1.173C7.628.7 4.383.7 2.382 2.702a4.964 4.964 0 0 0-1.18 1.914' stroke='%23636F92' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto 0.5rem;
+
+    @include media(mobile) {
+      position: absolute;
+      top: 50%;
+      left: 0rem;
+      transform: translateY(-50%);
+      margin: 0;
+    }
+  }
+
+  .head {
+    .nationality,
+    .age {
+      @include media(mobile) {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.team-squad {
+  .match__composition {
+    margin-bottom: 1.25rem;
+
+    @include media(mobile) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.team-composition {
+  .player__name {
+    max-width: 30rem;
+
+    @include media(mobile) {
+      max-width: 13rem;
+    }
+  }
+}

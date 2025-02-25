@@ -1,0 +1,116 @@
+{{#switch incident.type}} {{#case 1}}
+<!-- GOAL -->
+<div class="match__review-item match__review-item--goal {{teamClass incident.position}}">
+	<span class="match__review-minute">{{incident.time}}′</span>
+	<span class="match__review-block match__review-goal match__review-score">
+		{{incident.home_score}}-{{incident.away_score}}
+	</span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+		{{#if incident.assist1_id}}
+		<span class="match__review-brackets">({{Player incident.assist1_id}})</span>
+		{{/if}}
+	</div>
+</div>
+{{/case}} {{#case 3}}
+
+<!-- YELLOW CARD -->
+<div class="match__review-item match__review-item--yellow-card {{teamClass incident.position}}">
+	<span class="match__review-minute">{{incident.time}}′</span>
+	<span class="match__review-block match__review-yellow-card"></span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+	</div>
+</div>
+{{/case}} {{#case 4}}
+
+<!-- RED CARD -->
+<!-- AWAY TEAM -->
+<div class="match__review-item match__review-item--red-card {{teamClass incident.position}}">
+	<span class="match__review-minute">{{incident.time}}′</span>
+	<span class="match__review-block match__review-red-card"></span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+	</div>
+</div>
+{{/case}} {{#case 8}}
+
+<!-- PENALTY (GOAL) -->
+<div class="match__review-item match__review-item--substitution {{teamClass incident.position}}">
+	<span class="match__review-minute">{{incident.time}}′</span>
+	<span class="match__review-block match__review-goal match__review-score">
+		{{incident.home_score}}-{{incident.away_score}}
+	</span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+		<span class="match__review-brackets">(Пенальти)</span>
+	</div>
+</div>
+{{/case}} {{#case 9}}
+
+<!-- SUBSTITUTION -->
+<div class="match__review-item match__review-item--substitution {{teamClass incident.position}}">
+	<span class="match__review-minute">{{incident.time}}′</span>
+	<span class="match__review-block match__review-substitution"></span>
+	<div class="match__review-main">
+		<span class="match__review-brackets">({{Player incident.out_player_id}})</span>
+		<span>{{Player incident.in_player_id}}</span>
+	</div>
+</div>
+{{/case}} {{#case 11}}
+<div class="match__review-item match__review-time">
+	<span>2 тайм</span>
+</div>
+{{/case}} {{#case 999}}
+<div class="match__review-item match__review-time">
+	<span>1 тайм</span>
+</div>
+{{/case}} {{#case 16}}
+
+<!-- PENALTY (NO GOAL) -->
+<div class="match__review-item match__review-item--substitution {{teamClass incident.position}}">
+	<span class="match__review-minute">{{incident.time}}′</span>
+	<span class="match__review-block match__review-error"></span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+		<span class="match__review-brackets">(Нереализованый пенальти)</span>
+	</div>
+</div>
+{{/case}} {{#case 17}}
+
+<!-- AUTOGOAL -->
+<div class="match__review-item match__review-item--autogoal {{teamClass incident.position}}">
+	<span class="match__review-minute">{{incident.time}}′</span>
+	<span class="match__review-block match__review-autogoal match__review-score">
+		{{incident.home_score}}-{{incident.away_score}}
+	</span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+		<span class="match__review-brackets">(Автогол)</span>
+	</div>
+</div>
+{{/case}} {{#case 29}}
+
+<!-- PENALTY (GOAL) - series penalty -->
+<div class="match__review-item match__review-item--substitution {{teamClass incident.position}}">
+	<span class="match__review-block match__review-goal"></span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+		<span class="match__review-brackets">(Пенальти)</span>
+	</div>
+</div>
+{{/case}} {{#case 30}}
+
+<!-- PENALTY (NO GOAL) - series penalty-->
+<div class="match__review-item match__review-item--substitution {{teamClass incident.position}}">
+	<span class="match__review-block match__review-error"></span>
+	<div class="match__review-main">
+		<span>{{Player incident.player_id}}</span>
+		<span class="match__review-brackets">(Нереализованый пенальти)</span>
+	</div>
+</div>
+{{/case}} {{#case 33}}
+<div class="match__review-item match__review-time">
+	<span>Серия пенальти</span>
+</div>
+{{/case}} {{/switch}}

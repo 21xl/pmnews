@@ -1,0 +1,33 @@
+.statistics-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        margin-top: 10rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

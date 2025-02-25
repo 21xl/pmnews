@@ -1,0 +1,258 @@
+<div class="match__h2h">
+    <div class="schedule__tabs tabs">
+        <div class="tabs__list">
+            <div class="tabs__item skeleton active"></div>
+            <div class="tabs__item skeleton"></div>
+            <div class="tabs__item skeleton"></div>
+        </div>
+    </div>
+
+    <div class="matches__ligue">
+        <div class="matches__ligue-head">
+            <div class="matches__ligue-block">
+                <div class="matches__ligue-fav skeleton"></div>
+                <div class="matches__ligue-title skeleton"></div>
+            </div>
+
+            <div class="matches__ligue-control skeleton"></div>
+        </div>
+
+        <div class="matches__ligue-content">
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="matches__ligue">
+        <div class="matches__ligue-head">
+            <div class="matches__ligue-block">
+                <div class="matches__ligue-fav skeleton"></div>
+                <div class="matches__ligue-title skeleton"></div>
+            </div>
+
+            <div class="matches__ligue-control skeleton"></div>
+        </div>
+
+        <div class="matches__ligue-content">
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="matches__ligue">
+        <div class="matches__ligue-head">
+            <div class="matches__ligue-block">
+                <div class="matches__ligue-fav skeleton"></div>
+                <div class="matches__ligue-title skeleton"></div>
+            </div>
+
+            <div class="matches__ligue-control skeleton"></div>
+        </div>
+
+        <div class="matches__ligue-content">
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="matches__item">
+                <div class="matches__item-block">
+                    <div class="matches__item-fav skeleton"></div>
+
+                    <div class="matches__item-time skeleton"></div>
+
+                    <div class="matches__item-rivals">
+                        <div class="matches__item-team skeleton"></div>
+
+                        <div class="matches__item-team skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

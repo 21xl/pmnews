@@ -1,0 +1,115 @@
+.tabs {
+    position: relative;
+    width: fit-content;
+
+    @include media(mobile) {
+        width: 100%;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 2rem;
+            position: absolute;
+            top: 50%;
+            left: 82%;
+            transform: translateY(-50%);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            pointer-events: none;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        padding: 0.375rem 0.75rem;
+        transition: all 0.3s ease-in-out;
+        border-radius: 0.55rem;
+        cursor: pointer;
+        text-transform: capitalize;
+        color: $gray_3;
+        white-space: nowrap;
+
+        &.active {
+            background: $gray;
+            color: $black;
+
+            span {
+                color: $black;
+            }
+        }
+
+        &.skeleton {
+            width: 7.5rem;
+            height: 1.6rem;
+            margin-right: 0.5rem;
+        }
+
+        &:hover {
+            color: $black;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    span {
+        text-transform: capitalize;
+        color: $gray_3;
+        transition: color 0.3s ease-in-out;
+        white-space: nowrap;
+
+        &:hover {
+            color: $black;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        position: relative;
+
+        @include media(mobile) {
+            gap: 1rem;
+        }
+
+        &-item {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+.schedule__tabs {
+    margin-bottom: 1.25rem;
+}

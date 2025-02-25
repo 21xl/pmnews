@@ -1,0 +1,58 @@
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__input {
+        display: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+
+    &__box {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 0.25rem;
+        background: #edf1f5;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            width: 0.325rem;
+            height: 0.6rem;
+            border: solid $black;
+            border-width: 0 0.125rem 0.125rem 0;
+            transform: translate(-50%, -50%) rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        &[data-checked="true"] {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__label {
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    &__tab {
+        display: block;
+
+        &.hidden {
+            display: none;
+        }
+    }
+}

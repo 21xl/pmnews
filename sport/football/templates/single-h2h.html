@@ -1,0 +1,329 @@
+<div class="schedule__tabs tabs">
+	<div class="tabs__list">
+		<div class="tabs__item active" data-status="review">Обзор</div>
+		<div class="tabs__item" data-status="home">{{getLocalized home_t}} - дома</div>
+		<div class="tabs__item" data-status="away">{{getLocalized away_t}} - на выезде</div>
+	</div>
+</div>
+
+<div class="tabs__content">
+	<div class="tabs__content-item active" data-status="review">
+		<div class="matches__ligue">
+			<div class="matches__ligue-head">
+				<div class="matches__ligue-block">
+
+					<div class="matches__ligue-img">
+						<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
+					</div>
+
+					<div class="matches__ligue-title">
+						<div class="matches__ligue-category">
+							<span>{{home_t.name}}</span>
+							<span class="colon">:</span>
+							<span class="matches__ligue-category--last">Последние игры</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="matches__ligue-content">
+				{{#each h2hHome}}
+				<a href="/statistics/football/match/{{this.id}}/">
+					<div class="matches__item matches__item--h2h">
+						<div class="matches__item-block">
+
+
+							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+
+							<div class="matches__item-rivals">
+								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.home_team.logo}}" alt="{{getLocalized this.home_team}}" />
+									</div>
+									<span>{{getLocalized this.home_team}}</span>
+								</div>
+
+								<div class="matches__item-team {{winnerClass this.away_scores this.home_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.away_team.logo}}" alt="{{getLocalized this.away_team}}" />
+									</div>
+									<span>{{getLocalized this.away_team}}</span>
+								</div>
+							</div>
+
+							<div class="matches__item-score">
+								<span>{{displayScore this.status_id this.home_scores}}</span>
+								<span>{{displayScore this.status_id this.away_scores}}</span>
+							</div>
+						</div>
+
+						<div class="matches__item-block-2">
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
+							</div>
+							<div class="matches__item-point form-icons">
+								<span class="{{this.result}}"></span>
+							</div>
+						</div>
+					</div>
+				</a>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+
+	<div class="tabs__content-item" data-status="home">
+		<div class="matches__ligue">
+			<div class="matches__ligue-head">
+				<div class="matches__ligue-block">
+
+
+					<div class="matches__ligue-img">
+						<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
+					</div>
+
+					<div class="matches__ligue-title">
+						<div class="matches__ligue-category">
+							<span>{{home_t.name}}</span>
+							<span class="colon">:</span>
+							<span class="matches__ligue-category--last">Последние игры</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="matches__ligue-content">
+				{{#each home_m}}
+				<a href="/statistics/football/match/{{this.id}}/">
+					<div class="matches__item matches__item--h2h">
+						<div class="matches__item-block">
+
+
+							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+
+							<div class="matches__item-rivals">
+								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.home_team.logo}}" alt="{{getLocalized this.home_team}}" />
+									</div>
+									<span>{{getLocalized this.home_team}}</span>
+								</div>
+
+								<div class="matches__item-team {{winnerClass this.away_scores this.home_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.away_team.logo}}" alt="{{getLocalized this.away_team}}" />
+									</div>
+									<span>{{getLocalized this.away_team}}</span>
+								</div>
+							</div>
+
+							<div class="matches__item-score">
+								<span>{{displayScore this.status_id this.home_scores}}</span>
+								<span>{{displayScore this.status_id this.away_scores}}</span>
+							</div>
+						</div>
+
+						<div class="matches__item-block-2">
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
+							</div>
+							<div class="matches__item-point form-icons">
+								<span class="{{this.result}}"></span>
+							</div>
+						</div>
+					</div>
+				</a>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+
+	<!-- Навыезд команда -->
+	<div class="tabs__content-item active" data-status="review">
+		<div class="matches__ligue">
+			<div class="matches__ligue-head">
+				<div class="matches__ligue-block">
+
+
+					<div class="matches__ligue-img">
+						<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
+					</div>
+
+					<div class="matches__ligue-title">
+						<div class="matches__ligue-category">
+							<span>{{away_t.name}}</span>
+							<span class="colon">:</span>
+							<span class="matches__ligue-category--last">Последние игры</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="matches__ligue-content">
+				{{#each h2hAway}}
+				<a href="/statistics/football/match/{{this.id}}/">
+					<div class="matches__item matches__item--h2h">
+						<div class="matches__item-block">
+
+							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+
+							<div class="matches__item-rivals">
+								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.home_team.logo}}" alt="{{getLocalized this.home_team}}" />
+									</div>
+									<span>{{getLocalized this.home_team}}</span>
+								</div>
+
+								<div class="matches__item-team {{winnerClass this.away_scores this.home_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.away_team.logo}}" alt="{{getLocalized this.away_team}}" />
+									</div>
+									<span>{{getLocalized this.away_team}}</span>
+								</div>
+							</div>
+
+							<div class="matches__item-score">
+								<span>{{displayScore this.status_id this.home_scores}}</span>
+								<span>{{displayScore this.status_id this.away_scores}}</span>
+							</div>
+						</div>
+
+						<div class="matches__item-block-2">
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
+							</div>
+
+							<div class="matches__item-point form-icons">
+								<span class="{{this.result}}"></span>
+							</div>
+						</div>
+					</div>
+				</a>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+
+	<div class="tabs__content-item" data-status="away">
+		<div class="matches__ligue">
+			<div class="matches__ligue-head">
+				<div class="matches__ligue-block">
+
+
+					<div class="matches__ligue-img">
+						<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
+					</div>
+
+					<div class="matches__ligue-title">
+						<div class="matches__ligue-category">
+							<span>{{away_t.name}}</span>
+							<span class="colon">:</span>
+							<span class="matches__ligue-category--last">Последние игры</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="matches__ligue-content">
+				{{#each away_m}}
+				<a href="/statistics/football/match/{{this.id}}/">
+					<div class="matches__item matches__item--h2h">
+						<div class="matches__item-block">
+
+
+							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+
+							<div class="matches__item-rivals">
+								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.home_team.logo}}" alt="{{getLocalized this.home_team}}" />
+									</div>
+									<span>{{getLocalized this.home_team}}</span>
+								</div>
+
+								<div class="matches__item-team {{winnerClass this.away_scores this.home_scores}}">
+									<div class="matches__item-img">
+										<img src="{{this.away_team.logo}}" alt="{{getLocalized this.away_team}}" />
+									</div>
+									<span>{{getLocalized this.away_team}}</span>
+								</div>
+							</div>
+
+							<div class="matches__item-score">
+								<span>{{displayScore this.status_id this.home_scores}}</span>
+								<span>{{displayScore this.status_id this.away_scores}}</span>
+							</div>
+						</div>
+
+						<div class="matches__item-block-2">
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
+							</div>
+
+							<div class="matches__item-point form-icons">
+								<span class="{{this.result}}"></span>
+							</div>
+						</div>
+					</div>
+				</a>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	{{#if h2h}}
+	<div class="matches__ligue">
+		<div class="matches__ligue-head">
+			<div class="matches__ligue-block">
+
+
+				<!-- <div class="matches__ligue-img">
+                <img src="{{away_t.logo}}" alt="{{away_t.name}}" />
+            </div> -->
+
+				<div class="matches__ligue-title">
+					<div class="matches__ligue-category">
+						<!-- <span>{{away_t.name}}</span>
+                    <span class="colon">:</span> -->
+						<span>Очные встречи</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{#each h2h}}
+		<div class="matches__ligue-content">
+			<a href="/statistics/football/match/{{this.id}}/">
+				<div class="matches__item matches__item--h2h">
+					<div class="matches__item-block">
+
+
+						<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+
+						<div class="matches__item-rivals">
+							<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
+								<div class="matches__item-img">
+									<img src="{{this.home_team.logo}}" alt="{{getLocalized this.home_team}}" />
+								</div>
+								<span>{{getLocalized this.home_team}}</span>
+							</div>
+
+							<div class="matches__item-team {{winnerClass this.away_scores this.home_scores}}">
+								<div class="matches__item-img">
+									<img src="{{this.away_team.logo}}" alt="{{getLocalized this.away_team}}" />
+								</div>
+								<span>{{getLocalized this.away_team}}</span>
+							</div>
+						</div>
+
+						<div class="matches__item-score">
+							<span>{{displayScore this.status_id this.home_scores}}</span>
+							<span>{{displayScore this.status_id this.away_scores}}</span>
+						</div>
+					</div>
+
+					<div class="matches__item-block-2">
+						<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}</div>
+					</div>
+				</div>
+			</a>
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
+</div>

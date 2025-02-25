@@ -1,0 +1,30 @@
+.single-banner {
+    width: 100%;
+    height: 21.813rem;
+    border-radius: $border_radius;
+    background: $yellow;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    margin-bottom: 2rem;
+
+    @include media(mobile) {
+        display: none;
+    }
+}
+
+.mobile-banner {
+    display: none;
+    width: 100%;
+    height: 9.357rem;
+    border-radius: $border_radius;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    margin: 1.25rem 0;
+    display: none;
+
+    @include media(mobile) {
+        display: block;
+    }
+}
