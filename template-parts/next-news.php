@@ -32,7 +32,7 @@ if (!empty($category_ids)) {
             ?>
             <div class="single-aside__next">
                 <span class="single-aside__next-title">
-                    <?php pll_e('Следующая статья'); ?>
+                    <?php pll_e('Next article'); ?>
                 </span>
 
                 <?php get_template_part('template-parts/card'); ?>

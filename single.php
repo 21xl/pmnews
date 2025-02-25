@@ -34,7 +34,7 @@ $author_url = get_author_posts_url($author_id);
 								</div>
 
 								<div class="single__info-time">
-									<?php pll_e('Время для чтения:'); ?> <?php echo esc_html(get_reading_time()); ?>
+									<?php pll_e('Reading time:'); ?> <?php echo esc_html(get_reading_time()); ?>
 								</div>
 							</div>
 

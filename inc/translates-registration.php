@@ -9,11 +9,11 @@ if (function_exists('pll_register_string')):
     pll_register_string('all_rights_reserved', 'All rights reserved.', 'pm-news');
     pll_register_string('company', 'Company', 'pm-news');
     pll_register_string('categories', 'Categories', 'pm-news');
-    pll_register_string('join_us', 'Присоединяйтесь', 'pm-news');
+    pll_register_string('join_us', 'Join us', 'pm-news');
     pll_register_string('details', 'Details', 'pm-news');
-    pll_register_string('reading_time', 'Время для чтения:', 'pm-news');
-    pll_register_string('next_article', 'Следующая статья', 'pm-news');
-    pll_register_string('more_videos', 'Больше видео', 'pm-news');
+    pll_register_string('reading_time', 'Reading time:', 'pm-news');
+    pll_register_string('next_article', 'Next article', 'pm-news');
+    pll_register_string('more_videos', 'More videos', 'pm-news');
     pll_register_string('youtube_title', 'Latest news', 'pm-news');
     pll_register_string('youtube_description', 'YouTube channel PM News is your reliable source of the latest news from the world of sports!', 'pm-news');
     pll_register_string('back', 'Back', 'pm-news');
@@ -33,8 +33,8 @@ if (function_exists('pll_register_string')):
     pll_register_string('rating', 'Rating', 'pm-news');
     pll_register_string('blue-popup', 'Place a bet', 'pm-news');
     pll_register_string('all-news-author', 'All authors articles', 'pm-news');
-    pll_register_string('copied', 'Скопировано!', 'pm-news');
-    pll_register_string('footer-text', 'Будьте в курсе всех спортивных новостей Казахстана и мира. Получайте самую актуальную информацию о спорте, результаты матчей и интересные статьи от нашей команды журналистов.', 'pm-news');
+    pll_register_string('copied', 'Copied!', 'pm-news');
+    pll_register_string('footer-text', 'Stay updated on all sports news from Indonesia and the world. Receive the latest information on sports, match results, and interesting articles from our team of journalists.', 'pm-news');
     pll_register_string('back', 'ago', 'pm-news');
     pll_register_string('hour', 'час', 'pm-news');
     pll_register_string('hours', 'часов', 'pm-news');

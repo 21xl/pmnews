@@ -16,7 +16,7 @@ $full_logo = get_field('full_logo', 'options');
             </a>
 
             <div class="footer__text">
-                <?php pll_e('Будьте в курсе всех спортивных новостей Казахстана и мира. Получайте самую актуальную информацию о спорте, результаты матчей и интересные статьи от нашей команды журналистов.') ?>
+                <?php pll_e('Stay updated on all sports news from Indonesia and the world. Receive the latest information on sports, match results, and interesting articles from our team of journalists.') ?>
             </div>
 
             <?php get_template_part('template-parts/copyright') ?>
@@ -56,7 +56,7 @@ $full_logo = get_field('full_logo', 'options');
 
         <div class="footer__column">
             <span class="footer__title">
-                <?php pll_e('Присоединяйтесь'); ?>
+                <?php pll_e('Join us'); ?>
             </span>
 
             <?php get_template_part('template-parts/social-medias') ?>
