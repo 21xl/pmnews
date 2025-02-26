@@ -1,8 +1,8 @@
 <?php
 if (function_exists('pll_register_string')):
     pll_register_string('login', 'Login', 'pm-news');
-    pll_register_string('registration', 'Регистрация', 'pm-news');
-    pll_register_string('min', 'мин', 'pm-news');
+    pll_register_string('registration', 'Registration', 'pm-news');
+    pll_register_string('min', 'min', 'pm-news');
     pll_register_string('see_more', 'See more', 'pm-news');
     pll_register_string('no_posts_yet', 'There are no posts yet', 'pm-news');
     pll_register_string('copyright', 'Copyright', 'pm-news');
@@ -19,8 +19,8 @@ if (function_exists('pll_register_string')):
     pll_register_string('back', 'Back', 'pm-news');
     pll_register_string('go_to_home', 'Main page', 'pm-news');
     pll_register_string('page_not_found', 'Page Not Found', 'pm-news');
-    pll_register_string('error_page_text', 'К сожалению, что-то пошло не так и Page Not Found.
-				Пожалуйста, перейдите Main page страницу', 'pm-news');
+    pll_register_string('error_page_text', 'Sorry, something went wrong and Page Not Found.
+Please go to Main page', 'pm-news');
     pll_register_string('contact', 'Legal address of the editorial office', 'pm-news');
     pll_register_string('redaction', 'Editorial office', 'pm-news');
     pll_register_string('marketing-office', 'Advertising department', 'pm-news');
@@ -36,15 +36,15 @@ if (function_exists('pll_register_string')):
     pll_register_string('copied', 'Copied!', 'pm-news');
     pll_register_string('footer-text', 'Stay updated on all sports news from Indonesia and the world. Receive the latest information on sports, match results, and interesting articles from our team of journalists.', 'pm-news');
     pll_register_string('back', 'ago', 'pm-news');
-    pll_register_string('hour', 'час', 'pm-news');
-    pll_register_string('hours', 'часов', 'pm-news');
-    pll_register_string('minuta', 'минута', 'pm-news');
-    pll_register_string('minutes', 'минут', 'pm-news');
-    pll_register_string('week', 'неделя', 'pm-news');
-    pll_register_string('weeks', 'недель', 'pm-news');
-    pll_register_string('month', 'месяц', 'pm-news');
-    pll_register_string('months', 'месяцев', 'pm-news');
-    pll_register_string('sec', 'сек', 'pm-news');
+    pll_register_string('hour', 'hour', 'pm-news');
+    pll_register_string('hours', 'hours', 'pm-news');
+    pll_register_string('minuta', 'minute', 'pm-news');
+    pll_register_string('minutes', 'minutes', 'pm-news');
+    pll_register_string('week', 'week', 'pm-news');
+    pll_register_string('weeks', 'weeks', 'pm-news');
+    pll_register_string('month', 'month', 'pm-news');
+    pll_register_string('months', 'months', 'pm-news');
+    pll_register_string('sec', 'sec', 'pm-news');
     pll_register_string('search-placeholder', 'Search...', 'pm-news');
     pll_register_string('last-search', 'Recent queries', 'pm-news');
     pll_register_string('recommendation-search', 'Search results', 'pm-news');
@@ -68,7 +68,7 @@ if (function_exists('pll_register_string')):
     pll_register_string('search-show', 'Showing first search results', 'pm-news');
     pll_register_string('more-btn', 'More details', 'pm-news');
     pll_register_string('file-name', 'File name:', 'pm-news');
-    pll_register_string('prognoz', 'Узнавайте итоги всех футбольных матчей первыми на нашей странице с', 'pm-news');
+    pll_register_string('prognoz', 'Be the first to know the results of all football matches on our page with', 'pm-news');
     pll_register_string('prognoz-live', 'Live-результатами', 'pm-news');
     pll_register_string('youtube-link', 'More videos', 'pm-news');
     pll_register_string('bread-main', 'Sports news', 'pm-news');

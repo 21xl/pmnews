@@ -6,7 +6,7 @@ if (!empty($content)): ?>
             <?php the_content() ?>
             <?php
             if (has_term(array('predictions', 'transliacii'), 'category')) {
-                echo '<em>' . pll__('Узнавайте итоги всех футбольных матчей первыми на нашей странице с') . ' <a href="/statistics/">' . pll__('Live-результатами') . '</a></em>';
+                echo '<em>' . pll__('Be the first to know the results of all football matches on our page with') . ' <a href="/statistics/">' . pll__('Live-результатами') . '</a></em>';
             }
             ?>
 

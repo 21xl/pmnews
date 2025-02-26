@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   let menuContainer =
-    document.getElementById("menu-header-menu-english") ||
-    document.getElementById("menu-header-menu-indonesia");
+    document.getElementById("menu-header-en") ||
+    document.getElementById("menu-header-in");
 
   if (!menuContainer) return;  
 

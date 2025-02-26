@@ -71,7 +71,7 @@
 							}
 
 							$args = array(
-								'posts_per_page' => 13,
+								'posts_per_page' => 25,
 								'orderby' => 'date',
 								'order' => 'DESC',
 								'tax_query' => $tax_query

@@ -24,9 +24,8 @@ function search_ajax_handler()
         'posts_per_page' => -1,
         'post_status' => 'publish',
         's' => $query,
-        'fields' => 'ids',
-        // 'lang' => $current_lang,
-        // 'suppress_filters' => false
+        // 'fields' => 'ids',
+
     );
 
     $post_query = new WP_Query($post_args);
@@ -54,7 +53,7 @@ function search_ajax_handler()
 
     if (!empty($category_results)) {
         $total_results += count($category_results);
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Категории')) . ' (' . count($category_results) . ')</p>';
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Categories')) . ' (' . count($category_results) . ')</p>';
         $output .= '<div class="modal-search__categories">';
 
         foreach ($category_results as $category) {
@@ -75,7 +74,7 @@ function search_ajax_handler()
     $total_tags = count($tag_results);
     if ($total_tags > 0) {
         $total_results += $total_tags;
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Теги')) . ' (' . $total_tags . ')</p>';
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Tags')) . ' (' . $total_tags . ')</p>';
         $output .= '<ul class="modal-search__tags">';
 
         foreach (array_slice($tag_results, 0, 5) as $tag) {
@@ -96,7 +95,7 @@ function search_ajax_handler()
     $total_users = count($filtered_users);
     if ($total_users > 0) {
         $total_results += $total_users;
-        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Авторы')) . ' (' . $total_users . ')</p>';
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('Authors')) . ' (' . $total_users . ')</p>';
         $output .= '<div class="resluting-search__people">';
 
         foreach (array_slice($filtered_users, 0, 5) as $user) {
@@ -112,7 +111,7 @@ function search_ajax_handler()
             $output .= $avatar_html;
             $output .= '<div class="author-info">';
             $output .= '<p>' . esc_html($user->display_name) . '</p>';
-            $output .= '<p class="user-role">' . esc_html($author_position ? $author_position : 'Автор') . '</p>';
+            $output .= '<p class="user-role">' . esc_html($author_position ? $author_position : 'Author') . '</p>';
             $output .= '</div>';
             $output .= '</a>';
             $output .= '</div>';

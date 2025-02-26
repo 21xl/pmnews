@@ -37,12 +37,12 @@ $ad_banner = get_field('ad_menu', 'options');
 				</a>
 
 				<div class="header__search">
-					<img src="<?= get_template_directory_uri() . '/src/img/search-white.svg' ?>" alt="Поиск">
+					<img src="<?= get_template_directory_uri() . '/src/img/search-white.svg' ?>" alt="Search">
 				</div>
 			</div>
 
 			<div class="header__buttons">
-				<a href="#" class="button button--transparent"><?php pll_e('Регистрация') ?></a>
+				<a href="#" class="button button--transparent"><?php pll_e('Registration') ?></a>
 				<a href="#" class="button"><?php pll_e('Login') ?></a>
 			</div>
 

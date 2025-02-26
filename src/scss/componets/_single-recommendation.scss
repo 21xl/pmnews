@@ -113,8 +113,8 @@
 
     .tag-item {
         a {
-            background: #F1F4FE;
-            color: $gray_3;
+            background: $black;
+            color: $yellow;
             padding: 0.25rem 0.5rem;
             border-radius: 1.5rem;
             display: inline-block;
@@ -125,7 +125,8 @@
             white-space: nowrap;
 
             &:hover {
-                background: $white;
+                background: $yellow;
+                color: $black;
             }
         }
     }

@@ -17,9 +17,9 @@ function get_reading_time()
     }
 
     if ($reading_time == 1) {
-        $time_text = "1 " . pll__('мин');
+        $time_text = "1 " . pll__('min');
     } else {
-        $time_text = $reading_time . " " . pll__('мин');
+        $time_text = $reading_time . " " . pll__('min');
     }
 
     return $time_text;

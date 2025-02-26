@@ -368,11 +368,12 @@
             }
 
             &__category {
-                background: #F1F4FE;
+                background: $black;
+            color: $yellow;
                 padding: 0.25rem 0.5rem;
                 border-radius: 1.5rem;
                 display: inline-block;
-                color: $gray_3;
+          
                 font-weight: 700;
                 line-height: 0.916rem;
                 font-size: 0.75rem;
@@ -382,7 +383,8 @@
                     color 0.5s ease-in-out;
 
                 &:hover {
-                    background: $white;
+                    background: $yellow;
+                    color: $black; 
                 }
             }
 
