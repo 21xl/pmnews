@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var recommendationSwiper = new Swiper(recommendationEl, {
       slidesPerView: 1,
       a11y: false,
+      spaceBetween:5,
       grid: {
         rows: 3,
         fill: "row",

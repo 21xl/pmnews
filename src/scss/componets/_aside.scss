@@ -9,7 +9,7 @@
         width 0.5s ease-in-out,
         padding 0.5s ease-in-out;
     background: $black;
-    border-right: 0.063rem solid $border_2;
+    border-right: 0.063rem solid $black;
     height: fit-content;
 
     @include media(mobile) {
@@ -87,13 +87,13 @@
         position: absolute;
         top: 1.25rem;
         right: 1.875rem;
-        background: $white;
-        border: 0.063rem solid $border;
+        background: $black;
+        border: 0.063rem solid $gray_2;
         border-radius: 0.5rem;
         padding: 0.375rem;
         transition: all 0.5s ease-in-out;
         display: flex;
-        align-items: center;
+        align-items: center; 
         justify-content: center;
         width: 2.5rem;
         height: 2.5rem;
@@ -106,6 +106,7 @@
 
         &.collapsed {
             right: -3.438rem;
+            border: 0.063rem solid $black;
 
             img {
                 transform: scaleX(-1);

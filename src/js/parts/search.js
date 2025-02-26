@@ -104,7 +104,18 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function getCurrentLangFromURL() {
     const pathSegments = window.location.pathname.split("/").filter(Boolean);
-    const languagePrefixes = ["ru", "kk", "en", "ua", "uk"];
+    const languagePrefixes = [
+      "af", "sq", "am", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "ny", "zh", "zh-cn", "zh-tw", "zh-hk",
+      "co", "hr", "cs", "da", "nl", "en", "en-us", "en-gb", "eo", "et", "tl", "fi", "fr", "fr-ca", "fr-fr", "fy", "gl", "ka",
+      "de", "de-at", "de-ch", "el", "gu", "ht", "ha", "haw", "iw", "he", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it",
+      "ja", "jw", "kn", "kk", "km", "ko", "ku", "ky", "lo", "la", "lv", "lt", "lb", "mk", "mg", "ms", "ml", "mt", "mi",
+      "mr", "my", "ne", "no", "nb", "nn", "or", "ps", "fa", "pl", "pt", "pt-br", "pt-pt", "pa", "ro", "ru", "sm", "gd",
+      "sr", "sr-latn", "st", "sn", "sd", "si", "sk", "sl", "so", "es", "es-es", "es-mx", "su", "sw", "sv", "tg", "ta", "te",
+      "th", "tr", "uk", "ua", "ur", "uz", "vi", "cy", "xh", "yi", "yo", "zu"
+  ];
+  
+  
+  
     if (pathSegments.length > 0 && languagePrefixes.includes(pathSegments[0])) {
       return pathSegments[0];  
     }

@@ -22,7 +22,7 @@
         <div class="card__content">
             <div class="card__head">
                 <div class="card__date">
-                    <?php echo esc_html(get_the_date()); ?>
+                    <?php echo esc_html(get_the_date('d.m.Y')); ?>
                 </div>
 
                 <span class="card__separator">•</span>

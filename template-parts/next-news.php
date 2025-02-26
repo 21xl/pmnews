@@ -66,7 +66,7 @@ if ($popularpost->have_posts()): ?>
             <?php pll_e('Recommended'); ?>
         </h2>
 
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper single__recommendation-wrapper">
             <?php while ($popularpost->have_posts()):
                 $popularpost->the_post();
                 $post_tags = get_the_tags();

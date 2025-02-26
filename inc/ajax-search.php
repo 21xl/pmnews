@@ -24,6 +24,7 @@ function search_ajax_handler()
         'posts_per_page' => -1,
         'post_status' => 'publish',
         's' => $query,
+        'lang' => $current_lang,
         // 'fields' => 'ids',
 
     );
@@ -47,7 +48,7 @@ function search_ajax_handler()
         'taxonomy' => 'category',
         'search' => $query,
         'hide_empty' => true,
-        // 'lang' => $current_lang,
+        'lang' => $current_lang,
         // 'suppress_filters' => false
     ));
 
@@ -67,7 +68,7 @@ function search_ajax_handler()
         'taxonomy' => 'post_tag',
         'search' => $query,
         'hide_empty' => true,
-        // 'lang' => $current_lang,
+        'lang' => $current_lang,
 
     ));
 
@@ -126,7 +127,7 @@ function search_ajax_handler()
         'post_status' => 'publish',
         's' => $query,
         'fields' => 'ids',
-        // 'lang' => $current_lang,
+        'lang' => $current_lang,
     );
 
     $page_query = new WP_Query($page_args);

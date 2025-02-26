@@ -209,7 +209,7 @@ $banner = get_field('ad_single', 'option');
 									echo '<a href="' . get_permalink() . '" class="resluting-search__post--link">';
 
 									echo '<div class="card__head">';
-									echo '<div class="card__date">' . esc_html(get_the_date()) . '</div>';
+									echo '<div class="card__date">' . esc_html(get_the_date('d.m.Y')) . '</div>';
 									echo '<span class="card__separator">•</span>';
 									echo '<span class="card__time">' . esc_html(get_reading_time()) . '</span>';
 									echo '</div>';

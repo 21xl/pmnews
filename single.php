@@ -30,7 +30,7 @@ $author_url = get_author_posts_url($author_id);
 						<div class="single__info">
 							<div class="single__info-head">
 								<div class="single__info-date">
-									<?php echo esc_html(get_the_date()); ?>
+									<?php echo esc_html(get_the_date('d.m.Y')); ?>
 								</div>
 
 								<div class="single__info-time">

@@ -4,8 +4,8 @@
     left: 57.5%;
     transform: translate(-50%, 0);
     z-index: 30;
-    background: $blue;
-    border: 0.063rem solid $blue;
+    background: $black;
+    border: 0.063rem solid $black ;
     border-radius: $border_radius;
     width: 48rem;
     padding: 0.438rem 1.188rem;
@@ -13,7 +13,9 @@
     align-items: center;
     justify-content: space-between;
     transition: all 0.5s ease-in-out;
-
+    box-shadow: 0.063rem -0.063rem 1.75rem 0.563rem rgba(0,0,0,0.43);
+-webkit-box-shadow: 0.063rem -0.063rem 1.75rem 0.563rem rgba(0,0,0,0.43);
+-moz-box-shadow: 0.063rem -0.063rem 1.75rem 0.563re rgba(0,0,0,0.43);
     @include media(mobile) {
         width: 22rem;
         padding: 1rem;
