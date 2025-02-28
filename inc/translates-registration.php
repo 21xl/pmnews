@@ -68,8 +68,6 @@ Please go to Main page', 'pm-news');
     pll_register_string('search-show', 'Showing first search results', 'pm-news');
     pll_register_string('more-btn', 'More details', 'pm-news');
     pll_register_string('file-name', 'File name:', 'pm-news');
-    pll_register_string('prognoz', 'Be the first to know the results of all football matches on our page with', 'pm-news');
-    pll_register_string('prognoz-live', 'Live-результатами', 'pm-news');
     pll_register_string('youtube-link', 'More videos', 'pm-news');
     pll_register_string('bread-main', 'Sports news', 'pm-news');
     pll_register_string('404-text', 'Unfortunately, something went wrong, and the page could not be found. Please, go to the main page.', 'pm-news');

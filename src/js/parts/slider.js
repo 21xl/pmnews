@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var heroSwiper = new Swiper(heroSwiperEl, {
       loop: true,
       watchSlidesProgress: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 4000,
+      //   disableOnInteraction: false,
+      // },
       navigation: {
         nextEl: ".hero__navigation-next",
         prevEl: ".hero__navigation-prev",

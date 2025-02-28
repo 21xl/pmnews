@@ -135,6 +135,7 @@
         border: 0.063rem solid #65646e;
         background: linear-gradient(94.84deg, rgba(255, 255, 255, 0.15) 0%, rgba(229, 229, 229, 0.15) 102.26%);
         transition: color 0.3s ease;
+        position: relative;
 
         @include media(mobile) {
             width: 100%;
