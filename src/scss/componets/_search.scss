@@ -51,7 +51,7 @@
         font-weight: 400;
         transition: 0.4s;
         margin-left: 3rem;
-        color: $black;
+        color: $gray_3;
         opacity: 0.8;
 
         @include media(mobile) {
@@ -129,7 +129,7 @@
             position: relative;
 
             &:hover {
-                background: $search_bg;
+                background: $blue_gray;
             }
 
             &::before {
@@ -304,7 +304,7 @@
         transition: 0.4s ease;
 
         &:hover {
-            background: $search_bg;
+            background: $blue_gray;
         }
 
         @include media(mobile) {
@@ -324,7 +324,7 @@
         font-size: 1.4rem;
         position: absolute;
         right: 0.5rem;
-        top: 46%;
+        top: 50%;
         transform: translateY(-50%);
     }
 
@@ -369,11 +369,11 @@
 
             &__category {
                 background: $black;
-            color: $yellow;
+                color: $yellow;
                 padding: 0.25rem 0.5rem;
                 border-radius: 1.5rem;
                 display: inline-block;
-          
+
                 font-weight: 700;
                 line-height: 0.916rem;
                 font-size: 0.75rem;
@@ -384,7 +384,7 @@
 
                 &:hover {
                     background: $yellow;
-                    color: $black; 
+                    color: $black;
                 }
             }
 
@@ -453,7 +453,7 @@
                 }
 
                 &:hover {
-                    background: $search_bg;
+                    background: $blue_gray;
 
                     &::before {
                         transform: rotate(-45deg);
@@ -489,7 +489,7 @@
             padding: 0.25rem 0.5rem;
             border-radius: 1.5rem;
             // display: inline-block;
-          
+
             font-weight: 700;
             line-height: 0.916rem;
             font-size: 0.75rem;
@@ -499,7 +499,7 @@
 
             &:hover {
                 background: $white;
-                
+
             }
         }
     }
@@ -536,7 +536,7 @@
 
         &--text {
             width: 17rem;
-            color: #7f8aa8;
+            color: $gray_3;
             font-weight: 500;
             font-size: 0.875rem;
             line-height: 1.068rem;
@@ -559,6 +559,7 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 4;
+
         @include media(mobile) {
             right: 1.7rem;
         }
@@ -583,6 +584,7 @@
             &:hover {
                 background: none !important;
             }
+
             a {
                 @include media(mobile) {
                     display: flex;
@@ -620,7 +622,7 @@
     .view-text {
         display: block;
         font-weight: 400;
-        color: #636f92;
+        color: $gray_3;
         font-size: 0.875rem;
         line-height: 1.044rem;
         margin-bottom: 0.5rem;
@@ -648,6 +650,7 @@
 
     &__absolute {
         border-top: 0.063rem solid $gray;
+        width: 99%;
         position: fixed;
         background: $white;
         z-index: 10;
@@ -656,7 +659,9 @@
         transform: translate(-50%, -4%);
         padding: 1rem;
         bottom: 0;
+
         @include media(mobile) {
+            width: 100%;
             bottom: 2rem;
             padding: 1rem 1rem 6rem 1rem;
         }
@@ -666,6 +671,9 @@
         max-height: 45rem;
         height: 100%;
         overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: $gray_3 $white;
+
         @include media(mobile) {
             max-height: 33rem;
         }
@@ -676,6 +684,7 @@
             max-height: 45rem;
         }
     }
+
     #recommendations-section {
         @include media(mobile) {
             padding-bottom: 7rem;
@@ -690,8 +699,9 @@
         width: 0.8rem;
         height: 0.8rem;
         z-index: 4;
-        filter: invert(1);
+        filter: brightness(0) saturate(100%) invert(76%) sepia(0%) saturate(1430%) hue-rotate(295deg) brightness(89%) contrast(85%);
         display: none;
+
         @include media(mobile) {
             display: block;
         }

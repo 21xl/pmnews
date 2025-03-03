@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var heroSwiper = new Swiper(heroSwiperEl, {
       loop: true,
       watchSlidesProgress: true,
-      // autoplay: {
-      //   delay: 4000,
-      //   disableOnInteraction: false,
-      // },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
       navigation: {
         nextEl: ".hero__navigation-next",
         prevEl: ".hero__navigation-prev",
@@ -177,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var recommendationSwiper = new Swiper(recommendationEl, {
       slidesPerView: 1,
       a11y: false,
-      spaceBetween:5,
       grid: {
         rows: 3,
         fill: "row",
@@ -201,31 +200,64 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Category slider
+ // Category slider
 var categorySliders = document.querySelectorAll(".category-slider__inner");
 
-categorySliders.forEach(function(categoryEl) {
-  var slides = categoryEl.querySelectorAll(".swiper-slide");
+categorySliders.forEach(function (categoryEl) {
+  var slides = Array.from(categoryEl.querySelectorAll(".swiper-slide"));
 
   if (slides.length > 15) {
-    slides.forEach(function (slide, index) {
-      if (index >= 15) {
-        slide.remove();
-      }
-    });
+    slides.slice(15).forEach(slide => slide.remove());
+    slides = slides.slice(0, 15);
   }
+
+  function reorderSlides(slides) {
+    let fragment = document.createDocumentFragment();
+    let newOrder = [];
+
+    if (window.innerWidth >= 542) {
+     
+      let oddSlides = [];
+      let evenSlides = [];
+
+      slides.forEach((slide, index) => {
+        if (index % 2 === 0) {
+          oddSlides.push(slide);
+        } else {
+          evenSlides.push(slide);
+        }
+      });
+
+      newOrder = [...oddSlides, ...evenSlides];
+
+    } else {
+    
+      let column1 = slides.slice(0, Math.ceil(slides.length / 2));  
+      let column2 = slides.slice(Math.ceil(slides.length / 2));  
+
+      for (let i = 0; i < column1.length; i++) {
+        if (column1[i]) newOrder.push(column1[i]);
+        if (column2[i]) newOrder.push(column2[i]);
+      }
+    }
+
+    newOrder.forEach(slide => fragment.appendChild(slide));
+    categoryEl.querySelector(".swiper-wrapper").appendChild(fragment);
+  }
+
+  reorderSlides(slides);  
 
   var paginationEl = categoryEl.querySelector(".category-slider__pagination");
   var nextEl = categoryEl.querySelector(".category-slider__next");
   var prevEl = categoryEl.querySelector(".category-slider__prev");
 
   function initializeSwiper() {
-    var categorySwiper = new Swiper(categoryEl, {
-      slidesPerView: window.innerWidth <= 542 ? 1 : 3,
-      spaceBetween: window.innerWidth <= 542 ? 5 : 20,
-        a11y: false,
+    return new Swiper(categoryEl, {
+      slidesPerView: window.innerWidth < 542 ? 1 : 3,
+      spaceBetween: window.innerWidth < 542 ? 5 : 20,
+      a11y: false,
       grid: {
-        rows: window.innerWidth <= 542 ? 6 : 2, 
+        rows: window.innerWidth < 542 ? 6 : 2,
         fill: "row",
       },
       pagination: paginationEl
@@ -241,20 +273,22 @@ categorySliders.forEach(function(categoryEl) {
           }
         : false,
       navigation: {
-        nextEl: nextEl ? nextEl : "",
-        prevEl: prevEl ? prevEl : "",
+        nextEl: nextEl || "",
+        prevEl: prevEl || "",
       },
-    });
-
-    window.addEventListener("resize", function () {
-      if (categorySwiper) {
-        categorySwiper.destroy(true, true);
-      }
-      initializeSwiper();
     });
   }
 
-  initializeSwiper();
+  var categorySwiper = initializeSwiper();
+
+  window.addEventListener("resize", function () {
+    if (categorySwiper) {
+      categorySwiper.destroy(true, true);
+    }
+
+    reorderSlides(slides); 
+    categorySwiper = initializeSwiper();
+  });
 });
 
 

@@ -72,11 +72,13 @@
     }
   }
 
-  &--white {
+  &--white { 
     background: $white;
 
     @include media(mobile) {
-      border-bottom: 0.063rem solid $border_2;
+      border-bottom: 0.063rem solid $border_3;
+      backdrop-filter: blur(2rem);
+
     }
 
     .header__burger {

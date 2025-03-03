@@ -26,7 +26,6 @@ function search_ajax_handler()
         's' => $query,
         'lang' => $current_lang,
         // 'fields' => 'ids',
-
     );
 
     $post_query = new WP_Query($post_args);

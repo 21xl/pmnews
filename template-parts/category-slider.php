@@ -14,7 +14,7 @@
 
 
                         $start_date = $selected_date . ' 00:00:00';
-                        $end_date = date('Y-m-d 23:59:59', strtotime("+2 days", strtotime($start_date)));
+                        $end_date = date('Y-m-d 23:59:59', strtotime("+1 days", strtotime($start_date)));
 
 
                         $args = [
