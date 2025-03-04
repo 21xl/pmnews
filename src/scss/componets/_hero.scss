@@ -188,6 +188,9 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 font-size: 1.4rem !important;
+                @include media(mobile) {
+                    font-size: 0.75rem !important;
+                   }
             }
         }
 
@@ -210,6 +213,10 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 font-size: 1.4rem !important;
+
+                @include media(mobile) {
+                    font-size: 0.75rem !important;
+                }
             }
         }
 
@@ -253,6 +260,7 @@
                 transition: all 0.5s ease-in-out;
                 @include media(mobile) {
                     width: 1.875rem;
+                    height: 0.125rem;
                 }
 
                 &::before {
@@ -269,6 +277,10 @@
                     width: 0;
                     height: 0.25rem;
                     transition: all 0.5s ease-in-out;
+
+                    @include media(mobile) {
+               height: 0.125rem;
+                    }
                 }
 
                 &::after {
@@ -285,6 +297,9 @@
                     opacity: 0.4;
                     border-radius: 6.25rem;
                     transition: all 0.5s ease-in-out;
+                    @include media(mobile) {
+                        height: 0.125rem;
+                             }
                 }
 
                 &:hover {

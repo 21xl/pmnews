@@ -132,21 +132,21 @@ table {
 
     tr {
         &:nth-child(even) {
-            background: rgba(237, 241, 245, 0.4);
+            background: $blue_gray;
         }
     }
 
     th,
     td {
         padding: 1rem 1.5rem;
-        border: 0.063rem solid $border_2;
+        border: 0.063rem solid #F0F1F4;
         border-collapse: collapse;
         white-space: nowrap;
     }
 
     thead {
         tr {
-            background: $gray;
+            background: $yellow;
         }
 
         th {

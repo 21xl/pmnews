@@ -7,7 +7,7 @@
   z-index: 10;
   transition: 0.4s ease;
   opacity: 1 !important;
-
+  
   @include media(mobile) {
     position: fixed;
     padding: 0.725rem 1rem;
