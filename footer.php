@@ -41,7 +41,7 @@ $full_logo = get_field('full_logo', 'options');
         <?php if (has_nav_menu('footer_menu_2')): ?>
             <div class="footer__column">
                 <span class="footer__title">
-                    <?php pll_e('Категории'); ?>
+                    <?php pll_e('Categories'); ?>
                 </span>
 
                 <?php wp_nav_menu(

@@ -7,7 +7,7 @@
   z-index: 10;
   transition: 0.4s ease;
   opacity: 1 !important;
-  
+
   @include media(mobile) {
     position: fixed;
     padding: 0.725rem 1rem;
@@ -72,7 +72,7 @@
     }
   }
 
-  &--white { 
+  &--white {
     background: $white;
 
     @include media(mobile) {
@@ -89,7 +89,7 @@
         max-height: 1px;
         width: 1rem;
       }
-      
+
     }
   }
 
@@ -102,22 +102,12 @@
   &__logo {
     &-mobile {
       display: none;
-      width: 4.574rem;
+      width: 7.313rem;
       height: 1.75rem;
       transition: 0.4s ease;
 
       @include media(mobile) {
         display: block;
-      }
-
-      .active {
-        fill: $black;
-      }
-      svg{
-        @include media(mobile) {
-         width: 100%;
-         height: 100%;
-        }
       }
     }
   }
@@ -156,7 +146,7 @@
 
     &.active span:nth-child(1) {
       transform: rotate(45deg) translate(-50%, -50%);
-      background-color: $black;
+      background-color: $white;
       margin: 0;
       width: 0.8rem;
       position: absolute;
@@ -171,7 +161,7 @@
 
     &.active span:nth-child(3) {
       transform: rotate(-48deg) translate(-50%, -50%);
-      background-color: $black;
+      background-color: $white;
       margin: 0;
       width: 0.8rem;
       position: absolute;
@@ -181,7 +171,7 @@
   }
 
   &__active {
-    background: $white;
+    background: $black;
 
     .header__buttons {
       display: none;
@@ -199,7 +189,7 @@
     top: 100%;
     left: -100%;
     right: 0;
-    background-color: $white;
+    background-color: $black;
     text-align: center;
     height: 105vh;
     padding: 1rem;
@@ -212,6 +202,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding: 1rem 0 11rem 0;
+
     @include media(mobile) {
       display: block;
     }
@@ -220,6 +211,7 @@
       display: block;
       opacity: 1;
       left: 0;
+
     }
 
     .aside__list {
@@ -234,7 +226,7 @@
       text-align: start;
       position: relative;
       font-size: 1rem;
-      color: $black;
+      color: $white;
       font-weight: 500;
       line-height: 1.221rem;
       padding: 0.75rem 1rem;
@@ -245,37 +237,52 @@
       display: flex;
       align-items: center;
 
-      > span,
+      >span,
       a {
         padding: 0;
       }
 
       &:hover {
-        background: $gray;
+        background: $yellow;
+      }
+
+      .menu-item__name {
+        color: $white;
       }
     }
-    .current-menu-parent{
+
+    .current-menu-parent {
       border-radius: $border_radius;
-      background: $gray;
-  }
-  
-  
-  .current-menu-item{
+      background: $yellow;
+
+      .menu-item__name {
+        color: $black;
+      }
+    }
+
+
+    .current-menu-item {
       border-radius: $border_radius;
-      background: $gray;
-  }
+      background: $yellow;
+
+    }
 
     .hover-name {
       display: none;
     }
 
-    .social-medias{
+    .social-medias {
       padding: .75rem 1rem;
     }
   }
 
   &__freez {
     overflow: hidden;
+
+    .progress-bar{
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   //MENU
@@ -302,7 +309,7 @@
     }
 
     .top-menu-nav {
-      + .header__button.button {
+      +.header__button.button {
         display: none;
         outline: none;
       }
@@ -493,11 +500,18 @@
       overflow: hidden;
     }
   }
+
   .menu-item__name {
     @include media(mobile) {
       font-size: 1rem;
     }
   }
 
- 
+  .menu-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+  }
+
+
 }

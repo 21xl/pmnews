@@ -6,20 +6,20 @@
     padding: 0;
 
     &__item {
-        color: rgba(7, 20, 36, 0.5);
+        color: $gray_3;
         padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
+        border-radius: 0.25rem; 
         text-transform: uppercase;
 
         a {
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
         }
 
         &--current {
-            background: $gray;
-            color: $black;
+            background: $gray_2;
+            color: #F0F1F4;
         }
     }
 }

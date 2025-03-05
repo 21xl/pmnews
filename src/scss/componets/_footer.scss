@@ -29,9 +29,9 @@
 
     &__logo {
         &--desktop {
-            width: 7.8rem;
-            height: 3rem;
-            margin-bottom: 2.688rem;
+            width: 10.5rem;
+            height: 2.5rem;
+            margin-bottom: 3.5rem;
 
             @include media(mobile) {
                 display: none;
@@ -39,9 +39,9 @@
         }
 
         &--mobile {
-            width: 5.2rem;
+            width: 7.313rem;
             display: none;
-            height: 2rem;
+            height: 1.75rem;
             margin-bottom: 0;
 
             @include media(mobile) {
@@ -57,31 +57,38 @@
     }
 
     &__text {
-        font-size: 1.125rem;
-        margin-bottom: 1.438rem;
+        font-size: 1rem;
+        color: #5A5B5C;
+        line-height: 1.177rem;
+        margin-bottom: 1.5rem;
 
         @include media(mobile) {
             font-size: 0.875rem;
-            margin-bottom: 1rem;
+            line-height: 1.03rem;
         }
     }
 
     &__copyright {
-        font-size: 1.125rem;
+        font-size: 1rem;
+        color: #5A5B5C;
+        line-height: 1.177rem;
 
         @include media(mobile) {
             font-size: 0.875rem;
+            line-height: 1.03rem;
         }
     }
 
     &__title {
         display: block;
         font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: 3.2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        line-height: 1.789rem;
 
         @include media(mobile) {
             font-size: 1.125rem;
+            line-height: 1.342rem;
             margin-bottom: 0.75rem;
         }
     }
@@ -105,16 +112,30 @@
 
         .menu-item {
             a {
+                font-weight: 500;
+                color: #5A5B5C;
                 font-size: 1.125rem;
+                line-height: 1.324rem;
                 transition: color 0.3s ease-in;
 
                 &:hover {
-                    color: $yellow;
+                    color: $black;
                 }
 
                 @include media(mobile) {
                     font-size: 0.875rem;
+                    line-height: 1.03rem;
                 }
+            }
+        }
+    }
+
+    .social-medias{
+
+        &__icon{
+            filter: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(3551%) hue-rotate(291deg) brightness(88%) contrast(74%);
+            &:hover{
+                filter: brightness(0) saturate(100%) invert(0%) sepia(2%) saturate(6012%) hue-rotate(326deg) brightness(106%) contrast(88%);
             }
         }
     }

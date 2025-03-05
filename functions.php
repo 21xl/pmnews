@@ -172,3 +172,8 @@ require get_template_directory() . '/inc/ajax-sport-quiz.php';
 // require get_template_directory() . '/sport/translates-registration.php';
 // require get_template_directory() . '/sport/football/index.php';
 
+/**
+ * Convert images to webp
+ */
+require get_template_directory() . '/inc/webp-converter.php';
+

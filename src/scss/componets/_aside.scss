@@ -1,16 +1,20 @@
 .aside {
-    position: sticky;
-    top: 0;
-    left: 0;
+    // position: sticky;
+    // top: 0;
+    // left: 0;
+    top: auto;
+    left: auto;
+    position: relative;
     z-index: 20;
     width: 18.125rem;
-    padding: 1rem 0rem 2rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     transition:
         width 0.5s ease-in-out,
         padding 0.5s ease-in-out;
     background: $black;
     border-right: 0.063rem solid $black;
-    height: fit-content;
+    // height: fit-content;
+    height: auto;
 
     @include media(mobile) {
         display: none;
@@ -25,7 +29,7 @@
             transition: color 0.3s ease-in-out;
 
             &:hover {
-                color: $black;
+                color: #F0F1F4;
             }
         }
     }
@@ -38,6 +42,7 @@
         .menu-arrow {
             opacity: 0;
             width: 0;
+            display: none;
         }
 
         img {
@@ -57,11 +62,13 @@
         .menu-item__name {
             width: 0;
             opacity: 0;
+            display: none;
         }
 
         .aside__list li>.menu-item,
         .aside__list li>a {
             padding: 0.8rem;
+            justify-content: center;
         }
 
         .aside__nav {
@@ -73,7 +80,10 @@
     &__wrapper {
         display: flex;
         flex-direction: column;
-        position: relative;
+        // position: relative;
+        position: sticky;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
         max-height: 72rem;
@@ -93,7 +103,7 @@
         padding: 0.375rem;
         transition: all 0.5s ease-in-out;
         display: flex;
-        align-items: center; 
+        align-items: center;
         justify-content: center;
         width: 2.5rem;
         height: 2.5rem;
@@ -115,37 +125,41 @@
     }
 
     .logo {
-        width: 7.841rem;
-        height: 3rem;
+        width: 10.5rem;
+        height: 2.5rem;
         margin-bottom: 2rem;
-        margin-left: 1.2rem;
-        transition:
-            opacity 0.6s ease,
-            margin-bottom 0.6s ease,
-            margin-left 0.6s ease;
+        margin-left: 0;
+        transition: opacity 0.6s ease, visibility 0.6s ease, width 0.6s ease, height 0.6s ease,  margin-left 0.6s ease;
 
-        &.collapsed {
-            margin-left: 1rem;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
-        &>svg {
-            transition: opacity 0.6s ease;
+        &-small {
+            visibility: hidden;
+            opacity: 0;
+            display: none;
+        }
 
-            path {
-                transition: opacity 0.6s ease;
+        &.collapsed {
+            width: 100%;
+            height: 3rem;
+
+            .logo-full {
+                visibility: hidden;
+                opacity: 0;
+                display: none;
+            }
+
+            .logo-small {
+                visibility: visible;
                 opacity: 1;
-
-                &:nth-child(1),
-                &:nth-child(2) {
-                    opacity: 1;
-                }
+                display: block;
             }
         }
 
-        &.collapsed>svg path:nth-child(1),
-        &.collapsed>svg path:nth-child(2) {
-            opacity: 0;
-        }
     }
 
     &__banner {
@@ -182,6 +196,7 @@
         margin: 0;
         display: flex;
         flex-direction: column;
+        padding-left: 0;
 
         li {
             &>.menu-item {
@@ -239,6 +254,10 @@
                     background: $yellow;
                     color: $black;
 
+                    .menu-icon {
+                        filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+                    }
+
                     .menu-item__name {
                         color: $black !important;
                     }
@@ -280,6 +299,10 @@
                     @include media(mobile) {
                         width: 100%;
                     }
+                }
+
+                .current-menu-item a>.menu-item__name {
+                    color: $black;
                 }
             }
         }
@@ -428,7 +451,7 @@
             content: "";
             width: 95%;
             height: 0.063rem;
-            background: $border_2;
+            background: $gray_2;
             display: block;
             margin-bottom: 0.063rem;
         }
@@ -471,7 +494,11 @@
     .current-menu-item>.menu-item,
     .current-menu-item .menu-item>.menu-item__name {
         background: $yellow;
-        color: $black;
+        color: $black !important;
+
+        .menu-icon {
+            filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+        }
     }
 
     .current_page_item .menu-item .menu-item__name {
@@ -486,7 +513,7 @@
 
     }
 
-    li:has(.menu-arrow:hover) .menu-item {
+    li:has(.menu-arrow:hover) .current-menu-parent {
         background: $yellow;
         border-radius: $border_radius;
 
@@ -499,6 +526,10 @@
         }
     }
 
-
+    .menu-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        object-fit: contain;
+    }
 
 }
