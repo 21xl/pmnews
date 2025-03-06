@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
        
         var homePageUrl = window.location.origin;
         var text = window.location.href;
-        var copyText = `Источник: ${homePageUrl}\nСсылка: ${text}`;
+        var copyText = `Source: ${homePageUrl}\nLink: ${text}`;
         var dummy = document.createElement("textarea");
         
         document.body.appendChild(dummy);
