@@ -7,6 +7,7 @@ function translate_human_time_diff($from, $to)
         'hour' => array(pll__('hour'), pll__('hour'), pll__('hour')),
         'hours' => array(pll__('hours'), pll__('hours'), pll__('hours')),
         'min' => array(pll__('min'), pll__('min'), pll__('min')),
+        'minutes' => array(pll__('minutes'), pll__('minutes'), pll__('minutes')),
         'mins' => array(pll__('mins'), pll__('mins'), pll__('mins')),
         'day' => array(pll__('day'), pll__('day'), pll__('day')),
         'days' => array(pll__('days'), pll__('days'), pll__('days')),
