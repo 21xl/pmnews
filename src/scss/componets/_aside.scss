@@ -223,12 +223,24 @@
                     width: 98%;
                     color: $black;
 
+                    @include media(mobile) {
+                      background: none;
+                      color: $white;
+                    }
+
                     &>img {
                         filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+                        @include media(mobile) {
+                            filter: none;
+                          }
                     }
 
                     .menu-item__name {
                         color: $black;
+
+                        @include media(mobile) {
+                        color: $white !important;
+                          }
                     }
 
                     @include media(mobile) {
@@ -254,12 +266,31 @@
                     background: $yellow;
                     color: $black;
 
+                    @include media(mobile) {
+                        background: none;
+                        color: $white;
+                      }
+
                     .menu-icon {
                         filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+                        @include media(mobile) {
+                            filter: none;
+                          }
                     }
 
                     .menu-item__name {
                         color: $black !important;
+
+                        @include media(mobile) {
+                         color: $white !important;
+                          }
+                    }
+
+                    .menu-item-arrow-has-children{
+                        @include media(mobile) {
+                            filter: brightness(0) saturate(100%) invert(0%) sepia(98%) saturate(8%) hue-rotate(241deg) brightness(105%) contrast(100%);
+
+                        }
                     }
 
                     @include media(mobile) {
@@ -429,6 +460,10 @@
 
                 &:hover {
                     color: $black;
+
+                    @include media(mobile) {
+                        color: $white;
+                      }
                 }
             }
 
@@ -442,6 +477,9 @@
 
                 &:hover {
                     color: $black;
+                    @include media(mobile) {
+                        color: $black;
+                    }
                 }
             }
 
@@ -522,8 +560,10 @@
     .menu-item-has-children:hover {
         .menu-arrow {
             filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
+            @include media(mobile) {
+              filter: none;
+            }
         }
-
     }
 
     li:has(.menu-arrow:hover) .current-menu-parent {

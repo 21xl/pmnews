@@ -330,6 +330,10 @@
 
     &.collapsed {
         left: 12rem;
+
+        @include media(mobile) {
+           left: 0;
+        }
     }
 
     &__freeze {

@@ -203,13 +203,13 @@
             }
 
             &:hover {
-                border: 0.063rem solid $yellow;
+                border: 0.063rem solid #C7CC0C ;
             }
         }
-
+ 
         .current {
-            background: rgba(255, 0, 0, 0.1) !important;
-            border: 0.063rem solid transparent !important;
+            background: yellow !important;
+            border: 0.063rem solid #C7CC0C !important;
         }
 
         .pagination-prev {

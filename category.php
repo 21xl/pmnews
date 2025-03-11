@@ -89,7 +89,7 @@ $custom_title = get_field('custom_title', 'category_' . $category->term_id);
                                         <?php endwhile; ?>
                                     </div>
 
-                                    <?php if ($posts->max_num_pages >= 1): ?>
+                                    <?php if ($posts->have_posts() && $posts->max_num_pages > 1): ?>
                                         <div class="archive-grid__pagination">
                                             <?php $prev_link = get_previous_posts_link('<span class="pagination-prev"><svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.6504 13.9998L16.9504 20.6998L23.6504 27.3998" stroke="#071424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>');
                                             $next_link = get_next_posts_link('<span class="pagination-next"><svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none"> <path d="M17.3496 26.998L24.0496 20.298L17.3496 13.598" stroke="#071424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>');
