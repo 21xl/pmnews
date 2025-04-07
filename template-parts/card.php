@@ -19,14 +19,13 @@
             </div>
         <?php endif; ?>
 
-        <div class="card__content">
+        <div class="card__content<?php echo (empty(get_the_tags()) ? ' card__content-empty' : ''); ?>">
+
             <div class="card__head">
                 <div class="card__date">
                     <?php echo esc_html(get_the_date('d.m.Y')); ?>
                 </div>
-
                 <span class="card__separator">•</span>
-
                 <span class="card__time">
                     <?php echo esc_html(get_reading_time()); ?>
                 </span>
@@ -46,7 +45,7 @@
     $post_tags = get_the_tags();
     if ($post_tags):
         shuffle($post_tags);
-        $random_tags = array_slice($post_tags, 0, 3);
+        $random_tags = array_slice($post_tags, 0, 2);
         ?>
         <div class="tags">
             <?php foreach ($random_tags as $tag): ?>

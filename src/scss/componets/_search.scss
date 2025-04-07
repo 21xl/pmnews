@@ -380,8 +380,11 @@
 
                 font-weight: 700;
                 line-height: 0.916rem;
-                font-size: 0.75rem;
-                width: fit-content;
+                font-size: 0.75rem;width: fit-content;
+                white-space: nowrap; 
+                overflow: hidden;   
+                text-overflow: ellipsis;  
+                max-width: 6.25rem;
                 transition:
                     background 0.5s ease-in-out,
                     color 0.5s ease-in-out;
@@ -488,8 +491,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #F1F4FE;
-            color: $gray_3;
+            background: $black;
+            color: $yellow;
             padding: 0.25rem 0.5rem;
             border-radius: 1.5rem;
             // display: inline-block;
@@ -502,8 +505,8 @@
                 color 0.5s ease-in-out;
 
             &:hover {
-                background: $white;
-
+                background: $yellow;
+color: $black;
             }
         }
     }

@@ -3,8 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: #00000080;
+  background: #0F0F0F80;
   z-index: 10;
+  backdrop-filter: blur(2rem);
   transition: 0.4s ease;
   opacity: 1 !important;
 
@@ -195,7 +196,8 @@
     right: 0;
     background-color: $black;
     text-align: center;
-    height: 105vh;
+    height: 107vh;
+    // height: 105vh;
     padding: 1rem;
     opacity: 0;
     transition:
@@ -510,7 +512,8 @@
       overflow-x: hidden;
       opacity: 1;
       height: 100%;
-      max-height: 70%;
+      // max-height: 70%;
+      max-height: 65%;
 
       a {
         padding: 0;

@@ -113,11 +113,14 @@
         gap: 0.25rem;
         position: absolute;
         top: 0.75rem;
-        left: 0.75rem;
+        left: 0.75rem;  
+          overflow: hidden;
+        height: 1.5rem;
 
         @include media(mobile) {
             position: static;
             padding: 0.75rem 0.75rem 0;
+            height: 2.2rem;
         }
     }
 

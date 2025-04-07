@@ -173,9 +173,10 @@ height: 100%;
             }
 
             .tags__item {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;   
+                 display: inline-block;
             }
         }
 

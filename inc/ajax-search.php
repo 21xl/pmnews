@@ -144,6 +144,35 @@ function search_ajax_handler()
     }
     wp_reset_postdata();
 
+    // Поиск по новостям
+    $total_news = count($results);
+    $display_total = ($total_news > 99) ? '99+' : $total_news;
+
+    if ($total_news > 0) {
+        $output .= '<p class="resluting-search__subtitle">' . esc_html(pll__('News')) . ' (' . esc_html($display_total) . ')</p>';
+        $output .= '<ul class="modal-search__news">';
+
+        $displayed_results = array_slice($results, 0, 5);
+
+        foreach ($displayed_results as $item) {
+            $output .= '<li>';
+
+            if (!empty($item['categories'])) {
+                $output .= '<div class="result-categories">' . wp_kses_post($item['categories']) . '</div>';
+                $link_class = 'outer-link';
+            } else {
+                $link_class = 'outer-link no-category';
+            }
+
+            $output .= '<a href="' . esc_url($item['url']) . '" class="' . esc_attr($link_class) . '">';
+            $output .= '<div class="search-result-item" data-title="' . esc_attr($item['title']) . '">' . esc_html($item['title']) . '</div>';
+            $output .= '</a>';
+            $output .= '</li>';
+        }
+
+        $output .= '</ul>';
+    }
+
     $search_query = '?s=' . urlencode($query);
     $view_all_url = home_url(($current_lang !== pll_default_language() ? "/$current_lang/" : '') . $search_query);
     $view_all_button = '<a href="' . esc_url($view_all_url) . '" class="view-all-results">' . esc_html(pll__('View all results')) . ' (' . $total_results . ')</a>';

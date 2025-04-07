@@ -168,6 +168,15 @@
             object-position: center;
             border-radius: $border-radius;
         }
+        .tags{
+            top: 0;
+
+            @include media(mobile) {
+                overflow: visible;
+            height: auto;
+            }
+           
+        }
     }
 
     &__author {

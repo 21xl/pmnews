@@ -77,7 +77,7 @@ if ($popularpost->have_posts()): ?>
 
                     <?php if (!empty($post_tags)):
                         shuffle($post_tags);
-                        $random_tags = array_slice($post_tags, 0, 3); ?>
+                        $random_tags = array_slice($post_tags, 0, 2); ?>
 
                         <div class="single__recommendation-tags">
                             <?php foreach ($random_tags as $tag): ?>

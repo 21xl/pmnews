@@ -4,6 +4,7 @@ get_template_part('head');
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+
 	<main>
 		<section class="error-page">
 			<div class="wrapper">

@@ -1,15 +1,19 @@
 .tags {
     position: absolute;
-    top: 0;
+    height: 3.5rem;
+    overflow: hidden;
+    top: 49%;
     left: 0;
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     gap: 0.5rem;
     padding: 1rem;
     width: 100%;
 
     @include media(mobile) {
         padding: 0.75rem;
+        height: 2.7rem;
         gap: 0.25rem;
     }
 
@@ -23,6 +27,13 @@
         transition: background 0.3s ease-in-out;
         border-radius: 1.5rem;
         white-space: nowrap;
+        width: fit-content;
+     //если шо дропать тут
+     max-width: 9.375rem;
+        white-space: nowrap;  
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        //если шо дропать тут
 
         @include media(mobile) {
             padding: 0.25rem 0.5rem;

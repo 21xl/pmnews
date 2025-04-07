@@ -39,7 +39,7 @@ if ($query->have_posts()): ?>
                             $post_tag = esc_html($categories[0]->name);
                             $category_link = get_term_link($categories[0]->term_id, 'category');
                         }
-                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium')[0];
+                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
                         $link = get_the_permalink();
                         $post_time = get_the_time('U');
                         $time = translate_human_time_diff($post_time, $current_time);

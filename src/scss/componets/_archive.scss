@@ -37,6 +37,10 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+
+        @include media(mobile) {
+            gap: 1.25rem;
+        }
     }
 
     &__top {
@@ -63,6 +67,12 @@
             }
 
             .card {
+                .tags {
+                    @include media(mobile) {
+                        height: 2.2rem;
+                    }
+                }
+
                 &:nth-child(1) {
                     grid-column: 1 / 4;
 
@@ -71,15 +81,23 @@
                     }
 
                     .tags {
-                        width: 50%;
+                        width: fit-content;
+                        height: 4rem;
+                        overflow: hidden;
+                        left: 50%;
+                        top: 0.5rem;
 
                         @include media(mobile) {
                             width: 100%;
+                            height: 2.2rem;
+                            left: 0;
+                            top: 47%;
                         }
                     }
 
                     .card__link {
                         flex-direction: row;
+
                         @include media(mobile) {
                             flex-direction: column;
                         }
@@ -88,17 +106,37 @@
                     .card__img {
                         width: 50%;
                         height: 100%;
+
                         @include media(mobile) {
                             width: 100%;
                         }
                     }
 
-                    .card__content {
-                        padding: 1.5rem;
-                        width: 50%;
+                    .card__title{
+
                         @include media(mobile) {
-                            padding: 0.75rem;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            line-clamp: 2;
+                        }
+                        
+                    }
+
+                    .card__content {
+                        padding: 4.5rem 1.5rem 1.5rem;
+                        width: 50%;
+
+                        @include media(mobile) {
+                            padding: 3rem 0.75rem 0.75rem;
                             width: 100%;
+                        }
+                    }
+
+                    .card__desc {
+                        p {
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            line-clamp: 2;
                         }
                     }
                 }
@@ -122,6 +160,13 @@
         }
 
         .card {
+
+            .tags {
+                @include media(mobile) {
+                    height: 2.2rem;
+                }
+            }
+
             &:nth-child(1) {
                 @include media(mobile) {
                     display: flex;
@@ -200,13 +245,14 @@
                 height: 2rem;
                 font-size: 1rem;
                 padding: 0.6rem;
+                border-radius: 0.5rem;
             }
 
             &:hover {
-                border: 0.063rem solid #C7CC0C ;
+                border: 0.063rem solid #C7CC0C;
             }
         }
- 
+
         .current {
             background: yellow !important;
             border: 0.063rem solid #C7CC0C !important;
