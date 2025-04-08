@@ -16,8 +16,8 @@ if (!empty($seo_title)) {
     $title = get_the_title();
 }
 
-$custom_meta_title = $title . ': Матчи на сегодня в Live';
-$custom_meta_description = 'Следите за матчами ' . $title . ' в Live сегодня. Узнайте результаты и события игр в режиме реального времени!';
+$custom_meta_title = $title . ': Live matches for today';
+$custom_meta_description = 'Follow the matches ' . $title . ' in Live today. Find out the results and events of the games in real time!';
 get_template_part('head');
 $banner = get_field('ad_statistics', 'option');
 $ad = get_field('ad_category', 'options');
@@ -34,11 +34,11 @@ $ad = get_field('ad_category', 'options');
                 <section class="statistics">
                     <div class="statistics__wrapper wrapper">
                         <span class="statistics__title">
-                            <?php pll_e('Статистика'); ?>
+                            <?php pll_e('Statistics'); ?>
                         </span>
 
                         <div class="statistics__mobile-sidebar">
-                            <span>Все лиги</span>
+                            <span>All leagues</span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>

@@ -446,5 +446,5 @@ if ($country_data): ?>
     <?php
 
 else:
-    echo '<p>Данные о стране не найдены. Тест</p>';
+    echo '<p>Country data not found.</p>';
 endif;

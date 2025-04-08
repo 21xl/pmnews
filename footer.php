@@ -72,11 +72,10 @@ $full_logo = get_field('full_logo', 'options');
 <?php wp_footer(); ?>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9QSKL6C" height="0" width="0"
-        style="display:none;visibility:hidden"></iframe>
-</noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7GX4L48" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 </body>
 
 </html>

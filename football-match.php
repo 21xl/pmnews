@@ -42,11 +42,11 @@ $ad = get_field('ad_category', 'options');
                 <section class="statistics">
                     <div class="statistics__wrapper wrapper">
                         <h2 class="statistics__title">
-                            <?php pll_e('Статистика'); ?>
+                            <?php pll_e('Statistics'); ?>
                         </h2>
 
                         <div class="statistics__mobile-sidebar">
-                            Все лиги
+                            All leagues
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>

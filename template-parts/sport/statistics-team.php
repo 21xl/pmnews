@@ -134,7 +134,7 @@ if ($team_data): ?>
             <div class="matches" data-tab="sheduled">
 
                 <h1 class="statistics-competition__subtitle">
-                    <?php pll_e('Расписание матчей'); ?>
+                    <?php pll_e('Match Schedule'); ?>
                 </h1>
 
                 <div class="matches__head">

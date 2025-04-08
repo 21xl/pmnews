@@ -457,17 +457,17 @@ function get_brackets_with_relations($season_id)
     // Получить все матчи
     $matchups = [];
     if (!empty($round_ids)) {
-        error_log('Начало процесса: передан массив round_ids: ' . print_r($round_ids, true));
+
 
         // Получение матчей из wp_football_match_ups
         $query = sprintf(
             "SELECT * FROM wp_football_match_ups WHERE round_id IN (%s) ORDER BY number ASC",
             implode(',', array_map(fn($id) => "'" . esc_sql($id) . "'", $round_ids))
         );
-        error_log('SQL-запрос для wp_football_match_ups: ' . $query);
+
 
         $matchups = $wpdb->get_results($query);
-        error_log('Результат запроса wp_football_match_ups: ' . print_r($matchups, true));
+
 
         // Проверяем, что у нас есть данные
         if (!empty($matchups)) {

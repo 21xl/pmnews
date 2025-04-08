@@ -7,8 +7,8 @@ Template Post Type: Football
 global $custom_meta_title;
 global $custom_meta_description;
 
-$custom_meta_title = get_the_title() . ': Расписание игр и Календарь матчей';
-$custom_meta_description = 'Узнайте расписание игр и календарь матчей ' . get_the_title() . '. Не пропустите самые важные игры сезона! Следите за матчами легко и удобно.';
+$custom_meta_title = get_the_title() . ': Game Schedule and Match Calendar';
+$custom_meta_description = 'Find out the game schedule and match calendar ' . get_the_title() . '. Do not miss the most important games of the season! Follow the matches easily and conveniently.';
 
 global $robots;
 $robots = [
@@ -32,11 +32,11 @@ $ad = get_field('ad_category', 'options');
                 <section class="statistics">
                     <div class="statistics__wrapper wrapper">
                         <h2 class="statistics__title">
-                            <?php pll_e('Статистика'); ?>
+                            <?php pll_e('Statistics'); ?>
                         </h2>
 
                         <div class="statistics__mobile-sidebar">
-                            <span> Все лиги</span>
+                            <span>All leagues</span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>

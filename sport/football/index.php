@@ -1,7 +1,7 @@
 <?php
 /**
  * Football Custom Post Type.
- * */
+ */
 
 require_once __DIR__ . '/inc/post-type-football.php';
 

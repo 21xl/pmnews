@@ -97,7 +97,7 @@ if ($competition_data): ?>
 
                 <?php if ($team_logo && $team_name): ?>
                     <div class="statistics-competition__winner">
-                        <span class="statistics-competition__winner-text"><?php pll_e('Победитель турнира'); ?>:</span>
+                        <span class="statistics-competition__winner-text"><?php pll_e('Winner of the tournament'); ?>:</span>
 
                         <div class="statistics-competition__winner-img">
                             <img src="<?= esc_url($team_logo); ?>" alt="<?php echo $team_name ?>">
@@ -114,7 +114,7 @@ if ($competition_data): ?>
             <div class="matches">
 
                 <h1 class="statistics-competition__subtitle">
-                    <?php pll_e('Live матчи'); ?> -
+                    <?php pll_e('Live matches'); ?> -
                     <?php echo esc_html($title); ?>
                 </h1>
 
@@ -546,6 +546,6 @@ if ($competition_data): ?>
     <?php
 
 else:
-    echo '<p>Данные о стране не найдены.</p>';
+    echo '<p>Country data not found.</p>';
 endif;
 ?>

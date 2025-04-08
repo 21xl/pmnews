@@ -3,7 +3,7 @@ function add_custom_football_menu()
 {
     add_menu_page(
         'Футбол и Букмекерские конторы', // Заголовок страницы
-        'Футбол',           // Имя пункта меню
+        'Football',           // Имя пункта меню
         'manage_options',   // Необходимые права доступа
         'football_menu',    // Идентификатор меню
         '',                 // Callback-функция (оставляем пустым)
@@ -16,8 +16,8 @@ add_action('admin_menu', 'add_custom_football_menu');
 function register_football_post_type()
 {
     $labels = [
-        'name' => 'Футбол',
-        'singular_name' => 'Футбол',
+        'name' => 'Football',
+        'singular_name' => 'Football',
         'add_new' => 'Добавить соревнование',
         'add_new_item' => 'Добавить новое соревнование',
         'edit_item' => 'Редактировать соревнование',
@@ -177,7 +177,7 @@ function remove_post_id_from_custom_tables($post_id)
 
         // Если это категория, удаляем связь с таблицей wp_sport_category_data
         if ($category_id) {
-            error_log("Кат ID: {$category_id}");
+
             $wpdb->update(
                 'wp_sport_category_data',
                 ['post_id' => null], // Удаляем связь с постом
@@ -189,7 +189,7 @@ function remove_post_id_from_custom_tables($post_id)
 
         // Если это страна, удаляем связь с таблицей wp_sport_country_data
         if ($country_id) {
-            error_log("Стр ID: {$country_id}");
+
             $wpdb->update(
                 'wp_sport_country_data',
                 ['post_id' => null], // Удаляем связь с постом
@@ -201,7 +201,7 @@ function remove_post_id_from_custom_tables($post_id)
 
         // Если это соревнование, удаляем связь с таблицей wp_sport_competitions
         if ($competition_id) {
-            error_log("Комп ID: {$competition_id}");
+
             $wpdb->update(
                 'wp_sport_competitions',
                 ['post_id' => null], // Удаляем связь с постом
@@ -346,23 +346,22 @@ function add_match_query_vars($vars)
 }
 add_filter('query_vars', 'add_match_query_vars');
 
-function match_template_loader($template)
+function football_match_template_loader($template)
 {
     $custom_page = get_query_var('custom_page');
     $match_id = get_query_var('match_id');
+    $post_type = get_query_var('post_type');
 
-    // Проверяем, что страница — match и передан match_id
-    if ($custom_page === 'match' && !empty($match_id)) {
-        $custom_template = locate_template('football-match.php'); // Путь к вашему шаблону
+    if ($custom_page === 'match' && !empty($match_id) && $post_type === 'football') {
+        $custom_template = locate_template('football-match.php');
         if ($custom_template) {
             return $custom_template;
         }
     }
 
-    return $template; // Возвращаем стандартный шаблон
+    return $template; // Возвращаем стандартный шаблон, если условия не выполнены
 }
-
-add_filter('template_include', 'match_template_loader');
+add_filter('template_include', 'football_match_template_loader');
 
 
 // Регистрация кастомного посттайпа "Букмекерские конторы"
@@ -725,9 +724,9 @@ function update_related_data_on_post_update($post_id, $post, $update)
             ['%s']
         );
         if ($updated !== false) {
-            error_log("Название соревнования с ID {$competition_id} обновлено на '{$new_name_ru}'.");
+
         } else {
-            error_log("Ошибка обновления названия соревнования с ID {$competition_id}.");
+
         }
     }
 
@@ -742,9 +741,9 @@ function update_related_data_on_post_update($post_id, $post, $update)
             ['%s']
         );
         if ($updated !== false) {
-            error_log("Название страны с ID {$country_id} обновлено на '{$new_name_ru}'.");
+
         } else {
-            error_log("Ошибка обновления названия страны с ID {$country_id}.");
+
         }
     }
 
@@ -759,9 +758,9 @@ function update_related_data_on_post_update($post_id, $post, $update)
             ['%s']
         );
         if ($updated !== false) {
-            error_log("Название категории с ID {$category_id} обновлено на '{$new_name_ru}'.");
+
         } else {
-            error_log("Ошибка обновления названия категории с ID {$category_id}.");
+
         }
     }
 }
@@ -796,9 +795,9 @@ function update_team_name_on_post_update($post_id, $post, $update)
         );
 
         if ($updated !== false) {
-            error_log("Название команды с ID {$team_id} обновлено на '{$new_name_ru}'.");
+
         } else {
-            error_log("Ошибка обновления названия команды с ID {$team_id}.");
+
         }
     }
 }

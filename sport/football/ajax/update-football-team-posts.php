@@ -31,14 +31,14 @@ function create_teams_posts()
     ");
 
     if (empty($teams)) {
-        error_log("Нет новых команд для создания постов.");
+
         wp_send_json_error('Нет новых команд для создания постов.');
     }
 
     $teams_count = count($teams);
 
     // Запись в лог
-    error_log("Количество найденных новых команд: " . $teams_count);
+
 
     $posts_created = false;
     $created_count = 0;

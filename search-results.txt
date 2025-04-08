@@ -184,7 +184,7 @@ $banner = get_field('ad_single', 'option');
 							$search_results_posts = new WP_Query($args);
 
 							if ($search_results_posts->have_posts()) {
-								echo '<p class="resluting-search__subtitle">' . pll__('Новости') . ' (' . $search_results_posts->found_posts . ')</p>';
+								echo '<p class="resluting-search__subtitle">' . pll__('News') . ' (' . $search_results_posts->found_posts . ')</p>';
 								echo '<ul class="resluting-search__news">';
 
 								$post_count = 0;

@@ -1,0 +1,19 @@
+<ul class="statistics-sidebar__submenu">
+	{{#each competitions}}
+	<li class="statistics-sidebar__submenu-item">
+		<a href="/statistics/tennis/{{this.category.slug}}/{{this.slug}}/" class="statistics-sidebar__item-link">
+			<span class="statistics-sidebar__submenu-name">{{getLocalizedName this.names}}</span>
+		</a>
+
+		<span class="pin {{isPinnedClass this.pinned}}" data-competition_id="{{this.id}}">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+				<path fill-rule="evenodd" clip-rule="evenodd"
+					d="M12.5576 4.39259L15.6069 7.44185C15.8908 7.7258 16.0325 8.1221 15.993 8.52171C15.9534 8.92132 15.7367 9.28214 15.4026 9.50489L13.1731 10.9913C12.8956 11.1762 12.6971 11.4579 12.6162 11.7814L11.6886 15.4918C11.63 15.7261 11.45 15.9107 11.2173 15.9752C10.9846 16.0396 10.7353 15.9739 10.5645 15.8032L4.1963 9.43495C4.02558 9.26422 3.95988 9.01485 4.02433 8.78216C4.08879 8.54948 4.27342 8.36945 4.50766 8.31089L8.21807 7.38327C8.54155 7.3024 8.82327 7.10386 9.00823 6.82643L10.4946 4.59688C10.7173 4.26275 11.0782 4.0461 11.4778 4.00653C11.8774 3.96696 12.2737 4.10864 12.5576 4.39259Z"
+					stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M4 15.9981L7.38087 12.6172" stroke-width="1.5" stroke-linecap="round"
+					stroke-linejoin="round" />
+			</svg>
+		</span>
+	</li>
+	{{/each}}
+</ul>

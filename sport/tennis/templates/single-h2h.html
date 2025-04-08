@@ -1,0 +1,574 @@
+<div class="schedule__tabs tabs">
+	<div class="tabs__list">
+		<div class="tabs__item" data-ground="0">{{t 'All surfaces'}}</div>
+		{{#each groundIds}}
+		<div class="tabs__item" data-ground="{{this}}">{{groundSurface this}}</div>
+		{{/each}}
+	</div>
+</div>
+
+<div class="tabs__content">
+	{{#if (hasElements h2hHome)}}
+	<div class="tabs__content-item active" data-status="review">
+		<div class="matches-tennis__ligue">
+			<div class="matches-tennis__ligue-head">
+				<div class="matches-tennis__ligue-block">
+					<div class="matches-tennis__ligue-img">
+						{{#if home.country.logo}}
+						<img src="{{home.country.logo}}" alt="{{getLocalizedName home.names}}" />
+						{{else}}
+						<img src="../../src/img/world.svg" />
+						{{/if}}
+					</div>
+
+					<div class="matches-tennis__ligue-title">
+						<div class="matches-tennis__ligue-category">
+							<span>{{getLocalizedName home.names}}</span>
+							<span class="colon">:</span>
+							<span class="matches-tennis__ligue-category--last">{{t 'Last games'}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="matches-tennis__ligue-content" data-type="home">
+				{{#each h2hHome}}
+				<a href="/statistics/tennis/match/{{this.id}}/" class="home-show-more {{showMore @index}}">
+					<div class="matches-tennis__item matches-tennis__item--h2h {{statusClass status_id}}" data-match_id="{{id}}">
+						<div class="matches-tennis__item-block">
+							<div class="matches-tennis__item-fav" onclick="event.stopPropagation();">
+								<div class="fav addfav">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M9.82028 2.77976C9.89346 2.6304 10.1064 2.63042 10.1795 2.77978L12.3994 7.3127C12.4284 7.37188 12.4847 7.41299 12.5499 7.4226L17.5184 8.15443C17.6819 8.17851 17.7473 8.37927 17.6293 8.49503L14.0329 12.0249C13.9861 12.0707 13.9648 12.1366 13.9758 12.2012L14.8243 17.1859C14.8521 17.3495 14.6801 17.4739 14.5334 17.3962L10.0936 15.0435C10.035 15.0125 9.96485 15.0125 9.90628 15.0435L5.4664 17.3962C5.31976 17.4739 5.14774 17.3495 5.17559 17.1859L6.02404 12.2012C6.03503 12.1366 6.01371 12.0707 5.96697 12.0249L2.37051 8.49503C2.25256 8.37926 2.31795 8.17851 2.48146 8.15442L7.44911 7.4226C7.5143 7.41299 7.57058 7.37189 7.59957 7.31272L9.82028 2.77976Z"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</div>
+							</div>
+
+							<div class="matches-tennis__item-time">{{{matchTimeOrBreakSingle this}}}</div>
+
+							<div class="matches-tennis__item-rivals">
+								<!-- Домашняя команда -->
+								<div
+									class="matches-tennis__item-team {{isBall serving_side 1}} {{winnerClass this.scores.ft.[0] this.scores.ft.[1]}}"
+								>
+									<div class="matches-tennis__item-team-block-pair">
+										{{#if (hasSubs this.homeTeam.subs)}}
+										<!-- Если есть subs (двойная команда) -->
+										{{#each this.homeTeam.subs}}
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.country.logo}}
+												<img src="{{this.country.logo}}" alt="{{getLocalizedName this.names}}" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.names}}</span>
+										</div>
+										{{/each}} {{else}}
+										<!-- Если нет subs (одиночная команда) -->
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.homeTeam.country.logo}}
+												<img src="{{this.homeTeam.country.logo}}" alt="{{getLocalizedName this.homeTeam.names}}" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.homeTeam.names}}</span>
+										</div>
+										{{/if}}
+									</div>
+
+									<div class="matches-tennis__item-team-block">
+										<div class="matches-tennis__item-set">
+											<span>{{t 'set'}}</span>
+										</div>
+										<div class="matches-tennis__item-ball">
+											<span></span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Гостевая команда -->
+								<div
+									class="matches-tennis__item-team {{isBall serving_side 2}} {{winnerClass this.scores.ft.[1] this.scores.ft.[0]}}"
+								>
+									<div class="matches-tennis__item-team-block-pair">
+										{{#if (hasSubs this.awayTeam.subs)}}
+										<!-- Если есть subs (двойная команда) -->
+										{{#each this.awayTeam.subs}}
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.country.logo}}
+												<img src="{{this.country.logo}}" alt="" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.names}}</span>
+										</div>
+										{{/each}} {{else}}
+										<!-- Если нет subs (одиночная команда) -->
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.awayTeam.country.logo}}
+												<img src="{{this.awayTeam.country.logo}}" alt="" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.awayTeam.names}}</span>
+										</div>
+										{{/if}}
+									</div>
+
+									<div class="matches-tennis__item-team-block">
+										<div class="matches-tennis__item-set">
+											<span>{{t 'set'}}</span>
+										</div>
+										<div class="matches-tennis__item-ball">
+											<span></span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="matches-tennis__item-score-list">
+								<div class="matches-tennis__item-score-item matches-tennis__item-score-item--home">
+									<div class="matches-tennis__item-score-total">
+										{{#if (isMatchLive status_id)}}
+										<span>{{scores.ft.[0]}}</span>
+										{{else if (isMatchEnded status_id)}}
+										<span>{{scores.ft.[0]}}</span>
+										{{else }}
+										<span>-</span>
+										{{/if}}
+									</div>
+									{{#each scores}} {{#if (hasP @key)}}
+									<span class="matches-tennis__item-score-span">
+										{{this.[0]}}
+										<span>{{extra @key 0 ../scores}}</span>
+									</span>
+									{{/if}} {{/each}}
+								</div>
+								<div class="matches-tennis__item-score-item matches-tennis__item-score-item--away">
+									<div class="matches-tennis__item-score-total">
+										{{#if (isMatchLive status_id)}}
+										<span>{{scores.ft.[1]}}</span>
+										{{else if (isMatchEnded status_id)}}
+										<span>{{scores.ft.[1]}}</span>
+										{{else }}
+										<span>-</span>
+										{{/if}}
+									</div>
+									{{#each scores}} {{#if (hasP @key)}}
+									<span class="matches-tennis__item-score-span">
+										{{this.[1]}}
+										<span>{{extra @key 1 ../scores}}</span>
+									</span>
+									{{/if}} {{/each}}
+								</div>
+							</div>
+
+							<div class="matches-tennis__item-score-now">
+								{{#if (isMatchLive status_id)}}
+								<span>{{or scores.pt.[0] 0}}</span>
+								<span>{{or scores.pt.[1] 0}}</span>
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="matches-tennis__item-block-2">
+							<div class="matches-tennis__item-time matches-tennis__item-time--ended">
+								{{finishedMatchTimeSingle this}}
+							</div>
+							<div class="matches-tennis__item-point form-icons">
+								<span class="{{this.result}}"></span>
+							</div>
+						</div>
+					</div>
+				</a>
+
+				{{/each}}
+				<div class="show-more" data-type="home">{{t 'Show more'}}</div>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+
+	<!-- Навыезд команда -->
+	{{#if (hasElements h2hAway)}}
+	<div class="tabs__content-item active" data-status="review">
+		<div class="matches-tennis__ligue">
+			<div class="matches-tennis__ligue-head">
+				<div class="matches-tennis__ligue-block">
+					<div class="matches-tennis__ligue-img">
+						{{#if away.country.logo}}
+						<img src="{{away.country.logo}}" alt="{{getLocalizedName away.names}}" />
+						{{else}}
+						<img src="../../src/img/world.svg" />
+						{{/if}}
+					</div>
+
+					<div class="matches-tennis__ligue-title">
+						<div class="matches-tennis__ligue-category">
+							<span>{{getLocalizedName away.names}}</span>
+							<span class="colon">:</span>
+							<span class="matches-tennis__ligue-category--last">{{t 'Last games'}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="matches-tennis__ligue-content" data-type="away">
+				{{#each h2hAway}}
+				<a href="/statistics/tennis/match/{{this.id}}/" class="away-show-more {{showMore @index}}">
+					<div class="matches-tennis__item matches-tennis__item--h2h {{statusClass status_id}}" data-match_id="{{id}}">
+						<div class="matches-tennis__item-block">
+							<div class="matches-tennis__item-fav" onclick="event.stopPropagation();">
+								<div class="fav addfav">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M9.82028 2.77976C9.89346 2.6304 10.1064 2.63042 10.1795 2.77978L12.3994 7.3127C12.4284 7.37188 12.4847 7.41299 12.5499 7.4226L17.5184 8.15443C17.6819 8.17851 17.7473 8.37927 17.6293 8.49503L14.0329 12.0249C13.9861 12.0707 13.9648 12.1366 13.9758 12.2012L14.8243 17.1859C14.8521 17.3495 14.6801 17.4739 14.5334 17.3962L10.0936 15.0435C10.035 15.0125 9.96485 15.0125 9.90628 15.0435L5.4664 17.3962C5.31976 17.4739 5.14774 17.3495 5.17559 17.1859L6.02404 12.2012C6.03503 12.1366 6.01371 12.0707 5.96697 12.0249L2.37051 8.49503C2.25256 8.37926 2.31795 8.17851 2.48146 8.15442L7.44911 7.4226C7.5143 7.41299 7.57058 7.37189 7.59957 7.31272L9.82028 2.77976Z"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</div>
+							</div>
+
+							<div class="matches-tennis__item-time">{{{matchTimeOrBreakSingle this}}}</div>
+
+							<div class="matches-tennis__item-rivals">
+								<!-- Домашняя команда -->
+								<div
+									class="matches-tennis__item-team {{isBall serving_side 1}} {{winnerClass this.scores.ft.[0] this.scores.ft.[1]}}"
+								>
+									<div class="matches-tennis__item-team-block-pair">
+										{{#if (hasSubs this.homeTeam.subs)}}
+										<!-- Если есть subs (двойная команда) -->
+										{{#each this.homeTeam.subs}}
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.country.logo}}
+												<img src="{{this.country.logo}}" alt="{{getLocalizedName this.names}}" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.names}}</span>
+										</div>
+										{{/each}} {{else}}
+										<!-- Если нет subs (одиночная команда) -->
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.homeTeam.country.logo}}
+												<img src="{{this.homeTeam.country.logo}}" alt="{{getLocalizedName this.homeTeam.names}}" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.homeTeam.names}}</span>
+										</div>
+										{{/if}}
+									</div>
+
+									<div class="matches-tennis__item-team-block">
+										<div class="matches-tennis__item-set">
+											<span>{{t 'set'}}</span>
+										</div>
+										<div class="matches-tennis__item-ball">
+											<span></span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Гостевая команда -->
+								<div
+									class="matches-tennis__item-team {{isBall serving_side 2}} {{winnerClass this.scores.ft.[1] this.scores.ft.[0]}}"
+								>
+									<div class="matches-tennis__item-team-block-pair">
+										{{#if (hasSubs this.awayTeam.subs)}}
+										<!-- Если есть subs (двойная команда) -->
+										{{#each this.awayTeam.subs}}
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.country.logo}}
+												<img src="{{this.country.logo}}" alt="" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.names}}</span>
+										</div>
+										{{/each}} {{else}}
+										<!-- Если нет subs (одиночная команда) -->
+										<div class="matches-tennis__item-team-item">
+											<div class="matches-tennis__item-img">
+												{{#if this.awayTeam.country.logo}}
+												<img src="{{this.awayTeam.country.logo}}" alt="" />
+												{{else}}
+												<img src="../../src/img/world.svg" />
+												{{/if}}
+											</div>
+											<span>{{getLocalizedName this.awayTeam.names}}</span>
+										</div>
+										{{/if}}
+									</div>
+
+									<div class="matches-tennis__item-team-block">
+										<div class="matches-tennis__item-set">
+											<span>{{t 'set'}}</span>
+										</div>
+										<div class="matches-tennis__item-ball">
+											<span></span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="matches-tennis__item-score-list">
+								<div class="matches-tennis__item-score-item matches-tennis__item-score-item--home">
+									<div class="matches-tennis__item-score-total">
+										{{#if (isMatchLive status_id)}}
+										<span>{{scores.ft.[0]}}</span>
+										{{else if (isMatchEnded status_id)}}
+										<span>{{scores.ft.[0]}}</span>
+										{{else }}
+										<span>-</span>
+										{{/if}}
+									</div>
+									{{#each scores}} {{#if (hasP @key)}}
+									<span class="matches-tennis__item-score-span">
+										{{this.[0]}}
+										<span>{{extra @key 0 ../scores}}</span>
+									</span>
+									{{/if}} {{/each}}
+								</div>
+								<div class="matches-tennis__item-score-item matches-tennis__item-score-item--away">
+									<div class="matches-tennis__item-score-total">
+										{{#if (isMatchLive status_id)}}
+										<span>{{scores.ft.[1]}}</span>
+										{{else if (isMatchEnded status_id)}}
+										<span>{{scores.ft.[1]}}</span>
+										{{else }}
+										<span>-</span>
+										{{/if}}
+									</div>
+									{{#each scores}} {{#if (hasP @key)}}
+									<span class="matches-tennis__item-score-span">
+										{{this.[1]}}
+										<span>{{extra @key 1 ../scores}}</span>
+									</span>
+									{{/if}} {{/each}}
+								</div>
+							</div>
+
+							<div class="matches-tennis__item-score-now">
+								{{#if (isMatchLive status_id)}}
+								<span>{{or scores.pt.[0] 0}}</span>
+								<span>{{or scores.pt.[1] 0}}</span>
+								{{/if}}
+							</div>
+						</div>
+
+						<div class="matches-tennis__item-block-2">
+							<div class="matches-tennis__item-time matches-tennis__item-time--ended">
+								{{finishedMatchTimeSingle this}}
+							</div>
+							<div class="matches-tennis__item-point form-icons">
+								<span class="{{this.result}}"></span>
+							</div>
+						</div>
+					</div>
+				</a>
+
+				{{/each}}
+				<div class="show-more" data-type="away">{{t 'Show more'}}</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Очные -->
+	{{/if}} {{#if (hasElements h2h)}}
+	<div class="matches-tennis__ligue" data-status="review">
+		<div class="matches-tennis__ligue-head">
+			<div class="matches-tennis__ligue-block">
+				<div class="matches-tennis__ligue-title">
+					<div class="matches-tennis__ligue-category">
+						<span>{{t 'Face-to-face'}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{#each h2h}}
+		<div class="matches-tennis__ligue-content">
+			<a href="/statistics/tennis/match/{{this.id}}/">
+				<div class="matches-tennis__item matches-tennis__item--h2h {{statusClass status_id}}" data-match_id="{{id}}">
+					<div class="matches-tennis__item-block">
+						<div class="matches-tennis__item-fav" onclick="event.stopPropagation();">
+							<div class="fav addfav">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M9.82028 2.77976C9.89346 2.6304 10.1064 2.63042 10.1795 2.77978L12.3994 7.3127C12.4284 7.37188 12.4847 7.41299 12.5499 7.4226L17.5184 8.15443C17.6819 8.17851 17.7473 8.37927 17.6293 8.49503L14.0329 12.0249C13.9861 12.0707 13.9648 12.1366 13.9758 12.2012L14.8243 17.1859C14.8521 17.3495 14.6801 17.4739 14.5334 17.3962L10.0936 15.0435C10.035 15.0125 9.96485 15.0125 9.90628 15.0435L5.4664 17.3962C5.31976 17.4739 5.14774 17.3495 5.17559 17.1859L6.02404 12.2012C6.03503 12.1366 6.01371 12.0707 5.96697 12.0249L2.37051 8.49503C2.25256 8.37926 2.31795 8.17851 2.48146 8.15442L7.44911 7.4226C7.5143 7.41299 7.57058 7.37189 7.59957 7.31272L9.82028 2.77976Z"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</div>
+						</div>
+
+						<div class="matches-tennis__item-time">{{{matchTimeOrBreakSingle this}}}</div>
+
+						<div class="matches-tennis__item-rivals">
+							<!-- Домашняя команда -->
+							<div
+								class="matches-tennis__item-team {{isBall serving_side 1}} {{winnerClass this.scores.ft.[0] this.scores.ft.[1]}}"
+							>
+								<div class="matches-tennis__item-team-block-pair">
+									{{#if (hasSubs this.homeTeam.subs)}}
+									<!-- Если есть subs (двойная команда) -->
+									{{#each this.homeTeam.subs}}
+									<div class="matches-tennis__item-team-item">
+										<div class="matches-tennis__item-img">
+											{{#if this.country.logo}}
+											<img src="{{this.country.logo}}" alt="{{getLocalizedName this.names}}" />
+											{{else}}
+											<img src="../../src/img/world.svg" />
+											{{/if}}
+										</div>
+										<span>{{getLocalizedName this.names}}</span>
+									</div>
+									{{/each}} {{else}}
+									<!-- Если нет subs (одиночная команда) -->
+									<div class="matches-tennis__item-team-item">
+										<div class="matches-tennis__item-img">
+											{{#if this.homeTeam.country.logo}}
+											<img src="{{this.homeTeam.country.logo}}" alt="{{getLocalizedName this.homeTeam.names}}" />
+											{{else}}
+											<img src="../../src/img/world.svg" />
+											{{/if}}
+										</div>
+										<span>{{getLocalizedName this.homeTeam.names}}</span>
+									</div>
+									{{/if}}
+								</div>
+
+								<div class="matches-tennis__item-team-block">
+									<div class="matches-tennis__item-set">
+										<span>{{t 'set'}}</span>
+									</div>
+									<div class="matches-tennis__item-ball">
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Гостевая команда -->
+							<div
+								class="matches-tennis__item-team {{isBall serving_side 2}} {{winnerClass this.scores.ft.[1] this.scores.ft.[0]}}"
+							>
+								<div class="matches-tennis__item-team-block-pair">
+									{{#if (hasSubs this.awayTeam.subs)}}
+									<!-- Если есть subs (двойная команда) -->
+									{{#each this.awayTeam.subs}}
+									<div class="matches-tennis__item-team-item">
+										<div class="matches-tennis__item-img">
+											{{#if this.country.logo}}
+											<img src="{{this.country.logo}}" alt="" />
+											{{else}}
+											<img src="../../src/img/world.svg" />
+											{{/if}}
+										</div>
+										<span>{{getLocalizedName this.names}}</span>
+									</div>
+									{{/each}} {{else}}
+									<!-- Если нет subs (одиночная команда) -->
+									<div class="matches-tennis__item-team-item">
+										<div class="matches-tennis__item-img">
+											{{#if this.awayTeam.country.logo}}
+											<img src="{{this.awayTeam.country.logo}}" alt="" />
+											{{else}}
+											<img src="../../src/img/world.svg" />
+											{{/if}}
+										</div>
+										<span>{{getLocalizedName this.awayTeam.names}}</span>
+									</div>
+									{{/if}}
+								</div>
+
+								<div class="matches-tennis__item-team-block">
+									<div class="matches-tennis__item-set">
+										<span>{{t 'set'}}</span>
+									</div>
+									<div class="matches-tennis__item-ball">
+										<span></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="matches-tennis__item-score-list">
+							<div class="matches-tennis__item-score-item matches-tennis__item-score-item--home">
+								<div class="matches-tennis__item-score-total">
+									{{#if (isMatchLive status_id)}}
+									<span>{{scores.ft.[0]}}</span>
+									{{else if (isMatchEnded status_id)}}
+									<span>{{scores.ft.[0]}}</span>
+									{{else }}
+									<span>-</span>
+									{{/if}}
+								</div>
+								{{#each scores}} {{#if (hasP @key)}}
+								<span class="matches-tennis__item-score-span">
+									{{this.[0]}}
+									<span>{{extra @key 0 ../scores}}</span>
+								</span>
+								{{/if}} {{/each}}
+							</div>
+							<div class="matches-tennis__item-score-item matches-tennis__item-score-item--away">
+								<div class="matches-tennis__item-score-total">
+									{{#if (isMatchLive status_id)}}
+									<span>{{scores.ft.[1]}}</span>
+									{{else if (isMatchEnded status_id)}}
+									<span>{{scores.ft.[1]}}</span>
+									{{else }}
+									<span>-</span>
+									{{/if}}
+								</div>
+								{{#each scores}} {{#if (hasP @key)}}
+								<span class="matches-tennis__item-score-span">
+									{{this.[1]}}
+									<span>{{extra @key 1 ../scores}}</span>
+								</span>
+								{{/if}} {{/each}}
+							</div>
+						</div>
+
+						<div class="matches-tennis__item-score-now">
+							{{#if (isMatchLive status_id)}}
+							<span>{{or scores.pt.[0] 0}}</span>
+							<span>{{or scores.pt.[1] 0}}</span>
+							{{/if}}
+						</div>
+					</div>
+
+					<div class="matches-tennis__item-time matches-tennis__item-time--ended">{{finishedMatchTimeSingle this}}</div>
+				</div>
+			</a>
+		</div>
+		{{/each}}
+	</div>
+	{{/if}}
+</div>

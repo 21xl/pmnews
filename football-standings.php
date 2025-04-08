@@ -16,8 +16,8 @@ if (!empty($seo_title)) {
     $title = get_the_title();
 }
 
-$custom_meta_title = $title . ': Турнирная таблица';
-$custom_meta_description = 'Турнирная таблица ' . $title . ': актуальные позиции команд и статистика. Следите за изменениями в сезоне!';
+$custom_meta_title = $title . ': Tournament table';
+$custom_meta_description = 'Tournament table ' . $title . ': Current team positions and statistics. Follow the changes during the season!';
 get_template_part('head');
 $banner = get_field('ad_statistics', 'option');
 $ad = get_field('ad_category', 'options');
@@ -34,11 +34,11 @@ $ad = get_field('ad_category', 'options');
                 <section class="statistics">
                     <div class="statistics__wrapper wrapper">
                         <span class="statistics__title">
-                            <?php pll_e('Статистика'); ?>
+                            <?php pll_e('Statistics'); ?>
                         </span>
 
                         <div class="statistics__mobile-sidebar">
-                            <span>Все лиги</span>
+                            <span>All leagues</span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>

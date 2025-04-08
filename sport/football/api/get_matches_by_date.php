@@ -40,9 +40,6 @@ function get_matches_by_date($request)
     $start_timestamp = strtotime($date . ' 00:00:00') + $offset_in_seconds;
     $end_timestamp = strtotime($date . ' 23:59:59') + $offset_in_seconds;
 
-    error_log('Start Timestamp: ' . $start_timestamp);
-    error_log('End Timestamp: ' . $end_timestamp);
-
     // Проверяем тип даты: сегодня, будущее или прошлое
     $today = date('Y-m-d');
     $is_today = $today === $date;
@@ -180,6 +177,7 @@ function get_matches_by_date($request)
         $away_team = isset($teams_map[$match->away_team_id]) ? $teams_map[$match->away_team_id] : null;
 
         // Добавляем матч в соревнование
+        // Добавляем матч в соревнование
         $response[$competition_id]['matches'][] = array(
             'id' => $match->id,
             'season_id' => $match->season_id,
@@ -199,15 +197,15 @@ function get_matches_by_date($request)
             'referee_id' => $match->referee_id,
             'neutral' => $match->neutral,
             'note' => $match->note,
-            'home_scores' => json_decode($match->home_scores, true),
-            'away_scores' => json_decode($match->away_scores, true),
+            'home_scores' => $match->home_scores !== null ? json_decode($match->home_scores, true) : null,
+            'away_scores' => $match->away_scores !== null ? json_decode($match->away_scores, true) : null,
             'home_position' => $match->home_position,
             'away_position' => $match->away_position,
-            'coverage' => json_decode($match->coverage, true),
-            'round' => json_decode($match->round, true),
+            'coverage' => $match->coverage !== null ? json_decode($match->coverage, true) : null,
+            'round' => $match->round !== null ? json_decode($match->round, true) : null,
             'related_id' => $match->related_id,
-            'agg_score' => json_decode($match->agg_score, true),
-            'environment' => json_decode($match->environment, true),
+            'agg_score' => $match->agg_score !== null ? json_decode($match->agg_score, true) : null,
+            'environment' => $match->environment !== null ? json_decode($match->environment, true) : null,
             'updated_at' => $match->updated_at,
             'kickoff_timestamp' => $match->kickoff_timestamp,
         );

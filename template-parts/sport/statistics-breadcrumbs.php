@@ -4,7 +4,7 @@
 
             <a href="<?php echo home_url(); ?>" class="breadcrumbs__main">
                 <span>
-                    <?php pll_e("Главная") ?>
+                    <?php pll_e("Main page") ?>
                 </span>
             </a>
 
@@ -64,7 +64,7 @@
 
                 <a href="<?php echo esc_url($base_url); ?>" class="breadcrumbs__section">
                     <span>
-                        <?php echo (in_array($post_type, ['football', 'football_team'])) ? 'Футбол' : ucfirst($post_type); ?>
+                        <?php echo (in_array($post_type, ['football', 'football_team'])) ? 'Football' : ucfirst($post_type); ?>
                     </span>
                 </a>
 
@@ -99,7 +99,7 @@
                     </a>
 
                     <span class="breadcrumbs__current">
-                        матч
+                        match
                     </span>
                 <?php else: ?>
                     <span class="breadcrumbs__current">

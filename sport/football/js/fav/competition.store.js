@@ -99,33 +99,54 @@ class Store {
       data
         .map((competition) => ({
           ...competition,
-          matches: competition.matches.filter(statusFilter),
+          matches: competition.matches.filter((match) =>
+            statusFilter(match, competition.sportType)
+          ),
         }))
-        .filter((competition) => competition.matches.length > 0)
-        .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
+        .filter((competition) => competition.matches.length > 0);
 
     let filteredData;
 
     if (status === "live") {
-      filteredData = filterMatches(this.data, (match) =>
-        ["2", "3", "4", "5", "7"].includes(String(match.status_id))
-      );
+      filteredData = filterMatches(this.data, (match, sportType) => {
+        if (sportType === "tn") {
+          // Теннисные статусы для "live"
+          return ["3", "51", "52", "53", "54", "55"].includes(
+            String(match.status_id)
+          );
+        } else {
+          // Футбольные статусы для "live" (по умолчанию fb)
+          return ["2", "3", "4", "5", "7"].includes(String(match.status_id));
+        }
+      });
     } else if (status === "ended") {
-      filteredData = filterMatches(
-        this.data,
-        (match) => String(match.status_id) === "8"
-      );
+      filteredData = filterMatches(this.data, (match, sportType) => {
+        if (sportType === "tn") {
+          // Теннисный статус для "ended"
+          return String(match.status_id) === "100";
+        } else {
+          // Футбольный статус для "ended" (по умолчанию fb)
+          return String(match.status_id) === "8";
+        }
+      });
     } else if (status === "scheduled") {
-      filteredData = filterMatches(
-        this.data,
-        (match) => String(match.status_id) === "1"
-      );
+      filteredData = filterMatches(this.data, (match, sportType) => {
+        // Общий статус для "scheduled" (для обоих видов спорта)
+        return String(match.status_id) === "1";
+      });
     } else {
-      filteredData = filterMatches(
-        this.data,
-        (match) =>
-          String(match.status_id) !== "9" && String(match.status_id) !== "13"
-      );
+      // Для "all" исключаем определенные статусы
+      filteredData = filterMatches(this.data, (match, sportType) => {
+        if (sportType === "tn") {
+          // Теннисные статусы для исключения
+          return !["14", "15", "16", "17", "18", "19", "99"].includes(
+            String(match.status_id)
+          );
+        } else {
+          // Футбольные статусы для исключения (по умолчанию fb)
+          return !["9", "13"].includes(String(match.status_id));
+        }
+      });
     }
 
     return filteredData && filteredData.length > 0 ? filteredData : [];

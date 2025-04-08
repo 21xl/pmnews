@@ -43,7 +43,7 @@
 	</span>
 	<div class="match__review-main">
 		<span>{{Player incident.player_id}}</span>
-		<span class="match__review-brackets">(Пенальти)</span>
+		<span class="match__review-brackets">({{t 'penalty'}})</span>
 	</div>
 </div>
 {{/case}} {{#case 9}}
@@ -59,11 +59,11 @@
 </div>
 {{/case}} {{#case 11}}
 <div class="match__review-item match__review-time">
-	<span>2 тайм</span>
+	<span>2 {{t 'time'}}</span>
 </div>
 {{/case}} {{#case 999}}
 <div class="match__review-item match__review-time">
-	<span>1 тайм</span>
+	<span>1 {{'time'}}</span>
 </div>
 {{/case}} {{#case 16}}
 
@@ -73,7 +73,7 @@
 	<span class="match__review-block match__review-error"></span>
 	<div class="match__review-main">
 		<span>{{Player incident.player_id}}</span>
-		<span class="match__review-brackets">(Нереализованый пенальти)</span>
+		<span class="match__review-brackets">({{t 'Missed penalty'}})</span>
 	</div>
 </div>
 {{/case}} {{#case 17}}
@@ -86,7 +86,7 @@
 	</span>
 	<div class="match__review-main">
 		<span>{{Player incident.player_id}}</span>
-		<span class="match__review-brackets">(Автогол)</span>
+		<span class="match__review-brackets">({{t 'Own goal'}})</span>
 	</div>
 </div>
 {{/case}} {{#case 29}}
@@ -96,7 +96,7 @@
 	<span class="match__review-block match__review-goal"></span>
 	<div class="match__review-main">
 		<span>{{Player incident.player_id}}</span>
-		<span class="match__review-brackets">(Пенальти)</span>
+		<span class="match__review-brackets">({{t 'penalty'}})</span>
 	</div>
 </div>
 {{/case}} {{#case 30}}
@@ -106,11 +106,11 @@
 	<span class="match__review-block match__review-error"></span>
 	<div class="match__review-main">
 		<span>{{Player incident.player_id}}</span>
-		<span class="match__review-brackets">(Нереализованый пенальти)</span>
+		<span class="match__review-brackets">({{t 'Missed penalty'}})</span>
 	</div>
 </div>
 {{/case}} {{#case 33}}
 <div class="match__review-item match__review-time">
-	<span>Серия пенальти</span>
+	<span>{{t 'Penalty series'}}</span>
 </div>
 {{/case}} {{/switch}}

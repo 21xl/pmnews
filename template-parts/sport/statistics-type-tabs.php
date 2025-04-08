@@ -8,7 +8,7 @@
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/sport/src/img/tab-football.png'); ?>"
                     alt="Футбол">
             </div>
-            <span>Футбол</span>
+            <span>Football</span>
         </a>
 
         <!-- Избранное -->
@@ -16,9 +16,9 @@
             class="links__item <?php echo (strpos($_SERVER['REQUEST_URI'], '/statistics/favourites/') === 0 ? 'active' : ''); ?>">
             <div class="links__img">
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/sport/src/img/tab-fav.png'); ?>"
-                    alt="Избранное">
+                    alt="Favorites">
             </div>
-            <span>Избранное</span>
+            <span>Featured</span>
         </a>
 
         <!-- Теннис -->

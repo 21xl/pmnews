@@ -29,7 +29,7 @@ $ad = get_field('ad_category', 'options');
                         </div>
 
                         <div class="statistics__mobile-sidebar">
-                            <span>Все лиги</span>
+                            <span>All leagues</span>
                         </div>
 
                         <?php get_template_part('template-parts/sport-quiz') ?>

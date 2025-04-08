@@ -25,7 +25,9 @@
                 <div class="card__date">
                     <?php echo esc_html(get_the_date('d.m.Y')); ?>
                 </div>
+
                 <span class="card__separator">•</span>
+
                 <span class="card__time">
                     <?php echo esc_html(get_reading_time()); ?>
                 </span>

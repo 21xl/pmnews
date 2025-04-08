@@ -22,6 +22,11 @@
         border: 0.063rem solid #f9f9fb;
         border-radius: 0.75rem;
         overflow: hidden;
+        padding-bottom: 1.5rem;
+
+        @include media(mobile) {
+            padding-bottom: 0;
+        }
 
         &-item {
             display: flex;
@@ -234,6 +239,11 @@
             font-weight: 500;
             text-align: center;
 
+            @include media(mobile) {
+                max-width: 8.125rem;
+                width: fit-content;
+            }
+
             &.skeleton {
                 display: block;
                 width: 10rem;
@@ -361,6 +371,12 @@
         }
     }
 
+    &__h2h {
+        .matches__ligue-img {
+            border-radius: 50%;
+        }
+    }
+
     &.ended {
         .scoreboard__old-time {
             display: block;
@@ -373,20 +389,24 @@
 
         .scoreboard__minute {
             span {
+                text-align: center;
                 &:after {
                     opacity: 0;
                 }
             }
         }
+        .scoreboard__status {
+            display: none;
+        }
     }
 
     &.live {
         .scoreboard__minute {
-            background: $yellow;
+            background: $red;
             color: $white;
 
             span {
-                background: $yellow;
+                background: $red;
 
                 &:after {
                     content: "′";
@@ -404,11 +424,11 @@
 
     &.pause {
         .scoreboard__minute {
-            background: $yellow;
+            background: $red;
             color: $white;
 
             span {
-                background: $yellow;
+                background: $red;
             }
         }
     }
@@ -433,7 +453,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 3rem 1rem 1.88rem;
+        padding: 3rem 1rem 0rem;
         position: relative;
         border-radius: 0.75rem;
         background-position: center;
@@ -443,6 +463,7 @@
 
         @include media(mobile) {
             padding: 4rem 1rem 1.5rem;
+            position: relative;
         }
     }
 
@@ -451,21 +472,24 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
     }
 
     &__block {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 22rem;
+        gap: 1rem;
+        min-width: 22rem;
         padding: 0.5rem;
         border-radius: 5.5625rem;
         background: rgba(255, 255, 255, 0.12);
         backdrop-filter: blur(0.438rem);
+        margin-bottom: 1rem;
 
         @include media(mobile) {
-            width: 17.9rem;
+            min-width: 95%;
+            width: 95%;
+            gap: 0.5rem;
         }
     }
 
@@ -475,11 +499,11 @@
 
     &__logo {
         display: flex;
+        justify-content: center;
+        align-items: center;
         width: 5rem;
         height: 5rem;
         padding: 0.75rem;
-        justify-content: center;
-        align-items: center;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.1);
 
@@ -488,6 +512,60 @@
             height: 100%;
             object-fit: contain;
             border-radius: 50%;
+        }
+    }
+
+    &__logo-list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 10rem;
+        height: 5rem;
+        overflow: hidden;
+        border-radius: 62.5rem;
+        background: rgba(255, 255, 255, 0.1);
+
+        @include media(mobile) {
+            width: 6.5rem;
+            height: 3.75rem;
+        }
+
+        a {
+            width: 90%;
+            height: 90%;
+
+            &:first-child {
+                border-right: 0.063rem solid rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
+    &__logo-double {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+    }
+
+    &__logo-single {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
@@ -523,6 +601,11 @@
         background: transparent;
         transition: all 0.3s ease-in-out;
         margin-bottom: 0.25rem;
+        background: #ffffff1a;
+
+        @include media(mobile) {
+            min-width: 4.7rem;
+        }
 
         span {
             font-size: 0.875rem;
@@ -554,7 +637,7 @@
         align-items: center;
         position: relative;
         gap: 2rem;
-        width: 100%;
+        margin-bottom: 2rem;
         padding: 0 1rem;
 
         @include media(mobile) {
@@ -565,20 +648,25 @@
     }
 
     &__name {
+        max-width: 13rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         font-size: 1.125rem;
         font-weight: 700;
         color: $white;
         text-align: center;
-        min-width: 10rem;
 
         @include media(mobile) {
+            flex-direction: column;
             font-size: 0.875rem;
             max-width: 9rem;
-            min-width: fit-content;
             width: fit-content;
+            gap: 0.25rem;
         }
 
         span {
+            width: 100%;
             font-size: 1.125rem;
             font-weight: 700;
             color: $white;
@@ -597,6 +685,15 @@
 
         @include media(mobile) {
             font-size: 0.875rem;
+        }
+    }
+
+    &__slash {
+        font-size: 0.875rem;
+        color: $white;
+
+        @include media(mobile) {
+            display: none;
         }
     }
 
@@ -641,7 +738,7 @@
                 display: block;
                 width: 0.75rem;
                 height: 0.75rem;
-                background: $yellow;
+                background: $red;
                 border-radius: 50%;
                 animation: blink 2s infinite;
 
@@ -678,6 +775,60 @@
             }
         }
     }
+
+    &__status {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+
+        @include media(mobile) {
+            z-index: 9;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    &__ball {
+        border-radius: 1rem 1rem 0rem 0rem;
+        padding: 0.13rem 1rem;
+        background: red;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+
+        img {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+    }
+
+
+}
+
+.scoreboard--tennis {
+    .scoreboard__minute span:after {
+        content: none !important;
+    }
+
+    .scoreboard__minute {
+        text-align: center;
+    }
+    .scoreboard__wrapper:before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: linear-gradient(180deg, rgba(6, 27, 37, 0) 0%, rgba(6, 27, 37, 0.8) 100%);
+
+    }
 }
 
 @keyframes blink {
@@ -685,6 +836,7 @@
     100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }

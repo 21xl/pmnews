@@ -213,7 +213,7 @@ jQuery(document).ready(function ($) {
   const datePicker = document.querySelector(".date-picker");
   const displayElement = document.querySelector(".date-picker__display");
   const dateElement = document.querySelector(".date-picker__date");
-  const daysOfWeek = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   function formatDateDisplay(date) {
     const day = String(date.getDate()).padStart(2, "0");
@@ -346,7 +346,7 @@ jQuery(document).ready(function ($) {
 
   syncWithRealTime();
 
-  const socket = new WebSocket("wss://sync-stage.pm-news.kz");
+  const socket = new WebSocket("wss://sync-stage.sport-pulse.kz");
 
   socket.onopen = () => {};
 
@@ -650,19 +650,14 @@ jQuery(document).ready(function ($) {
       });
     }
 
-    return `${kickoffDate
-      .getDate()
+    return `${kickoffDate.getDate().toString().padStart(2, "0")}.${(
+      kickoffDate.getMonth() + 1
+    )
       .toString()
-      .padStart(
-        2,
-        "0"
-      )}.${(kickoffDate.getMonth() + 1).toString().padStart(2, "0")} ${kickoffDate.toLocaleTimeString(
-      [],
-      {
-        hour: "2-digit",
-        minute: "2-digit",
-      }
-    )}`;
+      .padStart(2, "0")} ${kickoffDate.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
   });
 
   Handlebars.registerHelper("matchTimeOrBreak", function (matchId) {

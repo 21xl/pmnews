@@ -95,19 +95,19 @@ switch ($status) {
         <div class="tabs__list">
             <?php if ($status !== 1 && !empty($match->incidents)): ?>
                 <div class="tabs__item active" data-status="review">
-                    <span><?php pll_e('Обзор') ?></span>
+                    <span><?php pll_e('Review') ?></span>
                 </div>
             <?php endif ?>
 
             <?php if ($status !== 8 && isset($odds)): ?>
                 <div class="tabs__item" data-status="odds">
-                    <span><?php pll_e('Коэфициенты') ?></span>
+                    <span><?php pll_e('Coefficients') ?></span>
                 </div>
             <?php endif ?>
 
             <?php if ($status !== 1 && $has_statistics): ?>
                 <div class="tabs__item" data-status="statistics">
-                    <span><?php pll_e('Статистика') ?></span>
+                    <span><?php pll_e('Statistics') ?></span>
                 </div>
             <?php endif; ?>
 
@@ -116,12 +116,12 @@ switch ($status) {
             </div>
 
             <div class="tabs__item" data-status="standings">
-                <span><?php pll_e('Турнирная таблица') ?></span>
+                <span><?php pll_e('Tournament table') ?></span>
             </div>
 
             <?php if ($lineup): ?>
                 <div class="tabs__item" data-status="squad">
-                    <span><?php pll_e('Состав') ?></span>
+                    <span><?php pll_e('Compound') ?></span>
                 </div>
             <?php endif ?>
         </div>

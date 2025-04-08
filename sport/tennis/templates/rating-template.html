@@ -1,0 +1,43 @@
+<div class="row result">
+	<div class="cell rating-number gray">{{ranking}}</div>
+	<div class="cell rating-player-row">
+		{{#if team.subs}}
+		<!-- Для двойных команд -->
+		{{#each team.subs}}
+		<div class="rating-name">
+			<div class="rating-flag">
+				<img src="{{this.country.logo}}" alt="{{getLocalizedName this.country.names}}" />
+			</div>
+			<a href="/statistics/tennis/player/{{this.slug}}/{{this.id}}/">
+				<span>{{getLocalizedName this.names}}</span>
+			</a>
+		</div>
+		{{/each}}
+		{{else}}
+		<!-- Для одиночных игроков -->
+		<div class="rating-name">
+			<div class="rating-flag">
+				<img src="{{team.country.logo}}" alt="{{getLocalizedName team.country.names}}" />
+			</div>
+			<a href="/statistics/tennis/player/{{team.slug}}/{{team.id}}/">
+				<span>{{getLocalizedName team.names}}</span>
+			</a>
+		</div>
+		{{/if}}
+	</div>
+
+	<div class="cell rating-country-row">
+		{{#if team.subs}}
+		<!-- Для двойных команд -->
+		{{#each team.subs}}
+		<div class="country-row">{{getLocalizedName this.country.names}}</div>
+		{{/each}}
+		{{else}}
+		<!-- Для одиночных игроков -->
+		<div class="rating-country">{{getLocalizedName team.country.names}}</div>
+		{{/if}}
+	</div>
+
+	<div class="cell rating-points">{{points}}</div>
+	<div class="cell rating-tournaments">{{tournamentCount}}</div>
+</div>

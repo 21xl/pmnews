@@ -40,8 +40,6 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    // overflow-x: hidden;
-    // overflow-y: visible;
   }
 
   &__ligue {
@@ -50,6 +48,7 @@
     width: 100%;
     border: 0.063rem solid $gray;
     border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
 
     &-head {
       display: flex;
@@ -92,6 +91,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      &--tennis {
+        border-radius: 0;
       }
     }
 
@@ -160,7 +163,6 @@
       display: flex;
       flex-direction: column;
       transition: all 0.3s ease-in-out;
-      // overflow: hidden;
       overflow-y: visible;
       a {
         border-bottom: 0.063rem solid $border_3;
@@ -331,6 +333,16 @@
       }
     }
 
+    &-team-block-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 0.44rem;
+
+      @include media(mobile) {
+        gap: 0.1rem;
+      }
+    }
+
     &-block-2 {
       display: flex;
       align-items: center;
@@ -409,6 +421,18 @@
         height: 1rem;
       }
 
+      &-block {
+        display: flex;
+        align-items: center;
+        gap: 0.31rem;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.31rem;
+      }
+
       span {
         transition: all 0.3s ease-in-out;
         color: $black;
@@ -417,9 +441,9 @@
         text-overflow: ellipsis;
         width: fit-content;
 
-        @include media(mobile) {
-          max-width: 13.75rem;
-        }
+        // @include media(mobile) {
+        //   max-width: 6.75rem;
+        // }
       }
 
       &.winner {
@@ -432,6 +456,15 @@
         .matches__item-card {
           opacity: 1;
         }
+      }
+
+      &.set {
+        .matches__item-set {
+          opacity: 1;
+        }
+      }
+
+      &.ball {
       }
     }
 
@@ -492,6 +525,79 @@
       }
     }
 
+    &-score-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 0.37rem;
+      width: 11rem;
+      align-self: stretch;
+    }
+
+    &-score-item {
+      display: flex;
+      align-items: center;
+      gap: 0.63rem;
+    }
+
+    &-score-span {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+      width: 1.25rem;
+      color: #636f92;
+
+      span {
+        font-size: 0.68rem;
+        line-height: 0.68rem;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+        color: #636f92;
+      }
+    }
+
+    &-score-total {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+      width: 1.25rem;
+    }
+
+    &-score-now {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      align-self: stretch;
+      gap: 0.37rem;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+
+      span {
+        width: 1.825rem;
+        background: transparent;
+        color: #636f92;
+        transition: all 0.3s ease-in-out;
+        border-radius: 0.25rem;
+        text-align: center;
+
+        &.win {
+          background: #fcc;
+          color: #f00;
+        }
+      }
+    }
+
     &-status {
       position: relative;
       margin-right: 1.25rem;
@@ -503,11 +609,38 @@
 
       span {
         font-weight: 500;
-        color: $yellow;
+        color: $red;
       }
     }
 
     //MATCH STATUS
+
+    &-ball {
+      display: block;
+      width: 1.125rem;
+      height: 1.125rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath d='M13.773 4.227a6.75 6.75 0 1 1-9.546 9.546 6.75 6.75 0 0 1 9.546-9.546' stroke='%23636F92' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.773 4.227a6.75 6.75 0 1 1-9.546 9.546 6.75 6.75 0 0 1 9.546-9.546' stroke='%23636F92' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.5 3.979a6.727 6.727 0 0 0 0 10.042M4.5 14.021a6.727 6.727 0 0 0 0-10.042' stroke='%23636F92' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &-set {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+
+      span {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $red;
+      }
+    }
 
     &-penalty {
       position: absolute;
@@ -545,25 +678,33 @@
 
     &.live {
       .matches__item-time {
-        color: $yellow;
+        color: $red;
+
+        @include media(mobile) {
+          text-align: center;
+        }
 
         &:after {
           content: "′";
           animation: blink 3s infinite;
-          color: $yellow;
+          color: $red;
           font-size: 0.875rem;
           font-weight: 500;
         }
       }
 
       .matches__item-score span {
-        color: $yellow;
+        color: $red;
+      }
+
+      .matches__item-score-now {
+        opacity: 1;
       }
     }
 
     &.overtime {
       .matches__item-time {
-        color: $yellow;
+        color: $red;
       }
 
       .matches__item-time:after {
@@ -571,13 +712,13 @@
       }
 
       .matches__item-score span {
-        color: $yellow;
+        color: $red;
       }
     }
 
     &.pause {
       .matches__item-time {
-        color: $yellow;
+        color: $red;
       }
 
       .matches__item-time:after {
@@ -585,7 +726,7 @@
       }
 
       .matches__item-score span {
-        color: $yellow;
+        color: $red;
       }
     }
 
@@ -619,6 +760,10 @@
 
         .matches__item-time--ended {
           opacity: 1;
+        }
+
+        .matches__item-score-span {
+          display: none;
         }
       }
     }
@@ -687,7 +832,7 @@
 
 .minute {
   animation: blink 2s infinite;
-  color: $yellow;
+  color: $red;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -699,5 +844,53 @@
   }
   50% {
     opacity: 0;
+  }
+}
+
+.tennis {
+  .matches__item.live {
+    .matches__item-team.ball {
+      .matches__item-ball {
+        opacity: 1;
+      }
+    }
+  }
+
+  .matches__item-time::after {
+    display: none;
+  }
+
+  .matches__item-team {
+    justify-content: space-between;
+  }
+
+  .matches__ligue-img {
+    border-radius: 0;
+  }
+
+  .matches__item-img {
+    border-radius: 50%;
+    @include media(mobile) {
+      width: 0.875rem;
+      min-width: 0.875rem;
+      height: 0.875rem;
+      min-height: 0.875rem;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .matches__item-rivals {
+    @include media(mobile) {
+      gap: 0.25rem;
+    }
+  }
+
+  .matches__ligue-title {
+    span {
+      text-transform: uppercase;
+    }
   }
 }

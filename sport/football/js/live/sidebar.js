@@ -14,11 +14,14 @@ export async function fetchAndStoreMatches() {
     "4zp5rzghp5q82w1",
     "gy0or5jhg6qwzv3",
     "yl5ergphnzr8k0o",
+    "kn54qllh40qvy9d",
+    "vl7oqdeheyr510j",
+    "9vjxm8ghx2r6odg",
     "z8yomo4h7wq0j6l",
     "56ypq3nh0xmd7oj",
-    "kp3glrw7hwqdyjv",
+    "p4jwq2gh754m0ve",
     "d23xmvkh43oqg8n",
-    "kn54qllh40qvy9d",
+    "49vjxm8ghgr6odg",
   ];
 
   if (!storedPinned) {
@@ -188,13 +191,13 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButton.addEventListener("click", () => {
       if (hidden) {
         hiddenItems.forEach((item) => item.classList.remove("hidden"));
-        toggleButtonText.textContent = "Показать меньше";
+        toggleButtonText.textContent = "Show less";
         toggleButton.classList.add("less");
         otherList.classList.remove("hidden");
         hidden = false;
       } else {
         hiddenItems.forEach((item) => item.classList.add("hidden"));
-        toggleButtonText.textContent = "Показать больше";
+        toggleButtonText.textContent = "Show more";
         toggleButton.classList.remove("less");
         otherList.classList.add("hidden");
         hidden = true;

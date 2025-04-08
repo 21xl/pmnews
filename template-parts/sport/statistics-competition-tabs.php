@@ -45,14 +45,14 @@ $base_url = trailingslashit('/' . implode('/', $uri_parts));
 $active_tab_index = isset($args['active_tab_index']) ? (int) $args['active_tab_index'] : -1;
 
 $tabs = array(
-    $base_url => 'Расписание',
+    $base_url => 'Schedule',
     $base_url . 'live/' => 'Live',
-    $base_url . 'results/' => 'Результаты',
-    $base_url . 'standings/' => 'Турнирная таблица',
+    $base_url . 'results/' => 'Results',
+    $base_url . 'standings/' => 'Tournament table',
 );
 
 if ($news_link) {
-    $tabs[$news_link] = 'Новости';
+    $tabs[$news_link] = 'News';
 }
 ?>
 

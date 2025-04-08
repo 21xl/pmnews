@@ -20,8 +20,8 @@ if (!empty($seo_title)) {
 
 
 
-$custom_meta_title = $title . ': Расписание игр и Календарь матчей';
-$custom_meta_description = 'Узнайте расписание игр и календарь матчей ' . $title . '. Не пропустите самые важные игры сезона! Следите за матчами легко и удобно.';
+$custom_meta_title = $title . ': Game Schedule and Match Calendar';
+$custom_meta_description = 'Find out the game schedule and match calendar ' . $title . '. Do not miss the most important games of the season! Follow the matches easily and conveniently.';
 get_template_part('head');
 $banner = get_field('ad_statistics', 'option');
 $ad = get_field('ad_category', 'options');
@@ -38,11 +38,11 @@ $ad = get_field('ad_category', 'options');
                 <section class="statistics">
                     <div class="statistics__wrapper wrapper">
                         <span class="statistics__title">
-                            <?php pll_e('Статистика'); ?>
+                            <?php pll_e('Statistics'); ?>
                         </span>
 
                         <div class="statistics__mobile-sidebar">
-                            <span>Все лиги</span>
+                            <span>All leagues</span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>

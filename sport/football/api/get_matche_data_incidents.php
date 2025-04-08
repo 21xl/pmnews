@@ -609,7 +609,7 @@ function get_matche_data_incidents($request)
         $processedOdds = processOdds($odds);
 
         // Логирование обработанных коэффициентов
-        error_log(print_r($processedOdds, true));
+
 
         return rest_ensure_response(['odds' => $processedOdds]);
     }

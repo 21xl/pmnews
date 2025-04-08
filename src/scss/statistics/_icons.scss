@@ -11,7 +11,7 @@
   position: relative;
 
   &::before {
-    content: "Добавить матч в избранное";
+    content: "Add match to favorites";
     position: absolute;
     top: 70%;
     left: 0.7rem;
@@ -58,7 +58,7 @@
     }
 
     &::before {
-      content: "Убрать матч из избранного";
+      content: "Remove match from favorites";
     }
 
     svg {
@@ -81,7 +81,7 @@
   position: relative;
 
   &::before {
-    content: "Закрепить лигу в закрепленных лигах";
+    content: "Pin a league to pinned leagues";
     position: absolute;
     top: 100%;
     left: -0.8rem;
@@ -128,7 +128,7 @@
     }
 
     &::before {
-      content: "Открепить лигу из закрепленных лиг";
+      content: "Unpin a league from pinned leagues";
     }
 
     &:hover {
@@ -136,12 +136,12 @@
     }
 
     svg {
-      fill: $light_blue;
-      stroke: $light_blue;
+      fill: $blue;
+      stroke: $blue;
 
       path {
-        fill: $light_blue;
-        stroke: $light_blue;
+        fill: $blue;
+        stroke: $blue;
       }
     }
   }

@@ -11,8 +11,8 @@ if (in_array($last_segment, $tabs_slugs)) {
 $base_url = '/' . implode('/', $uri_parts);
 $active_tab_index = isset($args['active_tab_index']) ? (int) $args['active_tab_index'] : -1;
 $tabs = array(
-    $base_url . '/' => 'Предстоящие',
-    $base_url . '/results' => 'Результаты',
+    $base_url . '/' => 'Upcoming',
+    $base_url . '/results' => 'Results',
 );
 ?>
 

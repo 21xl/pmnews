@@ -204,7 +204,7 @@ if (isset($page_data)) {
 <aside class="statistics-sidebar">
     <div class="statistics-sidebar__wrapper">
         <div class="statistics-sidebar__mobile-control">
-            <span><?php pll_e('Выберите лигу'); ?></span>
+            <span><?php pll_e('Select league'); ?></span>
 
             <div class="statistics-sidebar__close">
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -261,7 +261,7 @@ if (isset($page_data)) {
                     </div>
                     <?php if (count($related_competitions_formatted) >= 11): ?>
                         <button class="statistics-sidebar__toggle">
-                            <span><?php pll_e('Показать больше'); ?></span>
+                            <span><?php pll_e('Show more'); ?></span>
                         </button>
                     <?php endif; ?>
                 </div>
@@ -271,7 +271,7 @@ if (isset($page_data)) {
         <div class="statistics-sidebar__container">
             <div class="statistics-sidebar__block statistics-sidebar__block--pinned">
                 <span class="statistics-sidebar__title">
-                    <?php pll_e('Закрепленные Лиги'); ?>
+                    <?php pll_e('Pinned Leagues'); ?>
                 </span>
 
                 <ul id="pinned" class="statistics-sidebar__list">
@@ -286,8 +286,8 @@ if (isset($page_data)) {
                     <li class="empty_sb_pined hidden statistics-sidebar__item statistics-sidebar__item--pinned">
                         <div class="statistics-sidebar__item-wrapper statistics-sidebar__item-wrapper--error">
                             <div class="statistics-sidebar__item-error">
-                                Что бы создать список закрепленных лиг нажмите на <span>иконку</span> возле интересующей
-                                лиги
+                                To create a list of pinned leagues, click on <span>icon</span> near the league of
+                                interest
                             </div>
                         </div>
                     </li>
@@ -298,7 +298,7 @@ if (isset($page_data)) {
             <?php if ($countries): ?>
                 <div class="statistics-sidebar__block statistics-sidebar__block--countries">
                     <span class="statistics-sidebar__title">
-                        <?php pll_e('Страны'); ?>
+                        <?php pll_e('Countries'); ?>
                     </span>
 
                     <ul class="statistics-sidebar__list">
@@ -327,7 +327,7 @@ if (isset($page_data)) {
                 <div class="statistics-sidebar__container">
                     <div class="statistics-sidebar__block statistics-sidebar__block--other hidden">
                         <span class="statistics-sidebar__title">
-                            <?php pll_e('Другие соревнования'); ?>
+                            <?php pll_e('Other competitions'); ?>
                         </span>
 
                         <ul class="statistics-sidebar__list">
@@ -346,7 +346,7 @@ if (isset($page_data)) {
                     </div>
 
                     <button id="toggle-button" class="statistics-sidebar__toggle">
-                        <span><?php pll_e('Показать больше'); ?></span>
+                        <span><?php pll_e('Show more'); ?></span>
                     </button>
                 </div>
             <?php endif; ?>

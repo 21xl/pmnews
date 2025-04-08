@@ -167,13 +167,22 @@ require get_template_directory() . '/inc/ajax-sport-quiz.php';
 
 
 /**
- * Sports API.
- */
-// require get_template_directory() . '/sport/translates-registration.php';
-// require get_template_directory() . '/sport/football/index.php';
-
-/**
  * Convert images to webp
  */
 require get_template_directory() . '/inc/webp-converter.php';
+
+
+/**
+ * Image exif data.
+ */
+add_filter('wp_read_image_metadata', '__return_false');
+
+
+/**
+ * Sports API.
+ */
+require get_template_directory() . '/sport/translates-registration.php';
+require get_template_directory() . '/sport/index.php';
+require get_template_directory() . '/sport/football/index.php';
+// require get_template_directory() . '/sport/tennis/index.php';
 

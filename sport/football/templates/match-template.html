@@ -14,8 +14,10 @@
 			<div class="matches__ligue-img">
 				{{#if country}}
 				<img src="{{country.logo}}" alt="{{country.name}}" />
-				{{else}}
+				{{else if category}}
 				<img src="{{category.logo}}" alt="{{category.name}}" />
+				{{else}}
+				<img src="../../src/img/world.svg" alt="" />
 				{{/if}}
 			</div>
 
@@ -31,7 +33,7 @@
 					<span>{{competition.name}}</span>
 				</a>
 
-				{{else}}
+				{{else if category}}
 
 				<a href="/statistics/football/{{category.slug}}/" class="matches__ligue-category">
 					<span>{{category.name}}</span>
@@ -39,6 +41,10 @@
 				</a>
 				<a href="/statistics/football/{{category.slug}}/{{competition.slug}}/"
 					class="matches__ligue-competition">
+					<span>{{competition.name}}</span>
+				</a>
+				{{else}}
+				<a href="/statistics/football/{{competition.slug}}/" class="matches__ligue-competition">
 					<span>{{competition.name}}</span>
 				</a>
 				{{/if}}

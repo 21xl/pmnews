@@ -12,18 +12,18 @@ $dt = new DateTime();
 $dt->setTimestamp((int) $match_data->match_time);
 $format2 = $dt->format('d') . ' ' . mb_strtolower($dt->format('F'), 'UTF-8');
 $months = [
-    'January' => 'января',
-    'February' => 'февраля',
-    'March' => 'марта',
-    'April' => 'апреля',
-    'May' => 'мая',
-    'June' => 'июня',
-    'July' => 'июля',
-    'August' => 'августа',
-    'September' => 'сентября',
-    'October' => 'октября',
-    'November' => 'ноября',
-    'December' => 'декабря',
+    'January' => 'january',
+    'February' => 'february',
+    'March' => 'march',
+    'April' => 'april',
+    'May' => 'may',
+    'June' => 'june',
+    'July' => 'july',
+    'August' => 'august',
+    'September' => 'september',
+    'October' => 'october',
+    'November' => 'november',
+    'December' => 'december',
 ];
 
 $month = $months[$dt->format('F')];
@@ -133,10 +133,10 @@ $scores_away = json_decode($match_data->away_scores, true);
             <a href="<?php echo esc_url($bookmaker['link']) ?>" rel="nofollow noopener" target="_blank"
                 class="scoreboard__partner">
 
-                <span><?php pll_e('Смотреть онлайн'); ?></span>
+                <span><?php pll_e('Watch online'); ?></span>
 
                 <div class="scoreboard__partner-img">
-                    <img src="<?php echo esc_url($bookmaker['logo']['url']) ?>" alt="<?php pll_e('Смотреть онлайн'); ?>">
+                    <img src="<?php echo esc_url($bookmaker['logo']['url']) ?>" alt="<?php pll_e('Watch online'); ?>">
                 </div>
             </a>
         <?php endif; ?>

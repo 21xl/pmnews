@@ -9,10 +9,10 @@ if (in_array($last_segment, $tabs_slugs)) {
 $base_url = '/' . implode('/', $uri_parts);
 $active_tab_index = isset($args['active_tab_index']) ? (int) $args['active_tab_index'] : -1;
 $tabs = array(
-    $base_url . '/' => 'Расписание',
+    $base_url . '/' => 'Schedule',
     $base_url . '/live' => 'Live',
-    $base_url . '/results' => 'Результаты',
-    $base_url . '/standings' => 'Турнирная таблица',
+    $base_url . '/results' => 'Results',
+    $base_url . '/standings' => 'Tournament table',
 );
 ?>
 

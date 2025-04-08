@@ -1,91 +1,78 @@
 <div class="team-squad">
-    {{#each squad}}
+	{{#each squad}}
 
-    <div class="match__composition">
-        <div class="match__composition-block">
-            <div class="match__composition-main">
-                <div class="match__composition-wrapper">
-                    <div class="table composition team-composition">
-                        <div class="row head">
-                            <div class="cell team-name">
-                                <span>{{t this.position}}</span>
+	<div class="match__composition">
+		<div class="match__composition-block">
+			<div class="match__composition-main">
+				<div class="match__composition-wrapper">
+					<div class="table composition team-composition">
+						<div class="row head">
+							<div class="cell team-name">
+								<span>{{t this.position}}</span>
+							</div>
 
-                            </div>
+							<div class="cell nationality">{{t 'Nationality'}}</div>
 
-                            <div class="cell nationality">
-                                {{t 'Nationality'}}
-                            </div>
+							<div class="cell age">{{t "Age"}}</div>
+						</div>
 
-                            <div class="cell age">
-                                {{t "Age"}}
-                            </div>
-                        </div>
-                        {{#if (eq this.position "Coach")}}
-                        {{#each this.players}}
-                        <div class="row">
-                            <div class="cell player">
-                                <div class="player__img">
-                                    <img src="{{this.logo}}" alt="{{this.name}}">
-                                </div>
+						{{#if (eq this.position "Coach")}} {{#each this.players}}
 
-                                <div class="player__block">
-                                    <div class="player__head">
-                                        <span class="player__name">
-                                            {{localizedName this}}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+						<div class="row">
+							<div class="cell player">
+								<div class="player__img">
+									<img src="{{this.logo}}" alt="{{this.name}}" />
+								</div>
 
-                            <div class="cell">
-                                <div class="flag">
-                                    {{#if this.country_logo}}
-                                    <img src="{{this.country_logo}}" alt="Denmark">
-                                    {{/if}}
-                                </div>
-                            </div>
+								<div class="player__block">
+									<div class="player__head">
+										<span class="player__name">{{localizedName this}}</span>
+									</div>
+								</div>
+							</div>
 
-                            <div class="cell gray">
-                                {{this.age}}
-                            </div>
-                        </div>
-                        {{/each}}
-                        {{else}}
-                        {{#each this.players}}
-                        <div class="row">
-                            <div class="cell player">
-                                <div class="player__img">
-                                    <img src="{{this.logo}}" alt="{{this.name}}">
-                                </div>
+							<div class="cell">
+								<div class="flag">
+									{{#if this.country_logo}}
+									<img src="{{this.country_logo}}" alt="Denmark" />
+									{{/if}}
+								</div>
+							</div>
 
-                                <div class="player__block">
-                                    <div class="player__head">
-                                        <span class="player__name">
-                                            {{localizedName this}}
-                                        </span>
-                                        <span class="player__number">{{this.shirt_number}}</span>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="cell gray">{{this.age}}</div>
+						</div>
 
-                            <div class="cell">
-                                <div class="flag">
-                                    {{#if this.country_logo}}
-                                    <img src="{{this.country_logo}}" alt="Denmark">
-                                    {{/if}}
-                                </div>
-                            </div>
+						{{/each}} {{else}} {{#each this.players}}
 
-                            <div class="cell gray">
-                                {{this.age}}
-                            </div>
-                        </div>
-                        {{/each}}
-                        {{/if}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/each}}
+						<div class="row">
+							<div class="cell player">
+								<div class="player__img">
+									<img src="{{this.logo}}" alt="{{this.name}}" />
+								</div>
+
+								<div class="player__block">
+									<div class="player__head">
+										<span class="player__name">{{localizedName this}}</span>
+										<span class="player__number">{{this.shirt_number}}</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="cell">
+								<div class="flag">
+									{{#if this.country_logo}}
+									<img src="{{this.country_logo}}" alt="Denmark" />
+									{{/if}}
+								</div>
+							</div>
+
+							<div class="cell gray">{{this.age}}</div>
+						</div>
+						{{/each}} {{/if}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
 </div>

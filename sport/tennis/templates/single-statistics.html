@@ -1,0 +1,50 @@
+<div class="match__statistics-checkbox custom-checkbox">
+	{{#if stats}} {{#each stats}} {{#if @first}}
+	<!-- Первый элемент - "Весь матч" -->
+	<div class="custom-checkbox__item" data-checkbox-tab="tab{{@index}}">
+		<input type="hidden" name="checkbox{{@index}}" value="true" class="custom-checkbox__input" />
+		<div class="custom-checkbox__box" data-checked="true"></div>
+		<span class="custom-checkbox__label">{{t 'Full time'}}</span>
+	</div>
+	{{else}}
+	<!-- Остальные элементы - "Сет 1", "Сет 2" и т.д. -->
+	<div class="custom-checkbox__item" data-checkbox-tab="tab{{@index}}">
+		<input type="hidden" name="checkbox{{@index}}" value="false" class="custom-checkbox__input" />
+		<div class="custom-checkbox__box" data-checked="false"></div>
+		<span class="custom-checkbox__label">{{t 'set'}} {{add @index 0}}</span>
+	</div>
+	{{/if}} {{/each}} {{else}}
+	<p>{{t 'Information not found'}}</p>
+	{{/if}}
+</div>
+
+<div class="checkboxes__content">
+	{{#if stats}} {{#each stats}}
+	<div class="custom-checkbox__tab {{#unless @first}}hidden{{/unless}}" data-checkbox-tab="tab{{@index}}">
+		<div class="match__statistics-list">
+			{{#each this.details}}
+			<div class="match__statistics-item">
+				<div class="match__statistics-label">{{getStatDescription this.stat_type}}</div>
+
+				<div class="match__statistics-bar">
+					<div class="match__statistics-segment match__statistics-segment--red" data-value="{{this.home_value}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{getStatType this 'home'}}</div>
+					</div>
+
+					<div class="match__statistics-segment match__statistics-segment--blue" data-value="{{this.away_value}}">
+						<div class="match__statistics-progress"></div>
+
+						<div class="match__statistics-count">{{getStatType this 'away'}}</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+
+	{{/each}} {{else}}
+	<p>{{t 'Information not found'}}</p>
+	{{/if}}
+</div>

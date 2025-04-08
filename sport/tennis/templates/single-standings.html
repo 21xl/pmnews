@@ -1,0 +1,124 @@
+<div class="schedule">
+	<!-- Сетка -->
+	{{#if rounds}}
+	<div class="tabs__content-item active" data-status="brackets">
+		<div class="brackets">
+			<div class="brackets__navigation">
+				<div class="brackets__navigation-item brackets__navigation-prev">
+					<span>{{t 'Previous stage'}}</span>
+
+					<div class="brackets__navigation-arrow">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+							<path d="M14 8L10 12L14 16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="brackets__navigation-item brackets__navigation-next">
+					<span>{{t 'Next stage'}}</span>
+
+					<div class="brackets__navigation-arrow">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+							<path d="M10 16L14 12L10 8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</div>
+				</div>
+			</div>
+
+			<div class="brackets__wrapper">
+				<div class="brackets__head">
+					{{#each rounds}}
+					<div class="brackets__head-item" data-count="{{add @index 1}}">{{this.round.name}}</div>
+					{{/each}}
+				</div>
+
+				<div class="brackets__list">
+					{{#each rounds}}
+					<div class="brackets__item">
+						{{#each this.matchUps}}
+						<a href="{{getMatchLink this.match_ids this.home_team this.away_team}}">
+							<div class="brackets__item-wrapper">
+								<div class="brackets__item-rivals">
+									<!-- Home Team -->
+									<div class="brackets__item-team {{checkWinner this.home_team_id this.winner_team_id}}">
+										<div class="brackets__item-pair">
+											{{#if (hasSubs this.home_team.subs)}} {{#each this.home_team.subs}}
+											<div class="brackets__item-block">
+												<div class="brackets__item-img">
+													{{#if this}}
+													<img src="{{ifLogo this.country.logo}}" alt="{{getLocalizedName this.names}}" />
+													{{/if}}
+												</div>
+												<span class="brackets__item-name">{{getLocalizedName this.names}}</span>
+											</div>
+											{{/each}} {{else}}
+											<div class="brackets__item-block">
+												<div class="brackets__item-img">
+													{{#if this.home_team}}
+													<img
+														src="{{ifLogo this.home_team.country.logo}}"
+														alt="{{getLocalizedName this.home_team.names}}"
+													/>
+													{{/if}}
+												</div>
+												<span class="brackets__item-name">{{getLocalizedName this.home_team.names}}</span>
+											</div>
+											{{/if}}
+										</div>
+										{{#if (checkState state_id)}} {{#if this.home_team}}
+										<div class="brackets__item-score">
+											<span>{{#if home_score}}{{home_score}}{{else}}0{{/if}}</span>
+										</div>
+										{{/if}} {{/if}}
+									</div>
+									<!-- Away Team -->
+									<div class="brackets__item-team {{checkWinner this.away_team_id this.winner_team_id}}">
+										<div class="brackets__item-pair">
+											{{#if (hasSubs this.away_team.subs)}} {{#each this.away_team.subs}}
+											<div class="brackets__item-block">
+												<div class="brackets__item-img">
+													{{#if this}}
+													<img src="{{ifLogo this.country.logo}}" alt="{{getLocalizedName this.names}}" />
+													{{/if}}
+												</div>
+												<span class="brackets__item-name">{{getLocalizedName this.names}}</span>
+											</div>
+											{{/each}} {{else}}
+											<div class="brackets__item-block">
+												<div class="brackets__item-img">
+													{{#if this.away_team}}
+													<img
+														src="{{ifLogo this.away_team.country.logo}}"
+														alt="{{getLocalizedName this.away_team.names}}"
+													/>
+													{{/if}}
+												</div>
+												<span class="brackets__item-name">{{getLocalizedName this.away_team.names}}</span>
+											</div>
+											{{/if}}
+										</div>
+										{{#if (checkState state_id)}} {{#if this.away_team}}
+										<div class="brackets__item-score">
+											<span>{{#if away_score}}{{away_score}}{{else}}0{{/if}}</span>
+										</div>
+										{{/if}} {{/if}}
+									</div>
+									<!-- Bracket Connection -->
+									<div class="brackets__item-bracket">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 98" fill="none" preserveAspectRatio="none">
+											<path d="M0 1H11.5V52H25" stroke="#DBDDE6" style="vector-effect: non-scaling-stroke" />
+											<path d="M0 97H11.5V52H25" stroke="#DBDDE6" style="vector-effect: non-scaling-stroke" />
+										</svg>
+									</div>
+								</div>
+							</div>
+						</a>
+						{{/each}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+</div>

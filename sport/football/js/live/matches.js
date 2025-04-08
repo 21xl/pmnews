@@ -253,7 +253,7 @@ jQuery(document).ready(function ($) {
 
   syncWithRealTime();
 
-  const socket = new WebSocket("wss://sync-stage.pm-news.kz");
+  const socket = new WebSocket("wss://sync-stage.sport-pulse.kz");
 
   socket.onopen = () => {};
 
@@ -548,19 +548,14 @@ jQuery(document).ready(function ($) {
       });
     }
 
-    return `${kickoffDate
-      .getDate()
+    return `${kickoffDate.getDate().toString().padStart(2, "0")}.${(
+      kickoffDate.getMonth() + 1
+    )
       .toString()
-      .padStart(
-        2,
-        "0"
-      )}.${(kickoffDate.getMonth() + 1).toString().padStart(2, "0")} ${kickoffDate.toLocaleTimeString(
-      [],
-      {
-        hour: "2-digit",
-        minute: "2-digit",
-      }
-    )}`;
+      .padStart(2, "0")} ${kickoffDate.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
   });
 
   Handlebars.registerHelper("matchTimeOrBreak", function (matchId) {
@@ -781,3 +776,28 @@ function getFavorites() {
 function saveFavorites(favorites) {
   localStorage.setItem("favorit_fb", JSON.stringify(favorites));
 }
+
+const toggleButtons = document.querySelectorAll(".statistics-sidebar__toggle");
+
+toggleButtons.forEach((toggleButton) => {
+  const toggleButtonText = toggleButton.querySelector("span"); // Находим текст кнопки
+  const parentContainer = toggleButton.closest(".statistics-sidebar__operate"); // Находим контейнер
+  const hiddenItems = parentContainer.querySelectorAll(
+    ".countries__item.hidden, .statistics-sidebar__block--other.hidden"
+  ); // Элементы, которые нужно скрывать/показывать
+  let hidden = true;
+
+  toggleButton.addEventListener("click", () => {
+    if (hidden) {
+      hiddenItems.forEach((item) => item.classList.remove("hidden"));
+      toggleButtonText.textContent = "Show less";
+      toggleButton.classList.add("less");
+      hidden = false;
+    } else {
+      hiddenItems.forEach((item) => item.classList.add("hidden"));
+      toggleButtonText.textContent = "Show more";
+      toggleButton.classList.remove("less");
+      hidden = true;
+    }
+  });
+});

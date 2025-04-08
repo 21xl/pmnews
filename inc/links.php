@@ -1,42 +1,52 @@
 <?php
 add_action('wp_head', function () {
-    // Если это архив категории, тега или таксономии
+
+    // Категории, теги, таксономии
     if (is_category() || is_tag() || is_tax()) {
-        $canonical_url = get_category_link(get_queried_object_id()); // Ссылка на текущую категорию или тег
+        $canonical_url = get_category_link(get_queried_object_id());
 
-    } elseif (is_singular()) {
-        // Для постов и страниц
-        $canonical_url = get_permalink(); // Ссылка на пост или страницу
+        // Страницы с шаблоном footballteam-template.php
+    } elseif (is_page_template('footballteam-template.php')) {
+        $page_type = trim(get_query_var('page_type'));
 
-        $custom_page = get_query_var('custom_page');
-
-        // Если есть параметр custom_page
-        if ($custom_page && in_array($custom_page, ['results', 'standings', 'live'])) {
-            $base_url = get_permalink();
-            $canonical_url = user_trailingslashit(
-                trailingslashit($base_url) . $custom_page
-            );
+        if ($page_type === 'live') {
+            $canonical_url = trailingslashit(get_permalink()) . 'live/';
+        } elseif ($page_type === 'results') {
+            $canonical_url = trailingslashit(get_permalink()) . 'results/';
+        } elseif ($page_type === 'squad') {
+            $canonical_url = trailingslashit(get_permalink()) . 'squad/';
+        } else {
+            $canonical_url = get_permalink();
         }
 
+        // Обычные записи и страницы
+    } elseif (is_singular()) {
+        $canonical_url = get_permalink();
+
+        $custom_page = get_query_var('custom_page');
+        if ($custom_page && in_array($custom_page, ['results', 'standings', 'live'])) {
+            $canonical_url = trailingslashit(get_permalink()) . trailingslashit($custom_page);
+        }
+
+        // Главная страница блога
     } elseif (is_home()) {
-        // Для главной страницы блога
-        $canonical_url = get_home_url(); // Ссылка Main page 
+        $canonical_url = get_home_url();
 
+        // Пагинация
     } elseif (is_paged()) {
-        // Для архивов с пагинацией
-        $canonical_url = get_pagenum_link(1); // Ссылка на первую страницу пагинации
+        $canonical_url = get_pagenum_link(1);
 
+        // Остальное
     } else {
-        // Для всех остальных страниц
         $canonical_url = get_permalink();
     }
 
-    // Выводим каноническую ссылку
     echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
 }, 5);
 
-// Добавляем параметр custom_page в разрешённые query vars
+// Регистрируем переменные custom_page и page_type
 add_filter('query_vars', function ($vars) {
     $vars[] = 'custom_page';
+    $vars[] = 'page_type';
     return $vars;
 });

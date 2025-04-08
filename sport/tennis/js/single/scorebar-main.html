@@ -1,0 +1,19 @@
+<div class="scoreboard__score">
+    {{#if (eq status_id "100")}}
+    <div class="scoreboard__old-time" data-time="{{match_time}}">
+        {{formatDate match_time "dd/MM HH:mm"}}
+    </div>
+    {{/if}}
+
+    <div class="scoreboard__minute" data-time="{{match_time}}">
+        <span>{{displayTime status_id match_time}}</span>
+    </div>
+
+    <div class="scoreboard__goals {{#if (eq status_id 1)}}shedul{{/if}}" data-time="{{match_time}}">
+        {{#if (ne status_id 1)}}
+        <span>{{scores.ft.[0]}}:{{scores.ft.[1]}}</span>
+        {{else}}
+        <span>{{formatDate match_time "HH:mm"}}</span>
+        {{/if}}
+    </div>
+</div>

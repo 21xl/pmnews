@@ -101,7 +101,7 @@ if ($competition_data): ?>
                 </div>
                 <?php if ($team_logo && $team_name): ?>
                     <div class="statistics-competition__winner">
-                        <span class="statistics-competition__winner-text"><?php pll_e('Победитель турнира'); ?>:</span>
+                        <span class="statistics-competition__winner-text"><?php pll_e('Tournament Winner'); ?>:</span>
 
                         <div class="statistics-competition__winner-wrapper">
                             <div class="statistics-competition__winner-img">
@@ -120,7 +120,7 @@ if ($competition_data): ?>
             <div class="matches">
 
                 <h1 class="statistics-competition__subtitle">
-                    <?php pll_e('Расписание матчей'); ?> -
+                    <?php pll_e('Match Schedule'); ?> -
                     <?php echo esc_html($title); ?>
                 </h1>
 

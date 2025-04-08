@@ -1,8 +1,8 @@
 <div class="schedule__tabs tabs">
 	<div class="tabs__list">
-		<div class="tabs__item active" data-status="review">Обзор</div>
-		<div class="tabs__item" data-status="home">{{getLocalized home_t}} - дома</div>
-		<div class="tabs__item" data-status="away">{{getLocalized away_t}} - на выезде</div>
+		<div class="tabs__item active" data-status="review">{{t 'Review'}}</div>
+		<div class="tabs__item" data-status="home">{{getLocalized home_t}} - {{t 'home'}}</div>
+		<div class="tabs__item" data-status="away">{{getLocalized away_t}} - {{t 'away'}}</div>
 	</div>
 </div>
 
@@ -11,7 +11,6 @@
 		<div class="matches__ligue">
 			<div class="matches__ligue-head">
 				<div class="matches__ligue-block">
-
 					<div class="matches__ligue-img">
 						<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
 					</div>
@@ -20,7 +19,7 @@
 						<div class="matches__ligue-category">
 							<span>{{home_t.name}}</span>
 							<span class="colon">:</span>
-							<span class="matches__ligue-category--last">Последние игры</span>
+							<span class="matches__ligue-category--last">{{t 'Last games'}}</span>
 						</div>
 					</div>
 				</div>
@@ -31,9 +30,7 @@
 				<a href="/statistics/football/match/{{this.id}}/">
 					<div class="matches__item matches__item--h2h">
 						<div class="matches__item-block">
-
-
-							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+							<div class="matches__item-time matches__item-time--h2h">{{t 'Ended'}}</div>
 
 							<div class="matches__item-rivals">
 								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
@@ -58,8 +55,7 @@
 						</div>
 
 						<div class="matches__item-block-2">
-							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
-							</div>
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}</div>
 							<div class="matches__item-point form-icons">
 								<span class="{{this.result}}"></span>
 							</div>
@@ -75,8 +71,6 @@
 		<div class="matches__ligue">
 			<div class="matches__ligue-head">
 				<div class="matches__ligue-block">
-
-
 					<div class="matches__ligue-img">
 						<img src="{{home_t.logo}}" alt="{{home_t.name}}" />
 					</div>
@@ -85,7 +79,7 @@
 						<div class="matches__ligue-category">
 							<span>{{home_t.name}}</span>
 							<span class="colon">:</span>
-							<span class="matches__ligue-category--last">Последние игры</span>
+							<span class="matches__ligue-category--last">{{t 'Last games'}}</span>
 						</div>
 					</div>
 				</div>
@@ -96,9 +90,7 @@
 				<a href="/statistics/football/match/{{this.id}}/">
 					<div class="matches__item matches__item--h2h">
 						<div class="matches__item-block">
-
-
-							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+							<div class="matches__item-time matches__item-time--h2h">{{t 'Ended'}}</div>
 
 							<div class="matches__item-rivals">
 								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
@@ -123,8 +115,7 @@
 						</div>
 
 						<div class="matches__item-block-2">
-							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
-							</div>
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}</div>
 							<div class="matches__item-point form-icons">
 								<span class="{{this.result}}"></span>
 							</div>
@@ -141,8 +132,6 @@
 		<div class="matches__ligue">
 			<div class="matches__ligue-head">
 				<div class="matches__ligue-block">
-
-
 					<div class="matches__ligue-img">
 						<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
 					</div>
@@ -151,7 +140,7 @@
 						<div class="matches__ligue-category">
 							<span>{{away_t.name}}</span>
 							<span class="colon">:</span>
-							<span class="matches__ligue-category--last">Последние игры</span>
+							<span class="matches__ligue-category--last">{{t 'Last games'}}</span>
 						</div>
 					</div>
 				</div>
@@ -162,8 +151,7 @@
 				<a href="/statistics/football/match/{{this.id}}/">
 					<div class="matches__item matches__item--h2h">
 						<div class="matches__item-block">
-
-							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+							<div class="matches__item-time matches__item-time--h2h">{{t 'Ended'}}</div>
 
 							<div class="matches__item-rivals">
 								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
@@ -188,8 +176,7 @@
 						</div>
 
 						<div class="matches__item-block-2">
-							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
-							</div>
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}</div>
 
 							<div class="matches__item-point form-icons">
 								<span class="{{this.result}}"></span>
@@ -206,8 +193,6 @@
 		<div class="matches__ligue">
 			<div class="matches__ligue-head">
 				<div class="matches__ligue-block">
-
-
 					<div class="matches__ligue-img">
 						<img src="{{away_t.logo}}" alt="{{away_t.name}}" />
 					</div>
@@ -216,7 +201,7 @@
 						<div class="matches__ligue-category">
 							<span>{{away_t.name}}</span>
 							<span class="colon">:</span>
-							<span class="matches__ligue-category--last">Последние игры</span>
+							<span class="matches__ligue-category--last">{{t 'Last games'}}</span>
 						</div>
 					</div>
 				</div>
@@ -227,9 +212,7 @@
 				<a href="/statistics/football/match/{{this.id}}/">
 					<div class="matches__item matches__item--h2h">
 						<div class="matches__item-block">
-
-
-							<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+							<div class="matches__item-time matches__item-time--h2h">{{t 'Ended'}}</div>
 
 							<div class="matches__item-rivals">
 								<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">
@@ -254,8 +237,7 @@
 						</div>
 
 						<div class="matches__item-block-2">
-							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}
-							</div>
+							<div class="matches__item-time matches__item-time--ended">{{formatDate this.match_time}}</div>
 
 							<div class="matches__item-point form-icons">
 								<span class="{{this.result}}"></span>
@@ -271,8 +253,6 @@
 	<div class="matches__ligue">
 		<div class="matches__ligue-head">
 			<div class="matches__ligue-block">
-
-
 				<!-- <div class="matches__ligue-img">
                 <img src="{{away_t.logo}}" alt="{{away_t.name}}" />
             </div> -->
@@ -281,7 +261,7 @@
 					<div class="matches__ligue-category">
 						<!-- <span>{{away_t.name}}</span>
                     <span class="colon">:</span> -->
-						<span>Очные встречи</span>
+						<span>{{t 'Face-to-face'}}</span>
 					</div>
 				</div>
 			</div>
@@ -291,9 +271,7 @@
 			<a href="/statistics/football/match/{{this.id}}/">
 				<div class="matches__item matches__item--h2h">
 					<div class="matches__item-block">
-
-
-						<div class="matches__item-time matches__item-time--h2h">Завершен</div>
+						<div class="matches__item-time matches__item-time--h2h">{{t 'Ended'}}</div>
 
 						<div class="matches__item-rivals">
 							<div class="matches__item-team {{winnerClass this.home_scores this.away_scores}}">

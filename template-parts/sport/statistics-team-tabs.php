@@ -52,15 +52,15 @@ if ($active_tab_index !== false) {
 $base_url = trailingslashit('/' . implode('/', $uri_parts));
 
 $tabs = array(
-    $base_url => 'Расписание',
+    $base_url => 'Schedule',
     $base_url . 'live' => 'Live',
-    $base_url . 'results' => 'Результаты',
-    $base_url . 'squad' => 'Состав',
+    $base_url . 'results' => 'Results',
+    $base_url . 'squad' => 'Compound',
 );
 
 // Добавляем "Новости" только если нашли ссылку
 if ($news_link) {
-    $tabs[$news_link] = 'Новости';
+    $tabs[$news_link] = 'News';
 }
 
 $index = 0;

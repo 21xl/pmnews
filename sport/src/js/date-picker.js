@@ -5,7 +5,7 @@ const displayElement = document.querySelector(".date-picker__display");
 const dropdownList = document.querySelector(".date-picker__list");
 const tabsContainer = document.querySelector(".tabs__list");
 
-const DAYS_OF_WEEK = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 if (prevButton && nextButton && dateElement && displayElement && dropdownList) {
   const today = new Date();
@@ -113,7 +113,7 @@ if (prevButton && nextButton && dateElement && displayElement && dropdownList) {
       listItem.className = "date-picker__list-item";
       listItem.textContent =
         date.toDateString() === today.toDateString()
-          ? "Сегодня"
+          ? "Today"
           : formatDateDisplay(date);
       listItem.setAttribute("data-value", formatDateValue(date));
       listItem.addEventListener("click", handleDateSelection);

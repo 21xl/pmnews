@@ -268,7 +268,7 @@ jQuery(document).ready(function ($) {
 
   syncWithRealTime();
 
-  const socket = new WebSocket("wss://sync-stage.pm-news.kz");
+  const socket = new WebSocket("wss://sync-stage.sport-pulse.kz");
 
   socket.onopen = () => {};
 
@@ -565,19 +565,14 @@ jQuery(document).ready(function ($) {
       });
     }
 
-    return `${kickoffDate
-      .getDate()
+    return `${kickoffDate.getDate().toString().padStart(2, "0")}.${(
+      kickoffDate.getMonth() + 1
+    )
       .toString()
-      .padStart(
-        2,
-        "0"
-      )}.${(kickoffDate.getMonth() + 1).toString().padStart(2, "0")} ${kickoffDate.toLocaleTimeString(
-      [],
-      {
-        hour: "2-digit",
-        minute: "2-digit",
-      }
-    )}`;
+      .padStart(2, "0")} ${kickoffDate.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
   });
 
   Handlebars.registerHelper("matchTimeOrBreak", function (matchId) {
