@@ -128,6 +128,6 @@ if ($competition_data): ?>
     </section>
     <?php
 else:
-    echo '<p>Данные о стране не найдены.</p>';
+    echo '<p>Country data not found.</p>';
 endif;
 ?>

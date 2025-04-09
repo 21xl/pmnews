@@ -64,10 +64,10 @@ $scores_away = json_decode($match_data->away_scores, true);
                                     echo $format2; // Время матча
                                     break;
                                 case 8:
-                                    echo 'Завершен'; // Завершен
+                                    echo 'Ended'; // Завершен
                                     break;
                                 case 3:
-                                    echo 'Перерыв'; // Завершен
+                                    echo 'Break'; // Завершен
                                     break;
                                 case 2: // Первый тайм
                                     $matchMinutes = floor(($currentTimestamp - $kickoffTimestamp) / 60) + 1;

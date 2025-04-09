@@ -186,3 +186,5 @@ require get_template_directory() . '/sport/index.php';
 require get_template_directory() . '/sport/football/index.php';
 // require get_template_directory() . '/sport/tennis/index.php';
 
+//Disable canonical from Rank Math
+add_filter('rank_math/canonical_url', '__return_false');

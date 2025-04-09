@@ -121,7 +121,7 @@ if ($team_data): ?>
 
                 <div class="statistics-competition__last form-icons">
                     <?php if (!empty($match_results)): ?>
-                        <div class="statistics-competition__last-text">Последние игры:</div>
+                        <div class="statistics-competition__last-text">Latest games:</div>
                         <?php foreach ($match_results as $result): ?>
                             <span class="<?= esc_attr($result) ?>"></span>
                         <?php endforeach; ?>
