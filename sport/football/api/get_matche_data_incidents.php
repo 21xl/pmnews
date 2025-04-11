@@ -62,7 +62,7 @@ function get_matche_data_incidents($request)
                 SELECT 
                     id, 
                     logo, 
-                    IF(name_ru IS NULL OR name_ru = '', name, name_ru) AS name 
+                    name 
                 FROM 
                     wp_soccer_teams 
                 WHERE 
@@ -73,7 +73,7 @@ function get_matche_data_incidents($request)
                 SELECT 
                     id, 
                     logo, 
-                    IF(name_ru IS NULL OR name_ru = '', name, name_ru) AS name 
+                    name 
                 FROM 
                     wp_soccer_teams 
                 WHERE 
@@ -160,11 +160,11 @@ function get_matche_data_incidents($request)
             $players_data = [];
 
             foreach (array_merge($home_players, $away_players) as $player) {
-                $team_name = !empty($player->team_name_ru) ? $player->team_name_ru : $player->team_name;
+                $team_name = $player->team_name;
 
                 $players_data[] = [
                     'id' => $player->id,
-                    'name' => !empty($player->name_ru) ? $player->name_ru : $player->name,
+                    'name' => $player->name,
                     'age' => $player->age,
                     'country_logo' => $player->country_logo ?? null,
                     'country_name' => $player->country_name,
@@ -213,11 +213,11 @@ function get_matche_data_incidents($request)
 
         $players_data = [];
         foreach ($players as $player) {
-            $team_name = !empty($player->team_name_ru) ? $player->team_name_ru : $player->team_name;
+            $team_name = $player->team_name;
 
             $players_data[$player->id] = [
                 'id' => $player->id,
-                'name' => !empty($player->name_ru) ? $player->name_ru : $player->name,
+                'name' => $player->name,
                 'age' => $player->age,
                 'country_logo' => $player->country_logo ?? null,
                 'country_name' => $player->country_name,
@@ -317,7 +317,7 @@ function get_matche_data_incidents($request)
         foreach ($coaches as $coach) {
             $coaches_data[$coach->id] = [
                 'id' => $coach->id,
-                'name' => !empty($coach->name_ru) ? $coach->name_ru : $coach->name,
+                'name' => $coach->name,
                 'age' => $coach->age,
                 'country_logo' => $coach->country_logo ?? '/wp-content/themes/pm-news/sport/src/img/world.svg',
                 'country_name' => $coach->country_name,

@@ -206,7 +206,7 @@ function get_matches_by_team($request)
         foreach ($teams as $team) {
             $teams_map[$team->id] = array(
                 'id' => $team->id,
-                'name' => $team->name_ru ?: $team->name,
+                'name' => $team->name,
                 'logo' => $team->logo ?: '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg',
             );
         }
@@ -215,7 +215,7 @@ function get_matches_by_team($request)
         foreach ($competitions as $competition) {
             $competitions_map[$competition->id] = array(
                 'id' => $competition->id,
-                'name' => $competition->name_ru ?: $competition->name,
+                'name' => $competition->name,
                 'logo' => $competition->logo ?: '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg',
                 'country_id' => $competition->country_id,
                 'category_id' => $competition->category_id,
@@ -238,7 +238,7 @@ function get_matches_by_team($request)
         foreach ($countries as $country) {
             $countries_map[$country->id] = array(
                 'id' => $country->id,
-                'name' => $country->name_ru ?: $country->name,
+                'name' => $country->name,
                 'logo' => $country->logo ?: '/wp-content/themes/pm-news/sport/src/img/world.svg',
                 'slug' => $country->slug,
             );
@@ -256,7 +256,7 @@ function get_matches_by_team($request)
         foreach ($categories as $category) {
             $categories_map[$category->id] = array(
                 'id' => $category->id,
-                'name' => $category->name_ru ?: $category->name,
+                'name' => $category->name,
                 'logo' => '/wp-content/themes/pm-news/sport/src/img/world.svg',
                 'slug' => $category->slug,
             );

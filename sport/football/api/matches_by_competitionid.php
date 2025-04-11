@@ -93,7 +93,7 @@ function get_matches_by_competition($request)
         $teams_map = array();
         foreach ($teams as $team) {
             $teams_map[$team->id] = array(
-                'name' => !empty($team->name_ru) ? $team->name_ru : ($team->name ?? 'Unknown Team'),
+                'name' => $team->name ?? 'Unknown Team',
                 'logo' => !empty($team->logo) ? $team->logo : '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg',
             );
         }
@@ -157,7 +157,7 @@ function get_matches_by_competition($request)
     $response = array(
         'competition' => array(
             'id' => $competition->id ?? null,
-            'name' => !empty($competition->name_ru) ? $competition->name_ru : ($competition->name ?? 'Unknown Competition'),
+            'name' => $competition->name ?? 'Unknown Competition',
             'logo' => $competition->logo ?? null,
             'country_id' => $competition->country_id ?? null,
             'category_id' => $competition->category_id ?? null,
@@ -171,7 +171,7 @@ function get_matches_by_competition($request)
     if ($country) {
         $response['country'] = array(
             'id' => $country->id ?? null,
-            'name' => !empty($country->name_ru) ? $country->name_ru : ($country->name ?? 'Unknown Country'),
+            'name' => $country->name ?? 'Unknown Country',
             'logo' => !empty($country->logo) ? $country->logo : '/wp-content/themes/pm-news/sport/src/img/world.svg',
             'slug' => $country->slug ?? null,
         );
@@ -181,7 +181,7 @@ function get_matches_by_competition($request)
     if ($category) {
         $response['category'] = array(
             'id' => $category->id ?? null,
-            'name' => !empty($category->name_ru) ? $category->name_ru : ($category->name ?? 'Unknown Category'),
+            'name' => $category->name ?? 'Unknown Category',
             'slug' => $category->slug ?? null,
             'logo' => !empty($category->logo) ? $category->logo : '/wp-content/themes/pm-news/sport/src/img/world.svg',
         );

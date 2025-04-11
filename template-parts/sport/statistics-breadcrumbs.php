@@ -42,14 +42,14 @@
                             $country = $wpdb->get_row(
                                 $wpdb->prepare("SELECT * FROM wp_sport_country_data WHERE id = %s", $competition->country_id)
                             );
-                            $location_name = $country ? $country->name_ru : $competition->name_ru;
+                            $location_name = $country ? $country->name : $competition->name;
                             $location_slug = $country ? $country->slug : $competition->slug;
                         } else {
                             // Если country_id нет, используем category_id
                             $category = $wpdb->get_row(
                                 $wpdb->prepare("SELECT * FROM wp_sport_category_data WHERE id = %s", $competition->category_id)
                             );
-                            $location_name = $category ? $category->name_ru : $competition->name;
+                            $location_name = $category ? $category->name : $competition->name;
                             $location_slug = $category ? $category->slug : $competition->slug;
                         }
 
@@ -94,7 +94,7 @@
                     <a href="<?php echo esc_url(home_url('/statistics/football/' . $location_slug . '/' . $competition->slug . '/')); ?>"
                         class="breadcrumbs__section">
                         <span>
-                            <?php echo $competition->name_ru ? $competition->name_ru : $competition->name; ?>
+                            <?php echo $competition->name; ?>
                         </span>
                     </a>
 

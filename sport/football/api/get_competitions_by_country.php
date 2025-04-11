@@ -72,7 +72,7 @@ function get_competitions($request)
     } else {
         // Поиск по category_id
         $category_query = $wpdb->prepare("
-            SELECT name_ru AS category_name, logo AS category_logo, slug AS category_slug 
+            SELECT name AS category_name, logo AS category_logo, slug AS category_slug 
             FROM wp_sport_category_data 
             WHERE id = %s
         ", $category_id);
@@ -113,8 +113,8 @@ function get_competitions($request)
             'id' => $competition->id,
             'category_id' => $competition->category_id,
             'country_id' => $competition->country_id,
-            'name' => isset($competition->name_ru) && $competition->name_ru !== ''
-                ? $competition->name_ru
+            'name' => isset($competition->name) && $competition->name !== ''
+                ? $competition->name
                 : $competition->name,
             'country_logo' => $logo, // Добавляем логотип страны или категории
             'cur_season_id' => $competition->cur_season_id,

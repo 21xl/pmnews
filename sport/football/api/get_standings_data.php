@@ -161,7 +161,7 @@ function getCompetitionStandingsData($competition_id, $season_id, $matches)
             $team_data_result = getTeamData($row->team_id);
             if (!$team_data_result['error'] && !empty($team_data_result['data'])) {
                 $team_data = $team_data_result['data'];
-                $team_name = !empty($team_data['name_ru']) ? $team_data['name_ru'] : $team_data['name'];
+                $team_name = $team_data['name'];
                 $team_slug = !empty($team_data['slug']) ? $team_data['slug'] : NULL;
                 $team_logo = !empty($team_data['logo']) ? $team_data['logo'] : '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg';
 
@@ -522,7 +522,7 @@ function get_brackets_with_relations($season_id)
 
         foreach ($team_data as $team) {
             $teams[$team->id] = [
-                'name' => $team->name_ru ?: $team->name,
+                'name' => $team->name,
                 'logo' => $team->logo ?: '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg',
             ];
         }

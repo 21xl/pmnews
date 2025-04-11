@@ -7,11 +7,11 @@ $match_query = $wpdb->prepare("
         ht.id AS home_team_id, 
         ht.logo AS home_team_logo, 
         ht.slug AS home_team_slug,
-        IF(ht.name_ru IS NULL OR ht.name_ru = '', ht.name, ht.name_ru) AS home_team_name,
+        ht.name AS home_team_name,
         at.id AS away_team_id, 
         at.logo AS away_team_logo, 
         at.slug AS away_team_slug,
-        IF(at.name_ru IS NULL OR at.name_ru = '', at.name, at.name_ru) AS away_team_name
+        at.name away_team_name
     FROM 
         wp_sport_matches_shedule AS m
     LEFT JOIN 

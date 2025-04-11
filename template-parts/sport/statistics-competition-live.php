@@ -19,7 +19,7 @@ if ($competition_data) {
     if (!empty($seo_title)) {
         $title = $seo_title;
     } else {
-        $title = !empty($competition_data->name_ru) ? $competition_data->name_ru : $competition_data->name;
+        $title = $competition_data->name;
     }
 }
 
@@ -75,7 +75,7 @@ if ($competition_data): ?>
         <div class="statistics-competition__head">
             <div class="statistics-competition__img">
                 <img src="<?php echo esc_url($competition_data->logo); ?>"
-                    alt="<?php echo esc_attr($competition_data->name_ru ? $competition_data->name_ru : $competition_data->name); ?>">
+                    alt="<?php echo esc_attr($competition_data->name); ?>">
             </div>
 
             <div class="statistics-competition__content">

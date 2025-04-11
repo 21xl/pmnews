@@ -62,7 +62,7 @@ if ($competition_data) {
     if (!empty($seo_title)) {
         $title = $seo_title;
     } else {
-        $title = !empty($competition_data->name_ru) ? $competition_data->name_ru : $competition_data->name;
+        $title = $competition_data->name;
     }
 }
 
@@ -76,10 +76,10 @@ if ($competition_data): ?>
             <div class="statistics-competition__img">
                 <?php if ($competition_data->logo): ?>
                     <img src="<?php echo esc_url($competition_data->logo); ?>"
-                        alt="<?php echo esc_attr($competition_data->name_ru ? $competition_data->name_ru : $competition_data->name); ?>">
+                        alt="<?php echo esc_attr($competition_data->name); ?>">
                 <?php else: ?>
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/sport/src/img/football-team-placeholder.svg'); ?>"
-                        alt="<?php echo esc_attr($competition_data->name_ru ? $competition_data->name_ru : $competition_data->name); ?>">
+                        alt="<?php echo esc_attr($competition_data->name); ?>">
                 <?php endif; ?>
             </div>
 

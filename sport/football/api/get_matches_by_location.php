@@ -84,7 +84,7 @@ function get_matches_by_location($request)
     $country = $wpdb->get_row($country_query);
     $country = $country ? array(
         'id' => $country->id,
-        'name' => $country->name_ru ? $country->name_ru : $country->name,
+        'name' => $country->name,
         'logo' => $country->logo ?? '/wp-content/themes/pm-news/sport/src/img/world.svg',
         'slug' => $country->slug,
     ) : null;
@@ -95,7 +95,7 @@ function get_matches_by_location($request)
 
     $category = $category_row ? array(
         'id' => $category_row->id,
-        'name' => $category_row->name_ru ? $category_row->name_ru : $category_row->name,
+        'name' => $category_row->name,
         'slug' => $category_row->slug,
         'logo' => '/wp-content/themes/pm-news/sport/src/img/world.svg',
     ) : null;
@@ -157,7 +157,7 @@ function get_matches_by_location($request)
     $teams_map = array();
     foreach ($teams as $team) {
         $teams_map[$team->id] = array(
-            'name' => $team->name_ru ? $team->name_ru : $team->name,
+            'name' => $team->name,
             'logo' => (!empty($team->logo) && $team->logo !== '') ? $team->logo : '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg',
         );
     }
@@ -167,7 +167,7 @@ function get_matches_by_location($request)
     foreach ($competitions as $competition) {
         $competitions_map[$competition->id] = array(
             'id' => $competition->id,
-            'name' => $competition->name_ru ? $competition->name_ru : $competition->name,
+            'name' => $competition->name,
             'logo' => (!empty($competition->logo) && $competition->logo !== '') ? $competition->logo : '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg',
             'country_id' => $competition->country_id,
             'category_id' => $competition->category_id,

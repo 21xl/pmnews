@@ -110,7 +110,7 @@ function get_matches_by_date($request)
     foreach ($competitions as $competition) {
         $competitions_map[$competition->id] = array(
             'id' => $competition->id,
-            'name' => $competition->name_ru ? $competition->name_ru : $competition->name,
+            'name' => $competition->name,
             'logo' => $competition->logo,
             'country_id' => $competition->country_id,
             'category_id' => $competition->category_id,
@@ -122,7 +122,7 @@ function get_matches_by_date($request)
     foreach ($countries as $country) {
         $countries_map[$country->id] = array(
             'id' => $country->id,
-            'name' => $country->name_ru ? $country->name_ru : $country->name,
+            'name' => $country->name,
             'logo' => $country->logo ?? '/wp-content/themes/pm-news/sport/src/img/world.svg',
             'slug' => $country->slug,
         );
@@ -131,7 +131,7 @@ function get_matches_by_date($request)
     $teams_map = array();
     foreach ($teams as $team) {
         $teams_map[$team->id] = array(
-            'name' => $team->name_ru ? $team->name_ru : $team->name,
+            'name' => $team->name,
             'logo' => $team->logo ?? '/wp-content/themes/pm-news/sport/src/img/football-team-placeholder.svg',
         );
     }
@@ -140,7 +140,7 @@ function get_matches_by_date($request)
     foreach ($categories as $category) {
         $categories_map[$category->id] = array(
             'id' => $category->id,
-            'name' => $category->name_ru ? $category->name_ru : $category->name,
+            'name' => $category->name,
             'slug' => $category->slug,
             'logo' => '/wp-content/themes/pm-news/sport/src/img/world.svg',
         );
@@ -231,8 +231,8 @@ function get_matches_by_date($request)
             $country_a = $countries_map[$a['competition']['country_id']]['name'];
             $country_b = $countries_map[$b['competition']['country_id']]['name'];
 
-            $cyrillic_a = preg_match('/[А-Яа-я]/u', $country_a);
-            $cyrillic_b = preg_match('/[А-Яа-я]/u', $country_b);
+            $cyrillic_a = preg_match('/[A-Za-z]/u', $country_a);
+            $cyrillic_b = preg_match('/[A-Za-z]/u', $country_b);
 
             if ($cyrillic_a && !$cyrillic_b) {
                 return -1;
@@ -256,8 +256,8 @@ function get_matches_by_date($request)
                 ? $categories_map[$b['competition']['category_id']]['name']
                 : '';
 
-            $cyrillic_a = preg_match('/[А-Яа-я]/u', $category_a);
-            $cyrillic_b = preg_match('/[А-Яа-я]/u', $category_b);
+            $cyrillic_a = preg_match('/[A-Za-z]/u', $category_a);
+            $cyrillic_b = preg_match('/[A-Za-z]/u', $category_b);
 
             if ($cyrillic_a && !$cyrillic_b) {
                 return -1;
