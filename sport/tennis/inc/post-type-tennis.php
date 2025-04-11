@@ -12,7 +12,6 @@ function add_custom_tennis_menu()
     );
 }
 add_action('admin_menu', 'add_custom_tennis_menu');
-
 // 1. Регистрация кастомного посттайпа 'tennis'
 function register_tennis_post_type()
 {
