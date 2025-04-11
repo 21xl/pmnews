@@ -45,7 +45,7 @@ function update_football_posts()
         if (!$existing_post_id) {
             // Создаём новый пост
             $post_data = [
-                'post_title' => $category->name_ru ?: $category->name,
+                'post_title' => $category->name,
                 'post_name' => $category->slug,
                 'post_status' => 'publish',
                 'post_type' => 'football',
@@ -77,7 +77,7 @@ function update_football_posts()
 
         if (!$existing_post_id) {
             $post_data = [
-                'post_title' => $country->name_ru ?: $country->name,
+                'post_title' => $country->name,
                 'post_name' => $country->slug,
                 'post_status' => 'publish',
                 'post_type' => 'football',
@@ -124,7 +124,7 @@ function update_football_posts()
 
             // Создаём новый пост
             $post_data = [
-                'post_title' => $competition->name_ru ?: $competition->name,
+                'post_title' => $competition->name,
                 'post_name' => $competition->slug,
                 'post_status' => 'publish',
                 'post_type' => 'football',

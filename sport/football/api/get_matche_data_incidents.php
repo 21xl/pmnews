@@ -135,7 +135,7 @@ function get_matche_data_incidents($request)
             $home_players_query = $wpdb->prepare(
                 "SELECT p.id, p.name, p.name_ru, p.age, p.country_id, p.team_id, 
                        c.logo AS country_logo, c.name AS country_name, 
-                       t.logo AS team_logo, t.name AS team_name, t.name_ru AS team_name_ru
+                       t.logo AS team_logo, t.name AS team_name
                 FROM wp_football_players p
                 LEFT JOIN wp_sport_country_data c ON p.country_id = c.id
                 LEFT JOIN wp_soccer_teams t ON p.team_id = t.id
@@ -146,7 +146,7 @@ function get_matche_data_incidents($request)
             $away_players_query = $wpdb->prepare(
                 "SELECT p.id, p.name, p.name_ru, p.age, p.country_id, p.team_id, 
                        c.logo AS country_logo, c.name AS country_name, 
-                       t.logo AS team_logo, t.name AS team_name, t.name_ru AS team_name_ru
+                       t.logo AS team_logo, t.name AS team_name
                 FROM wp_football_players p
                 LEFT JOIN wp_sport_country_data c ON p.country_id = c.id
                 LEFT JOIN wp_soccer_teams t ON p.team_id = t.id
@@ -203,7 +203,7 @@ function get_matche_data_incidents($request)
         $players_query = $wpdb->prepare("
                 SELECT p.id, p.name, p.name_ru, p.age, p.country_id, p.team_id, 
                     c.logo AS country_logo, c.name AS country_name, 
-                    t.logo AS team_logo, t.name AS team_name, t.name_ru AS team_name_ru
+                    t.logo AS team_logo, t.name AS team_name
                 FROM wp_football_players p
                 LEFT JOIN wp_sport_country_data c ON p.country_id = c.id
                 LEFT JOIN wp_soccer_teams t ON p.team_id = t.id

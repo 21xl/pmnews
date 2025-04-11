@@ -11,7 +11,7 @@ $countries = $wpdb->get_results("
     FROM $table_countries c
     JOIN $table_competitions comp ON c.id = comp.country_id
     WHERE comp.cur_season_id IS NOT NULL
-    ORDER BY c.name_ru IS NULL, c.name_ru ASC, c.name ASC
+    ORDER BY c.name ASC
 ");
 
 // Получение данных категорий
@@ -20,7 +20,7 @@ $categories = $wpdb->get_results("
     FROM $table_categories cat
     JOIN $table_competitions comp ON cat.id = comp.category_id
     WHERE comp.cur_season_id IS NOT NULL
-    ORDER BY cat.name_ru IS NULL, cat.name_ru ASC, cat.name ASC
+    ORDER BY cat.name ASC
 ");
 
 function get_localized_field($data, $field_base)

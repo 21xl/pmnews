@@ -284,6 +284,8 @@ function get_matches_by_team($request)
             $home_team = $teams_map[$match->home_team_id] ?? null;
             $away_team = $teams_map[$match->away_team_id] ?? null;
 
+            error_log(print_r($teams_map, true));
+
             $response[$competition_id]['matches'][] = array(
                 'id' => $match->id,
                 'season_id' => $match->season_id,

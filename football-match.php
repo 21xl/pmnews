@@ -5,8 +5,8 @@ Template Name: Football Match
 
 $match_query = $wpdb->prepare("
     SELECT 
-        IF(ht.name_ru IS NULL OR ht.name_ru = '', ht.name, ht.name_ru) AS home_team_name,
-        IF(at.name_ru IS NULL OR at.name_ru = '', at.name, at.name_ru) AS away_team_name
+        ht.name AS home_team_name,
+        at.name AS away_team_name
     FROM 
         wp_sport_matches_shedule AS m
     LEFT JOIN 
