@@ -8,9 +8,7 @@ global $custom_meta_title;
 global $custom_meta_description;
 
 $seo_title = get_post_meta(get_the_ID(), '_seo_title', true);
-
 $title = '';
-
 
 if (!empty($seo_title)) {
     $title = $seo_title;
@@ -18,10 +16,9 @@ if (!empty($seo_title)) {
     $title = get_the_title();
 }
 
-
-
 $custom_meta_title = $title . ': Game Schedule and Match Calendar';
 $custom_meta_description = 'Find out the game schedule and match calendar ' . $title . '. Do not miss the most important games of the season! Follow the matches easily and conveniently.';
+
 get_template_part('head');
 $banner = get_field('ad_statistics', 'option');
 $ad = get_field('ad_category', 'options');
@@ -50,9 +47,9 @@ $ad = get_field('ad_category', 'options');
                         <?php get_template_part('template-parts/sport-quiz') ?>
 
                         <div class="statistics__main">
-                            <?php get_template_part('template-parts/sport/statistics-sidebar', null, ['page_data' => 'competition']) ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-sidebar', null, ['page_data' => 'competition']) ?>
 
-                            <?php get_template_part('template-parts/sport/statistics-competition') ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-competition') ?>
 
                             <?php if ($ad):
                                 $ad_link = isset($ad['link']) ? esc_url($ad['link']) : '';

@@ -46,7 +46,7 @@ function create_teams_posts()
     foreach ($teams as $team) {
         // Создаём новый пост
         $post_id = wp_insert_post([
-            'post_title' => $team->name_ru ?: $team->name,
+            'post_title' => $team->name,
             'post_name' => sanitize_title($team->slug),
             'post_status' => 'publish',
             'post_type' => 'football_team',

@@ -24,7 +24,7 @@ $ad = get_field('ad_category', 'options');
                         </span>
 
                         <div class="statistics__mobile-sidebar">
-                            <span>All leagues</span>
+                            <span><?php pll_e('All leagues') ?></span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>
@@ -32,9 +32,9 @@ $ad = get_field('ad_category', 'options');
                         <?php get_template_part('template-parts/sport-quiz') ?>
 
                         <div class="statistics__main">
-                            <?php get_template_part('template-parts/sport/statistics-sidebar', null, ['page_data' => 'team']) ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-sidebar', null, ['page_data' => 'team']) ?>
 
-                            <?php get_template_part('template-parts/sport/statistics-team') ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-team') ?>
 
                             <?php if ($ad):
                                 $ad_link = isset($ad['link']) ? esc_url($ad['link']) : '';

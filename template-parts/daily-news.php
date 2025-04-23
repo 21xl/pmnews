@@ -90,9 +90,6 @@ if ($query->have_posts()): ?>
                 <?php endif; ?>
             </div>
         </div>
-        <div class="wrapper">
-            <?php get_template_part('template-parts/single-ad-mobile') ?>
-        </div>
     </section>
 <?php endif;
 wp_reset_postdata();

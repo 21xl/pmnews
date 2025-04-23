@@ -1,0 +1,103 @@
+.rating {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include media(mobile) {
+    overflow: visible;
+    }
+
+  &__head {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.063rem solid #dbdde6;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    @include media(mobile) {
+    overflow: visible;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 18.25rem;
+    padding: 0.62rem 1rem;
+    border-radius: 0.75rem;
+    border: 0.063rem solid #dbdde6;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 1rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    input {
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        color: #636f92;
+      }
+    }
+  }
+
+  &-block {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 33.5rem;
+    margin: 0 auto;
+
+    @include media(mobile) {
+      width: 100%;
+      gap: 0.25rem;
+    }
+
+    span {
+      text-align: center;
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #636f92;
+
+      @include media(mobile) {
+        font-size: 0.875rem;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='none'%3E%3Cpath d='m43.47 43.47-5.335-5.335' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath clip-rule='evenodd' d='M32 7.99v0A23.91 23.91 0 0 1 56.01 32v0A23.91 23.91 0 0 1 32 56.01v0A23.91 23.91 0 0 1 7.99 32v0A23.91 23.91 0 0 1 32 7.99Z' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='m13.59 47.473 33.882-33.881M23.196 37.868c4.001 4.268 10.67 4.268 14.672.267 4.002-4.002 4.269-10.671.267-14.673l-.267-.267M20.261 30.398c0-2.668 1.067-5.335 2.935-7.203v0c1.867-1.867 4.535-2.934 7.203-2.934' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include media(mobile) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}

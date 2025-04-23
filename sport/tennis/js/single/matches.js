@@ -929,23 +929,24 @@ Handlebars.registerHelper("displayTime", function (statusId, matchTime) {
 	const isToday = dt.toDateString() === new Date().toDateString();
 
 	const months = {
-		January: "января",
-		February: "февраля",
-		March: "марта",
-		April: "апреля",
-		May: "мая",
-		June: "июня",
-		July: "июля",
-		August: "августа",
-		September: "сентября",
-		October: "октября",
-		November: "ноября",
-		December: "декабря",
+		January: "January",
+		February: "February",
+		March: "March",
+		April: "April",
+		May: "May",
+		June: "June",
+		July: "July",
+		August: "August",
+		September: "September",
+		October: "October",
+		November: "November",
+		December: "December",
 	};
+	
 
 	switch (statusId) {
 		case "0":
-			return "Скрыто"; // Замените на вашу систему перевода
+			return "Hidden";
 		case "1":
 			return isToday
 				? dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
@@ -954,40 +955,41 @@ Handlebars.registerHelper("displayTime", function (statusId, matchTime) {
 						minute: "2-digit",
 					})}`;
 		case "3":
-			return "Матч начался";
+			return "Match Started";
 		case "51":
-			return "1 Сет";
+			return "Set 1";
 		case "52":
-			return "2 Сет";
+			return "Set 2";
 		case "53":
-			return "3 Сет";
+			return "Set 3";
 		case "54":
-			return "4 Сет";
+			return "Set 4";
 		case "55":
-			return "5 Сет";
+			return "Set 5";
 		case "100":
-			return "Завершён";
+			return "Finished";
 		case "20":
-			return "Техническая победа";
+			return "Technical Win";
 		case "21":
-			return "Отказ";
+			return "Withdrawal";
 		case "14":
-			return "Отложен";
+			return "Postponed";
 		case "15":
-			return "Задержан";
+			return "Delayed";
 		case "16":
-			return "Отменён";
+			return "Cancelled";
 		case "17":
-			return "Прерван";
+			return "Interrupted";
 		case "18":
-			return "Приостановлен";
+			return "Suspended";
 		case "19":
-			return "Прерван пополам";
+			return "Halved";
 		case "99":
-			return "Будет определено";
+			return "To Be Determined";
 		default:
 			return `${dt.getDate()} ${months[dt.toLocaleString("en", { month: "long" })]}`;
 	}
+	
 });
 
 Handlebars.registerHelper("active", function (a, b) {
@@ -1029,7 +1031,7 @@ function initShowMore(selector = ".show-more", initialCount = 5) {
 		button.addEventListener("click", () => {
 			isExpanded = !isExpanded;
 			updateVisibility();
-			button.textContent = isExpanded ? "Показать меньше" : "Показать больше";
+			button.textContent = isExpanded ? "Show less" : "Show more";
 		});
 	});
 }

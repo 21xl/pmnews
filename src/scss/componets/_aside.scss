@@ -333,7 +333,7 @@
                 }
 
                 li a {
-                    width: 100%;
+                    width: 98%;
 
                     @include media(mobile) {
                         width: 100%;
@@ -544,7 +544,7 @@
     .current-menu-item .menu-item>.menu-item__name {
         background: $yellow;
         color: $black !important;
-
+        width: 98%;
         .menu-icon {
             filter: brightness(0) saturate(100%) invert(1%) sepia(1%) saturate(561%) hue-rotate(314deg) brightness(96%) contrast(91%);
         }

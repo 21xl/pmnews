@@ -46,9 +46,9 @@ $ad = get_field('ad_category', 'options');
                         <?php get_template_part('template-parts/sport-quiz') ?>
 
                         <div class="statistics__main">
-                            <?php get_template_part('template-parts/sport/statistics-sidebar', null, ['page_data' => 'competition']) ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-sidebar', null, ['page_data' => 'competition']) ?>
 
-                            <?php get_template_part('template-parts/sport/statistics-competition-live') ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-competition-live') ?>
 
                             <?php if ($ad):
                                 $ad_link = isset($ad['link']) ? esc_url($ad['link']) : '';

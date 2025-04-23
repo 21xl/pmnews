@@ -26,7 +26,6 @@ if (!isset($match)) {
 
 $custom_meta_title = $match->home_team_name . ' - ' . $match->away_team_name . " | " . esc_html(get_bloginfo('name'));
 
-
 get_template_part('head');
 $ad = get_field('ad_category', 'options');
 ?>
@@ -46,13 +45,13 @@ $ad = get_field('ad_category', 'options');
                         </h2>
 
                         <div class="statistics__mobile-sidebar">
-                            All leagues
+                            <span><?php pll_e('All leagues'); ?></span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>
 
                         <div class="statistics__main">
-                            <?php get_template_part('template-parts/sport/statistics-sidebar', null, ['page_data' => 'match']) ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-sidebar', null, ['page_data' => 'match']) ?>
 
                             <?php get_template_part('template-parts/sport/football/statistics-match') ?>
 

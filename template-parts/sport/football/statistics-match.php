@@ -83,6 +83,11 @@ switch ($status) {
         $class = ''; // Неизвестный статус
         break;
 }
+
+$is_indonesia = false;
+if (isset($_SERVER['HTTP_CF_IPCOUNTRY']) && $_SERVER['HTTP_CF_IPCOUNTRY'] === 'ID') {
+    $is_indonesia = true;
+}
 ?>
 
 <section class="match <?php echo $class; ?>" id="match-<?php echo $match_id ?>" data-matchid="<?php echo $match_id ?>">
@@ -99,9 +104,9 @@ switch ($status) {
                 </div>
             <?php endif ?>
 
-            <?php if ($status !== 8 && isset($odds)): ?>
+            <?php if ($status !== 8 && isset($odds) && !$is_indonesia): ?>
                 <div class="tabs__item" data-status="odds">
-                    <span><?php pll_e('Coefficients') ?></span>
+                    <span><?php pll_e('Odds') ?></span>
                 </div>
             <?php endif ?>
 
@@ -116,12 +121,12 @@ switch ($status) {
             </div>
 
             <div class="tabs__item" data-status="standings">
-                <span><?php pll_e('Tournament table') ?></span>
+                <span><?php pll_e('Standings') ?></span>
             </div>
 
             <?php if ($lineup): ?>
                 <div class="tabs__item" data-status="squad">
-                    <span><?php pll_e('Compound') ?></span>
+                    <span><?php pll_e('Team') ?></span>
                 </div>
             <?php endif ?>
         </div>
@@ -134,7 +139,7 @@ switch ($status) {
             </div>
         <?php endif ?>
 
-        <?php if (isset($odds)): ?>
+        <?php if (isset($odds) && !$is_indonesia): ?>
             <div class="tabs__content-item" data-status="odds">
                 <?php get_template_part('template-parts/sport/football/statistics-match-odds'); ?>
             </div>

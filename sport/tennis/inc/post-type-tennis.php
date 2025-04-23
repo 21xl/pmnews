@@ -2,8 +2,8 @@
 function add_custom_tennis_menu()
 {
     add_menu_page(
-        'Теннис и Букмекерские конторы',
-        'Теннис',
+        'Tennis',
+        'Tennis',
         'manage_options',
         'tennis_menu',
         '',
@@ -12,21 +12,22 @@ function add_custom_tennis_menu()
     );
 }
 add_action('admin_menu', 'add_custom_tennis_menu');
+
 // 1. Регистрация кастомного посттайпа 'tennis'
 function register_tennis_post_type()
 {
     $labels = [
-        'name' => 'Теннис',
-        'singular_name' => 'Теннис',
-        'add_new' => 'Добавить соревнование',
-        'add_new_item' => 'Добавить новое соревнование',
-        'edit_item' => 'Редактировать соревнование',
-        'new_item' => 'Новое соревнование',
-        'view_item' => 'Просмотреть соревнование',
-        'all_items' => 'Все соревнования',
-        'search_items' => 'Найти соревнование',
-        'not_found' => 'Соревнования не найдены',
-        'not_found_in_trash' => 'Нет соревнований в корзине',
+        'name' => 'Tennis',
+        'singular_name' => 'Tennis',
+        'add_new' => 'Add tournament',
+        'add_new_item' => 'Add new tournament',
+        'edit_item' => 'Edit tournament',
+        'new_item' => 'New tournament',
+        'view_item' => 'Watch tournament',
+        'all_items' => 'All tournaments',
+        'search_items' => 'Find tournaments',
+        'not_found' => 'Tournaments not found',
+        'not_found_in_trash' => 'Not found tournaments in trash',
     ];
 
     $args = [
@@ -57,17 +58,17 @@ add_action('init', 'register_tennis_post_type');
 function register_tennis_rating_post_type()
 {
     $labels = [
-        'name' => 'Рейтинг',
-        'singular_name' => 'Рейтинг',
-        'add_new' => 'Добавить рейтинг',
-        'add_new_item' => 'Добавить новый рейтинг',
-        'edit_item' => 'Редактировать рейтинг',
-        'new_item' => 'Новый рейтинг',
-        'view_item' => 'Просмотреть рейтинг',
-        'all_items' => 'Все рейтинги',
-        'search_items' => 'Найти рейтинг',
-        'not_found' => 'Рейтинги не найдены',
-        'not_found_in_trash' => 'Нет рейтингов в корзине',
+        'name' => 'Rating',
+        'singular_name' => 'Rating',
+        'add_new' => 'Add rating',
+        'add_new_item' => 'Add new rating',
+        'edit_item' => 'Edit rating',
+        'new_item' => 'New rating',
+        'view_item' => 'Watch rating',
+        'all_items' => 'All ratings',
+        'search_items' => 'Find ratings',
+        'not_found' => 'Ratings not found',
+        'not_found_in_trash' => 'Not found ratings in trash',
     ];
 
     $args = [
@@ -101,17 +102,17 @@ add_action('init', 'register_tennis_rating_post_type');
 function register_tennis_calendar_post_type()
 {
     $labels = [
-        'name' => 'Календарь',
-        'singular_name' => 'Календарь',
-        'add_new' => 'Добавить календарь',
-        'add_new_item' => 'Добавить новый календарь',
-        'edit_item' => 'Редактировать календарь',
-        'new_item' => 'Новый календарь',
-        'view_item' => 'Просмотреть календарь',
-        'all_items' => 'Все календари',
-        'search_items' => 'Найти календарь',
-        'not_found' => 'Календари не найдены',
-        'not_found_in_trash' => 'Нет календарей в корзине',
+        'name' => 'Calender',
+        'singular_name' => 'Calender',
+        'add_new' => 'Add calender',
+        'add_new_item' => 'Add new calender',
+        'edit_item' => 'Edir calender',
+        'new_item' => 'New calender',
+        'view_item' => 'Watch calender',
+        'all_items' => 'All calenders',
+        'search_items' => 'Find calender',
+        'not_found' => 'Calenders not found',
+        'not_found_in_trash' => 'Not found calenders in trash',
     ];
 
     $args = [

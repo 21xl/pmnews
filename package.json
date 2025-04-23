@@ -1,5 +1,5 @@
 {
-  "name": "pm_news",
+  "name": "sport_pulse",
   "version": "1.0.0",
   "description": "Awesome theme.",
   "author": "Ihor F",
@@ -38,6 +38,9 @@
   },
   "main": "index.js",
   "dependencies": {
+    "diff-dom": "^5.1.4",
+    "dotenv": "^16.4.7",
+    "dotenv-webpack": "^8.1.0",
     "events": "^3.3.0",
     "handlebars": "^4.7.8",
     "i18next": "^24.0.5"

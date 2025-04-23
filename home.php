@@ -27,6 +27,8 @@ get_template_part('head');
             get_template_part('template-parts/youtube-slider');
           } elseif (get_row_layout() == 'category_slider') {
             get_template_part('template-parts/category-slider');
+          } elseif (get_row_layout() == 'single_ad_mobile') {
+            get_template_part('template-parts/single-ad-mobile');
           }
 
         endwhile;

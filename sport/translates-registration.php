@@ -14,9 +14,10 @@ if (function_exists('pll_register_string')):
     pll_register_string('statistics-pinned', 'Fixed Leagues', 'statistics');
     pll_register_string('statistics-today', 'Today', 'statistics');
     pll_register_string('statistics-review', 'Review', 'statistics');
+    pll_register_string('statistics-all-games', 'All games', 'statistics');
     pll_register_string('statistics-h2h', 'H2H', 'statistics');
-    pll_register_string('statistics-tournament-standings', 'Tournament table', 'statistics');
-    pll_register_string('statistics-composition', 'Compound', 'statistics');
+    pll_register_string('statistics-tournament-standings', 'Standings', 'statistics');
+    pll_register_string('statistics-composition', 'Team', 'statistics');
     pll_register_string('statistics-news', 'News', 'statistics');
     pll_register_string('statistics-tournament-news', 'News', 'statistics');
     pll_register_string('statistics-watch', 'Watch online', 'statistics');
@@ -46,6 +47,7 @@ if (function_exists('pll_register_string')):
     pll_register_string('statistics-favourites', 'Favorites', 'statistics');
     pll_register_string('statistics-pin-msg-1', 'To create a list of pinned leagues, click on', 'statistics');
     pll_register_string('statistics-pin-msg-2', 'icon', 'statistics');
+    pll_register_string('statistics-pin-msg-3', 'To create a list of pinned leagues, click on the %s next to the league you are interested in', 'statistics');
     pll_register_string('statistics-pin-msg-3', 'near the league of interest', 'statistics');
     pll_register_string('statistics-name', 'Name', 'statistics');
     pll_register_string('statistics-points', 'Points', 'statistics');
@@ -54,4 +56,21 @@ if (function_exists('pll_register_string')):
     pll_register_string('statistics-pin-tennis-msg-1', 'To create a list of favorite players, click on', 'statistics');
     pll_register_string('statistics-pin-tennis-msg-2', 'near the match of interest', 'statistics');
     pll_register_string('statistics-show-more', 'Show more', 'statistics');
+
+    pll_register_string('statistics-match-results', 'Match results', 'statistics');
+    pll_register_string('statistics-tournament-table', 'Tournament table', 'statistics');
+    pll_register_string('statistics-match-schedule', ' Match schedule', 'statistics');
+    pll_register_string('statistics-tournament-grid', 'Tournament Grid', 'statistics');
+    pll_register_string('statistics-ended', 'Ended', 'statistics');
+    pll_register_string('statistics-set', 'set', 'statistics');
+    pll_register_string('statistics-tech-victory', 'Technical victory', 'statistics');
+    pll_register_string('statistics-refusal', 'Refusel', 'statistics');
+    pll_register_string('statistics-delayed', 'Delayed', 'statistics');
+    pll_register_string('statistics-detained', 'Detained', 'statistics');
+    pll_register_string('statistics-canceled', 'Canceled', 'statistics');
+    pll_register_string('statistics-suspended', 'Suspended', 'statistics');
+    pll_register_string('statistics-select', 'Select league', 'statistics');
+    pll_register_string('statistics-singles', 'Singles', 'statistics');
+    pll_register_string('statistics-doubles', 'Doubles', 'statistics');
+    pll_register_string('statistics-odds', 'Odds', 'statistics');
 endif;

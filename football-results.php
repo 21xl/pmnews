@@ -16,8 +16,8 @@ if (!empty($seo_title)) {
     $title = get_the_title();
 }
 
-$custom_meta_title = $title . ': Результаты матчей';
-$custom_meta_description = 'Смотрите результаты матчей ' . $title . '. Не пропустите самые важные игры сезона! Узнайте итоги всех игр сезона быстро и удобно в одном месте!';
+$custom_meta_title = $title . ': Match Results';
+$custom_meta_description = 'See the match results for ' . $title . '. Don’t miss the most important games of the season! Get all the season’s results quickly and easily in one place!';
 get_template_part('head');
 $banner = get_field('ad_statistics', 'option');
 $ad = get_field('ad_category', 'options');
@@ -38,7 +38,7 @@ $ad = get_field('ad_category', 'options');
                         </span>
 
                         <div class="statistics__mobile-sidebar">
-                            <span>All leagues</span>
+                            <span><?php pll_e('All leagues') ?></span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>
@@ -46,9 +46,9 @@ $ad = get_field('ad_category', 'options');
                         <?php get_template_part('template-parts/sport-quiz') ?>
 
                         <div class="statistics__main">
-                            <?php get_template_part('template-parts/sport/statistics-sidebar', null, ['page_data' => 'competition']) ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-sidebar', null, ['page_data' => 'competition']) ?>
 
-                            <?php get_template_part('template-parts/sport/statistics-competition-results') ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-competition-results') ?>
 
                             <?php if ($ad):
                                 $ad_link = isset($ad['link']) ? esc_url($ad['link']) : '';

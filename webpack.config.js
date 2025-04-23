@@ -1,5 +1,6 @@
 const path = require("path");
 const glob = require("glob");
+const Dotenv = require("dotenv-webpack");
 
 const miniCss = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -7,8 +8,9 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // Функция для генерации точек входа
 const generateEntries = () => {
 	const entries = {};
-	const files = glob.sync("./sport/football/js/**/index.js", {
+	const files = glob.sync("./sport/*/js/**/index.js", {
 		cwd: path.resolve(__dirname),
+		ignore: "./sport/js/**/index.js", // Исключаем ./sport/js
 	});
 
 	console.log("Found files:", files); // Для отладки
@@ -68,6 +70,9 @@ module.exports = {
 	plugins: [
 		new miniCss({
 			filename: "../style.css",
+		}),
+		new Dotenv({
+			path: path.resolve(__dirname, "./.env"), // Путь к .env
 		}),
 	],
 	optimization: {

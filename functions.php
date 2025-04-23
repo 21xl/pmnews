@@ -179,12 +179,15 @@ add_filter('wp_read_image_metadata', '__return_false');
 
 
 /**
+ * Disable canonical from Rank Math
+ */
+add_filter('rank_math/canonical_url', '__return_false');
+
+
+/**
  * Sports API.
  */
 require get_template_directory() . '/sport/translates-registration.php';
 require get_template_directory() . '/sport/index.php';
 require get_template_directory() . '/sport/football/index.php';
-// require get_template_directory() . '/sport/tennis/index.php';
-
-//Disable canonical from Rank Math
-add_filter('rank_math/canonical_url', '__return_false');
+require get_template_directory() . '/sport/tennis/index.php';

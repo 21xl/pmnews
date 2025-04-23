@@ -11,6 +11,16 @@
             <span>Football</span>
         </a>
 
+        <!-- Теннис -->
+        <a href="<?php echo esc_url(home_url('/statistics/tennis/')); ?>"
+            class="links__item <?php echo (strpos($_SERVER['REQUEST_URI'], '/statistics/tennis/') === 0 ? 'active' : ''); ?>">
+            <div class="links__img">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/sport/src/img/tab-tennis.png'); ?>"
+                    alt="Tennis">
+            </div>
+            <span>Tennis</span>
+        </a>
+
         <!-- Избранное -->
         <a href="<?php echo esc_url(home_url('/statistics/favourites/')); ?>"
             class="links__item <?php echo (strpos($_SERVER['REQUEST_URI'], '/statistics/favourites/') === 0 ? 'active' : ''); ?>">
@@ -20,15 +30,5 @@
             </div>
             <span>Featured</span>
         </a>
-
-        <!-- Теннис -->
-        <!-- <a href="<?php echo esc_url(home_url('/statistics/tennis/')); ?>"
-            class="links__item <?php echo (strpos($_SERVER['REQUEST_URI'], '/statistics/tennis/') === 0 ? 'active' : ''); ?>">
-            <div class="links__img">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/sport/src/img/tab-tennis.png'); ?>"
-                    alt="Теннис">
-            </div>
-            <span>Теннис</span>
-        </a> -->
     </div>
 </div>

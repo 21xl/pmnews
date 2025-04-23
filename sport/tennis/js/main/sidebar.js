@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		toggleButton.addEventListener("click", () => {
 			const isHidden = !hidden;
 			hiddenItems.forEach((item) => item.classList.toggle("hidden", isHidden));
-			toggleButtonText.textContent = isHidden ? "Показать больше" : "Показать меньше";
+			toggleButtonText.textContent = isHidden ? "Show more" : "Show less";
 			toggleButton.classList.toggle("less", !isHidden);
 			otherList.classList.toggle("hidden", isHidden);
 			hidden = isHidden;
@@ -189,10 +189,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				});
 
 				// Переключение текста кнопки
-				if (buttonText.textContent === "Показать больше") {
-					buttonText.textContent = "Показать меньше";
+				if (buttonText.textContent === "Show more") {
+					buttonText.textContent = "Show less";
 				} else {
-					buttonText.textContent = "Показать больше";
+					buttonText.textContent = "Show more";
 				}
 			});
 		}

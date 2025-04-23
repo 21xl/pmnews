@@ -8,8 +8,8 @@ Template Post Type: football
 global $custom_meta_title;
 global $custom_meta_description;
 
-$custom_meta_title = get_the_title() . ': Расписание игр и Календарь матчей';
-$custom_meta_description = 'Узнайте расписание игр и календарь матчей ' . get_the_title() . '. Не пропустите самые важные игры сезона! Следите за матчами легко и удобно.';
+$custom_meta_title = get_the_title() . ': Game Schedule and Match Calendar';
+$custom_meta_description = 'Check out the game schedule and match calendar for ' . get_the_title() . '. Don’t miss the most important games of the season! Follow the matches easily and conveniently.';
 global $robots;
 $robots = [
     'index' => 'noindex',
@@ -48,9 +48,9 @@ $ad = get_field('ad_category', 'options');
                         <?php get_template_part('template-parts/sport-quiz') ?>
 
                         <div class="statistics__main">
-                            <?php get_template_part('template-parts/sport/statistics-sidebar', null, ['page_data' => 'country']) ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-sidebar', null, ['page_data' => 'country']) ?>
 
-                            <?php get_template_part('template-parts/sport/statistics-country') ?>
+                            <?php get_template_part('template-parts/sport/football/statistics-country') ?>
 
                             <?php if ($ad):
                                 $ad_link = isset($ad['link']) ? esc_url($ad['link']) : '';

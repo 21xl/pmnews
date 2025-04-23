@@ -38,7 +38,7 @@ $ad = get_field('ad_category', 'options');
                         </span>
 
                         <div class="statistics__mobile-sidebar">
-                            <span>All leagues</span>
+                            <span><?php pll_e('All leagues') ?></span>
                         </div>
 
                         <?php get_template_part('template-parts/sport/statistics-type-tabs') ?>

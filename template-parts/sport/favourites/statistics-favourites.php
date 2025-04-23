@@ -1,7 +1,11 @@
 <div class="matches">
     <div class="matches__head">
-        <?php get_template_part('template-parts/sport/statistics-matches-tabs') ?>
 
+        <?php get_template_part('template-parts/sport/football/statistics-matches-tabs') ?>
+
+        <div class="matches__top-block">
+            <?php get_template_part('template-parts/sport/date-picker') ?>
+        </div>
     </div>
 
     <div class="matches__main favourits">

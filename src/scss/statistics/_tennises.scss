@@ -1,0 +1,1019 @@
+.matches-tennis {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.25rem;
+
+    @include media(mobile) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &-block {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  &__top {
+    &-block {
+      @include media(mobile) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__ligue {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 0.063rem solid $gray;
+    border-radius: 0.75rem;
+
+    &-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.25rem;
+      width: 100%;
+      background: rgba(237, 241, 245, 0.5);
+      padding: 0.56rem 0.25rem;
+    }
+
+    &-block {
+      display: flex;
+      align-items: center;
+
+      @include media(mobile) {
+        width: 100%;
+      }
+    }
+
+    &-fav {
+      display: block;
+
+      &.skeleton {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.75rem;
+      }
+    }
+
+    &-img {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      // border-radius: 50%;
+      overflow: hidden;
+      margin-right: 0.38rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &--tennis {
+        border-radius: 0;
+      }
+    }
+
+    &-title {
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+
+      &.skeleton {
+        width: 7.1rem;
+        height: 1.25rem;
+      }
+
+      @include media(mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        flex: 1;
+      }
+
+      span,
+      a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $black;
+
+        @include media(mobile) {
+          font-size: 0.75rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &-category {
+      text-transform: uppercase;
+
+      @include media(mobile) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &--last {
+        @include media(mobile) {
+          font-size: 0.875rem;
+          color: $gray_3 !important;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    &-competition {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media screen and (min-width: 541px) {
+        text-transform: uppercase;
+      }
+
+      @include media(mobile) {
+        width: 11.563rem;
+
+        span {
+          color: $gray_3 !important;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    &-sport {
+      text-transform: capitalize !important;
+
+      @include media(mobile) {
+        color: $gray_3 !important;
+        font-size: 0.75rem !important;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease-in-out;
+      overflow-y: visible;
+
+      a {
+        border-bottom: 0.063rem solid $border_3;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-control {
+      display: flex;
+      align-items: center;
+
+      &.skeleton {
+        width: 7.0625rem;
+        height: 1.25rem;
+      }
+
+      span {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #818181;
+        transition: all 0.3s ease-in-out;
+
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    &-table {
+      @include media(mobile) {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M11 4H20' stroke='%23636F92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.1484 9H19.9984' stroke='%23636F92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.5 9H4H5.25V4L4 5.25' stroke='%23636F92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 15H20' stroke='%23636F92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.1484 20H19.9984' stroke='%23636F92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4 15H6.5V17L4 18.5V20H6.75' stroke='%23636F92' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &-arrow {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &:after {
+        content: "";
+        background-image: url("/wp-content/themes/pm-news/src/img/chevron.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(0);
+      }
+    }
+
+    &-hide {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        display: none;
+
+        @include media(mobile) {
+          display: none !important;
+        }
+      }
+    }
+
+    &-round {
+      display: block;
+      width: 100%;
+      padding: 0.65rem 2.25rem;
+      background: #f9f9fb;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #636f92;
+
+      @include media(mobile) {
+        padding: 0.65rem 2rem;
+      }
+    }
+
+    &--rounds {
+      .matches__item-time {
+        @include media(mobile) {
+          width: 6.3rem;
+        }
+      }
+    }
+
+    .colon {
+      margin-left: -0.2rem;
+
+      @include media(mobile) {
+        display: none;
+        margin-left: 0;
+      }
+    }
+
+    &.hidden {
+      .matches-tennis__ligue-hide {
+        span {
+          display: block;
+        }
+      }
+
+      .matches-tennis__ligue-arrow {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+
+      .matches-tennis__ligue-content {
+        display: none;
+      }
+
+      .matches-tennis__ligue-table {
+        display: none;
+
+        @include media(mobile) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__item {
+    padding: 0.5rem 1rem 0.5rem 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+    border-bottom: 0.063rem solid $border_3;
+    transition: all 0.3s ease-in-out;
+    background: $white;
+
+    @include media(mobile) {
+      padding: 0.4rem 0.5rem 0.4rem 0.25rem;
+      width: 100%;
+    }
+
+    &:hover {
+      background: #f9f9fb;
+    }
+
+    &.skeleton {
+      width: 100%;
+      height: 3.5rem;
+    }
+
+    &-block {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      @include media(mobile) {
+        width: 100%;
+      }
+    }
+
+    &-team-block-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 0.44rem;
+
+      @include media(mobile) {
+        gap: 0.1rem;
+      }
+    }
+
+    &-block-2 {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      @include media(mobile) {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &-fav {
+      width: 1.5rem;
+      margin-right: 0.62rem;
+
+      &.skeleton {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      @include media(mobile) {
+        margin-right: 0.25rem;
+      }
+    }
+
+    &-time {
+      font-weight: 500;
+      width: 7.3rem;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &.skeleton {
+        width: 4.5rem;
+        height: 1rem;
+      }
+
+      @include media(mobile) {
+        max-width: 4rem;
+        text-overflow: ellipsis;
+        text-align: center;
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2rem;
+        color: #636f92;
+        font-weight: 400;
+        font-size: 0.75rem;
+      }
+
+      &--ended {
+        color: $gray_3;
+        text-align: right;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        font-weight: 400;
+        font-size: 0.875rem;
+        display: block !important;
+
+        @include media(mobile) {
+          max-width: 5.3rem;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 2rem;
+        }
+      }
+    }
+
+    &-rivals {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 31rem;
+      margin: 0 1.38rem;
+
+      @include media(mobile) {
+        width: 100%;
+        margin: 0;
+        flex: 1;
+      }
+    }
+
+    &-team {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 0.31rem;
+
+      @include media(mobile) {
+        justify-content: space-between;
+        gap: 0.25rem;
+      }
+
+      &.skeleton {
+        width: 7.0625rem;
+        height: 1rem;
+      }
+
+      &-block {
+        display: flex;
+        align-items: center;
+        gap: 0.31rem;
+
+        @include media(mobile) {
+          gap: 0.25rem;
+        }
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.31rem;
+
+        @include media(mobile) {
+          gap: 0.25rem;
+        }
+      }
+
+      span {
+        transition: all 0.3s ease-in-out;
+        color: $black;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: fit-content;
+
+        @include media(mobile) {
+          // max-width: 5rem;
+          max-width: 7.5rem;
+        }
+      }
+
+      &.winner {
+        span {
+          font-weight: 500;
+        }
+      }
+
+      &.red-card {
+        .matches__item-card {
+          opacity: 1;
+        }
+      }
+
+      &.set {
+        .matches__item-set {
+          opacity: 1;
+        }
+      }
+
+      &.ball {
+        @include media(mobile) {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    &-img {
+      display: block;
+      width: 1.125rem;
+      min-width: 1.125rem;
+      height: 1.125rem;
+      min-height: 1.125rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 0.65rem;
+      min-width: 0.65rem;
+      height: 0.9rem;
+      border-radius: 0.125rem;
+      background: red;
+      margin: 0 0.25rem;
+      font-size: 0.65rem;
+      line-height: 0.688rem;
+      font-weight: 500;
+      color: $white;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      @include media(mobile) {
+        margin: 0;
+      }
+    }
+
+    &-score {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: 1.25rem;
+
+      @include media(mobile) {
+        grid-area: 1 / 5 / 2 / 6;
+      }
+
+      span {
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+        text-align: center;
+      }
+    }
+
+    &-score-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 0.37rem;
+      width: 11rem;
+      align-self: stretch;
+
+      @include media(mobile) {
+        width: fit-content;
+        align-items: flex-end;
+      }
+    }
+
+    &-score-item {
+      display: flex;
+      align-items: center;
+      gap: 0.63rem;
+
+      @include media(mobile) {
+        gap: 0.45rem;
+      }
+    }
+
+    &-score-span {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+      width: 1.25rem;
+      color: #636f92;
+
+      @include media(mobile) {
+        font-size: 0.875rem;
+        width: fit-content;
+      }
+
+      span {
+        font-size: 0.68rem;
+        line-height: 0.68rem;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+        color: #636f92;
+        @include media(mobile) {
+          font-size: 0.63rem;
+        }
+      }
+    }
+
+    &-score-total {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+      width: 1.25rem;
+
+      @include media(mobile) {
+        width: fit-content;
+      }
+    }
+
+    &-score-now {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      align-self: stretch;
+      gap: 0.37rem;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+
+      span {
+        width: 1.825rem;
+        background: #f0f0f0;
+        color: #636f92;
+        transition: all 0.3s ease-in-out;
+        border-radius: 0.25rem;
+        text-align: center;
+
+        @include media(mobile) {
+          width: 1.5rem;
+          margin-left: 0.3rem;
+        }
+
+        &.win {
+          background: #fcc;
+          color: #f00;
+        }
+      }
+    }
+
+    &-status {
+      position: relative;
+      margin-right: 1.25rem;
+
+      @include media(mobile) {
+        margin-right: 0;
+      }
+
+      span {
+        font-weight: 500;
+        color: $red;
+      }
+    }
+
+    &--h2h {
+      .matches-tennis__item-time--ended {
+        right: 3rem;
+      }
+    }
+
+    //MATCH STATUS
+
+    &-ball {
+      display: block;
+      width: 1.125rem;
+      height: 1.125rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath d='M13.773 4.227a6.75 6.75 0 1 1-9.546 9.546 6.75 6.75 0 0 1 9.546-9.546' stroke='%23636F92' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.773 4.227a6.75 6.75 0 1 1-9.546 9.546 6.75 6.75 0 0 1 9.546-9.546' stroke='%23636F92' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.5 3.979a6.727 6.727 0 0 0 0 10.042M4.5 14.021a6.727 6.727 0 0 0 0-10.042' stroke='%23636F92' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &-set {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+
+      span {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $red;
+      }
+    }
+
+    &-penalty {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &-goal {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &-point {
+      margin-left: 1rem;
+
+      @include media(mobile) {
+        margin-left: 0;
+      }
+    }
+
+    &.canceled {
+      .matches-tennis__item-score-list {
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    &.interrupted {
+      .matches-tennis__item-score-list {
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    &.suspension {
+      .matches-tennis__item-score-list {
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    &.live {
+      .matches__item-score span {
+        color: $red;
+      }
+
+      .matches-tennis__item-score-total span {
+        color: $red;
+      }
+
+      .matches-tennis__item-time--ended {
+        display: none !important;
+      }
+
+      .matches-tennis__item-score-now {
+        opacity: 1;
+      }
+
+      .matches-tennis__item-time {
+        color: $red;
+
+        @include media(mobile) {
+          display: none;
+        }
+      }
+
+      .matches__item-score-now {
+        opacity: 1;
+      }
+
+      .matches-tennis__item-score-span:empty {
+        display: none;
+      }
+
+      .matches-tennis__item-score-span span:empty {
+        display: none;
+      }
+
+      .matches-tennis__item-set {
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    &.overtime {
+      .matches__item-time {
+        color: $red;
+      }
+
+      .matches__item-score span {
+        color: $red;
+      }
+    }
+
+    &.pause {
+      .matches__item-time {
+        color: $red;
+      }
+
+      .matches__item-score span {
+        color: $red;
+      }
+    }
+
+    &.goal {
+      background: #ffe9e9;
+
+      .matches__item-goal {
+        opacity: 1;
+      }
+    }
+
+    &.penalty {
+      .matches__item-penalty {
+        opacity: 1;
+      }
+    }
+
+    &.ended {
+      .matches__item-time--ended {
+        opacity: 1;
+      }
+
+      .matches-tennis__item-time {
+        @include media(mobile) {
+          display: none;
+        }
+      }
+
+      .matches-tennis__item-score-span {
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 33.5rem;
+    margin: 0 auto;
+
+    @include media(mobile) {
+      width: 100%;
+      gap: 0.25rem;
+    }
+
+    span {
+      text-align: center;
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #636f92;
+
+      @include media(mobile) {
+        font-size: 0.875rem;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='none'%3E%3Cpath d='M56.01 21.329H7.99M46.673 34.668c6.63 0 12.005 5.375 12.005 12.005 0 6.63-5.375 12.005-12.005 12.005-6.63 0-12.005-5.375-12.005-12.005 0-6.63 5.375-12.005 12.005-12.005' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M39.131 56.01H15.994a8.003 8.003 0 0 1-8.004-8.003V15.993a8.003 8.003 0 0 1 8.004-8.003h32.013a8.003 8.003 0 0 1 8.003 8.003v23.138M47.264 40.776v6.38M42.068 47.156h5.197' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18.125 30.666a.133.133 0 1 1-.133-.133' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17.992 30.533c.073 0 .133.06.133.133M27.465 30.666a.133.133 0 1 1-.133-.133' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M27.332 30.533c.073 0 .133.06.133.133M18.125 38.67a.133.133 0 1 1-.133-.134M17.992 38.536c.073 0 .133.06.133.133M27.465 38.67a.133.133 0 1 1-.133-.134M27.332 38.536c.073 0 .133.06.133.133M36.8 30.666a.133.133 0 1 1-.134-.133' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M36.666 30.533c.073 0 .133.06.133.133M18.125 46.673a.133.133 0 1 1-.133-.134' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17.992 46.54c.073 0 .133.06.133.133M27.465 46.673a.133.133 0 1 1-.133-.134' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M27.332 46.54c.073 0 .133.06.133.133' stroke='%239EA6BD' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include media(mobile) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}
+
+.tennis {
+  .matches-tennis__item.live {
+    .matches-tennis__item-team.ball {
+      .matches-tennis__item-ball {
+        opacity: 1;
+      }
+    }
+  }
+
+  .matches-tennis__item-team {
+    justify-content: space-between;
+  }
+
+  .matches__ligue-img {
+    border-radius: 0;
+  }
+
+  .matches__item-img {
+    border-radius: 50%;
+
+    @include media(mobile) {
+      width: 0.875rem;
+      min-width: 0.875rem;
+      height: 0.875rem;
+      min-height: 0.875rem;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .matches__item-rivals {
+    @include media(mobile) {
+      gap: 0.25rem;
+    }
+  }
+}
+
+[data-status="review"] .tennis .matches-tennis__item-fav {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
+[data-status="review"] .tennis .matches-tennis__ligue-title {
+  margin-left: 0.5rem;
+}
+
+[data-status="review"] .tennis .matches-tennis__item-time {
+  margin-left: 0.5rem;
+
+  @include media(mobile) {
+    margin-left: 0;
+  }
+}
+
+[data-status="review"] .matches-tennis__item-rivals {
+  @include media(mobile) {
+    margin-left: 0.25rem;
+  }
+}
+
+//NEW
+[data-status="review"] .ended .matches-tennis__item-score-list .matches-tennis__item-score-span {
+  @include media(mobile) {
+    display: flex;
+  }
+}
+
+[data-status="review"] .ended .matches-tennis__item-time--ended {
+  @include media(mobile) {
+    right: 6.5rem;
+  }
+}
+
+[data-status="h2h"] .tennis .matches-tennis__ligue-img {
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+
+[data-status="review"] .matches-tennis__item--h2h .matches-tennis__item-time--ended {
+  @include media(mobile) {
+    right: 3rem;
+  }
+}
+
+[data-status="review"] .matches-tennis__item--h2h .matches-tennis__item-score-list .matches-tennis__item-score-span {
+  @include media(mobile) {
+    display: none;
+  }
+}
+
+[data-status="review"] .matches-tennis__item--h2h .matches-tennis__item-fav {
+  @include media(mobile) {
+    display: none;
+  }
+}

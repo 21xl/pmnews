@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   let menuContainer =
     document.getElementById("menu-header-en") ||
-    document.getElementById("menu-header-in");
+    document.getElementById("menu-header-in") ||
+    document.getElementById("menu-header-uz");
 
   if (!menuContainer) return;  
 

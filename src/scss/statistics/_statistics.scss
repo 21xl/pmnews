@@ -1,4 +1,5 @@
 @import "loader";
+@import "tennises";
 @import "sidebar";
 @import "icons";
 @import "tabs";
@@ -11,6 +12,7 @@
 @import "custom-checkbox";
 @import "brackets";
 @import "tooltip";
+@import "rating";
 
 .statistics {
   padding: 8rem 0 5rem;
@@ -172,5 +174,35 @@
 @keyframes shine {
   to {
     background-position: right -2.5rem top 0;
+  }
+}
+
+.show-more {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem;
+  color: #636f92;
+  cursor: pointer;
+}
+
+.favourits {
+  .matches__ligue-title a,
+  .matches__ligue-title span {
+    @include media(mobile) {
+      font-size: 0.75rem;
+    }
+  }
+
+  .matches__ligue-competition {
+    @include media(mobile) {
+      font-size: 0.75rem;
+    }
+  }
+
+  .matches__item-team span {
+    @include media(mobile) {
+      font-size: 0.875rem;
+    }
   }
 }
