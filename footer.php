@@ -6,6 +6,7 @@ $full_logo = get_field('full_logo', 'options');
 <?php get_template_part('template-parts/popup') ?>
 
 <?php get_template_part('template-parts/search') ?>
+<?php get_template_part('template-parts/cookie-popup'); ?>
 
 <footer class="footer">
     <div class="footer__wrapper wrapper">
