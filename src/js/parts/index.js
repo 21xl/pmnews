@@ -11,3 +11,4 @@ import "./blue-popup";
 import "./iframe-time";
 // import "./preloader";
 import "./sport-quiz";
+import "./cookie-popup";
