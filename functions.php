@@ -1,5 +1,11 @@
 <?php
 /**
+ * Image exif data.
+ */
+add_filter('wp_read_image_metadata', '__return_false');
+
+
+/**
  * Base configuration.
  */
 if (!defined('_S_VERSION')) {
@@ -170,12 +176,6 @@ require get_template_directory() . '/inc/ajax-sport-quiz.php';
  * Convert images to webp
  */
 require get_template_directory() . '/inc/webp-converter.php';
-
-
-/**
- * Image exif data.
- */
-add_filter('wp_read_image_metadata', '__return_false');
 
 
 /**
